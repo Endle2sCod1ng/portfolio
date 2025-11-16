@@ -1,0 +1,19 @@
+@import url("./reset");
+@import url("./variables");
+@import url("./themes/dark");
+@import url("./themes/light");
+
+
+
+#root,
+body,
+.app {
+  min-height: 100vh;
+  width: 100%;
+
+
+  font: var(--font-m);
+
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
