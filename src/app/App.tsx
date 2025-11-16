@@ -1,8 +1,10 @@
+import { Header } from "@/widgets/Header/Header";
 import styled from "styled-components";
 
 function App() {
   return (
     <div className="app portfolio_theme_dark">
+      <Header />
       <Title>
         Styled-components <span>.attrs</span> method
       </Title>

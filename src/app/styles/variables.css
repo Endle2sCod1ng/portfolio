@@ -1,4 +1,10 @@
 :root {
+  /* Colors */
+
+  /* Sizes */
+  --header-height: 80px;
+
+  /* Fonts */
   --font-family-main: "Poppins", sans-serif;
   --font-size-m: 16px;
   --font-line-m: 1.6;
