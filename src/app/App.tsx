@@ -1,3 +1,5 @@
+import { Container } from "@/shared/ui/Container/Container";
+import { Footer } from "@/widgets/Footer/Footer";
 import { Header } from "@/widgets/Header/Header";
 import styled from "styled-components";
 
@@ -5,15 +7,18 @@ function App() {
   return (
     <div className="app portfolio_theme_dark">
       <Header />
-      <Title>
-        Styled-components <span>.attrs</span> method
-      </Title>
-      <Form>
-        <Field placeholder="Hello" />
-        <Field />
-        <Field />
-        <Checkbox />
-      </Form>
+      <Container>
+        <Title>
+          Styled-components <span>.attrs</span> method
+        </Title>
+        <Form>
+          <Field placeholder="Hello" />
+          <Field />
+          <Field />
+          <Checkbox />
+        </Form>
+      </Container>
+      <Footer />
     </div>
   );
 }
