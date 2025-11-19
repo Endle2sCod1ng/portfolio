@@ -14,7 +14,7 @@ export const Container = ({ children, className }: ContainerProps) => {
 };
 const StyledContainer = styled.div`
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: var(--width-container-max);
   width: 100%;
-  min-width: 360px;
+  min-width: var(--width-container-min);
 `;

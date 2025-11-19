@@ -4,6 +4,9 @@
   /* Sizes */
   --header-height: 80px;
 
+  --width-container-max:1600px;
+  --width-container-min:360px;
+
   /* Fonts */
   --font-family-main: "Poppins", sans-serif;
   --font-size-m: 16px;

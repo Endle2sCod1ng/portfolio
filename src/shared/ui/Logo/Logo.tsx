@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { AppLink } from "../AppLink/AppLink";
 
 interface LogoProps {
   className?: string;
@@ -6,7 +7,7 @@ interface LogoProps {
 export const Logo = ({ className }: LogoProps) => {
   return (
     <StyledLogo
-      href="#"
+      to="/"
       className={`${className ? className : ""}`}
     >
       <span>{"Fort"}</span>
@@ -15,8 +16,9 @@ export const Logo = ({ className }: LogoProps) => {
   );
 };
 
-const StyledLogo = styled.a`
+const StyledLogo = styled(AppLink)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 `;

@@ -1,7 +1,9 @@
+import { routesConfig } from "@/shared/config/routesCpnfig";
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import { Container } from "@/shared/ui/Container/Container";
+
 import { Logo } from "@/shared/ui/Logo/Logo";
 import styled from "styled-components";
-
 
 export const Header = () => {
   return (
@@ -9,16 +11,24 @@ export const Header = () => {
       <Logo />
       <Content>
         <Nav>
-          <li>Home</li>
-          <li>About</li>
-          <li>Stack</li>
-          <li>Projects</li>
-          <li>Contacts</li>
+          {routesConfig.map((l, i) => (
+            <li key={i + l}>
+              <AppLink to={l === "Home" ? "/" : `/${l.toLowerCase()}`}>
+                {l}
+              </AppLink>
+            </li>
+          ))}
         </Nav>
         <Socials>
-          <li>GH</li>
-          <li>X</li>
-          <li>IN</li>
+          <li>
+            <AppLink to="/">GH</AppLink>
+          </li>
+          <li>
+            <AppLink to="/">X</AppLink>
+          </li>
+          <li>
+            <AppLink to="/">IN</AppLink>
+          </li>
         </Socials>
       </Content>
     </StyledHeader>

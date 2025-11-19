@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import HtmlSvg from "@/shared/assets/img/stack/html.svg";
+import { AppSvg } from "@/shared/ui/AppSvg/AppSvg";
 
 interface StackProps {
   className?: string;
@@ -10,7 +11,7 @@ export const Stack = ({ className }: StackProps) => {
   return (
     <section className={`${className ? className : ""}`}>
       <h2>Stack</h2>
-      <HtmlSvg />
+      <AppSvg Svg={HtmlSvg} />
     </section>
   );
 };
