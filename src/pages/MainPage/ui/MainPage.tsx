@@ -1,21 +1,18 @@
 import { Container } from "@/shared/ui/Container/Container";
+import { Stack } from "@/widgets/Stack";
 import styled from "styled-components";
 
-interface MainPageProps {
-  className?: string;
-}
-export const MainPage = ({ className }: MainPageProps) => {
+export const MainPage = () => {
   return (
     <Container>
-      <Title>
-        Styled-components <span>.attrs</span> method
-      </Title>
-      <Form>
+      <Title>Potfolio</Title>
+      {/* <Form>
         <Field placeholder="Hello" />
         <Field />
         <Field />
         <Checkbox />
-      </Form>
+      </Form> */}
+      <Stack />
     </Container>
   );
 };
@@ -29,22 +26,22 @@ const Title = styled.h1`
   }
 `;
 
-const Form = styled.form`
-  width: 100%;
-  max-width: 500px;
-`;
+// const Form = styled.form`
+//   width: 100%;
+//   max-width: 500px;
+// `;
 
-const Field = styled.input.attrs(({ placeholder }) => ({
-  type: "password",
-  placeholder: placeholder || "Type smth...",
-}))`
-  padding: 5px 15px;
-  margin: 10px 0;
-  width: 100%;
-  font-size: 1rem;
-`;
-const Checkbox = styled.input.attrs(() => ({
-  type: "checkbox",
-}))`
-  //styles here...
-`;
+// const Field = styled.input.attrs(({ placeholder }) => ({
+//   type: "password",
+//   placeholder: placeholder || "Type smth...",
+// }))`
+//   padding: 5px 15px;
+//   margin: 10px 0;
+//   width: 100%;
+//   font-size: 1rem;
+// `;
+// const Checkbox = styled.input.attrs(() => ({
+//   type: "checkbox",
+// }))`
+//   //styles here...
+// `;
