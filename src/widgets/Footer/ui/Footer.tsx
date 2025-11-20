@@ -1,11 +1,9 @@
-import { Container } from "@/shared/ui/Container/Container";
 import { Logo } from "@/shared/ui/Logo/Logo";
 import styled from "styled-components";
 
-
 export const Footer = () => {
   return (
-    <StyledFooter>
+    <StyledFooter as="footer">
       <div>
         <Logo />
         <div>Contacts</div>
@@ -19,4 +17,9 @@ export const Footer = () => {
   );
 };
 
-const StyledFooter = styled(Container)``;
+const StyledFooter = styled.footer`
+  margin: 0 auto;
+  max-width: var(--width-container-max);
+  width: 100%;
+  min-width: var(--width-container-min);
+`;

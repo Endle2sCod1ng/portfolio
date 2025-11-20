@@ -3,16 +3,24 @@ import styled from "styled-components";
 
 interface ContainerProps {
   children: ReactNode;
+  as?: "section" | "div" | "header" | "footer";
   className?: string;
 }
-export const Container = ({ children, className }: ContainerProps) => {
+export const Container = ({
+  children,
+  as = "div",
+  className,
+}: ContainerProps) => {
   return (
-    <StyledContainer className={`${className ? className : ""}`}>
+    <StyledContainer
+      as={as}
+      className={`${className ? className : ""}`}
+    >
       {children}
     </StyledContainer>
   );
 };
-const StyledContainer = styled.div`
+export const StyledContainer = styled.div`
   margin: 0 auto;
   max-width: var(--width-container-max);
   width: 100%;

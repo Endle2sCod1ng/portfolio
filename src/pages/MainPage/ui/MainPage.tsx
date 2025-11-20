@@ -1,10 +1,9 @@
-import { Container } from "@/shared/ui/Container/Container";
 import { Stack } from "@/widgets/Stack";
 import styled from "styled-components";
 
 export const MainPage = () => {
   return (
-    <Container>
+    <MainPageStyled>
       <Title>Potfolio</Title>
       {/* <Form>
         <Field placeholder="Hello" />
@@ -13,9 +12,15 @@ export const MainPage = () => {
         <Checkbox />
       </Form> */}
       <Stack />
-    </Container>
+    </MainPageStyled>
   );
 };
+const MainPageStyled = styled.div`
+  width: 100%;
+  max-width: var(--width-container-max);
+  min-width: var(--width-container-min);
+  margin: 0 auto;
+`;
 
 const Title = styled.h1`
   font-size: 1.5em;

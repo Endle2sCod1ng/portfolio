@@ -1,8 +1,8 @@
-import type { FunctionComponent, SVGProps } from "react";
+import type { FC, SVGProps } from "react";
 
 type Size = "112" | "120" | "105" | "88" | "30";
 interface AppSvgProps extends SVGProps<SVGSVGElement> {
-  Svg: FunctionComponent<SVGProps<SVGSVGElement>>;
+  Svg: FC<SVGProps<SVGSVGElement>>;
   size?: Size;
   viewBox?: `0 0 ${Size} ${Size}`;
   className?: string;
@@ -16,7 +16,7 @@ export const AppSvg = ({
 }: AppSvgProps) => {
   return (
     <Svg
-    {...otherProps}
+      {...otherProps}
       width={size}
       height={size}
       className={className ?? ""}

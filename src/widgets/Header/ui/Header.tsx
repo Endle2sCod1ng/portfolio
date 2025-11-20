@@ -1,6 +1,5 @@
 import { routesConfig } from "@/shared/config/routesCpnfig";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
-import { Container } from "@/shared/ui/Container/Container";
 
 import { Logo } from "@/shared/ui/Logo/Logo";
 import styled from "styled-components";
@@ -35,11 +34,12 @@ export const Header = () => {
   );
 };
 
-const StyledHeader = styled(Container)`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+const StyledHeader = styled.header`
   height: var(--header-height);
+  margin: 0 auto;
+  max-width: var(--width-container-max);
+  width: 100%;
+  min-width: var(--width-container-min);
 `;
 const Content = styled.div`
   display: flex;
