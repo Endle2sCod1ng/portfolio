@@ -1,4 +1,4 @@
-import { routesConfig } from "@/shared/config/routesCpnfig";
+import { Nav } from "@/features/Nav";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 
 import { Logo } from "@/shared/ui/Logo/Logo";
@@ -9,15 +9,7 @@ export const Header = () => {
     <StyledHeader>
       <Logo />
       <Content>
-        <Nav>
-          {routesConfig.map((l, i) => (
-            <li key={i + l}>
-              <AppLink to={l === "Home" ? "/" : `/${l.toLowerCase()}`}>
-                {l}
-              </AppLink>
-            </li>
-          ))}
-        </Nav>
+        <Nav />
         <Socials>
           <li>
             <AppLink to="/">GH</AppLink>
@@ -40,16 +32,14 @@ const StyledHeader = styled.header`
   max-width: var(--width-container-max);
   width: 100%;
   min-width: var(--width-container-min);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 const Content = styled.div`
   display: flex;
   gap: 40px;
   list-style-type: none;
-`;
-const Nav = styled.nav`
-  display: flex;
-  list-style-type: none;
-  gap: 20px;
 `;
 const Socials = styled.ul`
   display: flex;

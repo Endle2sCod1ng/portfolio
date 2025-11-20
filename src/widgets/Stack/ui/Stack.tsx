@@ -50,7 +50,6 @@ const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 `;
 
 const Item = styled.li`

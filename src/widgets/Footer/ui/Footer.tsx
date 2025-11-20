@@ -1,3 +1,4 @@
+import { Nav } from "@/features/Nav";
 import { Logo } from "@/shared/ui/Logo/Logo";
 import styled from "styled-components";
 
@@ -10,7 +11,7 @@ export const Footer = () => {
       </div>
       <hr />
       <div>
-        <div>Navbar</div>
+        <Nav />
         <div>Cp</div>
       </div>
     </StyledFooter>
