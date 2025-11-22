@@ -1,15 +1,11 @@
+import { Banner } from "@/widgets/Banner";
 import { Stack } from "@/widgets/Stack";
 import styled from "styled-components";
 
 export const MainPage = () => {
   return (
     <MainPageStyled>
-      {/* <Form>
-        <Field placeholder="Hello" />
-        <Field />
-        <Field />
-        <Checkbox />
-      </Form> */}
+      <Banner />
       <Stack />
     </MainPageStyled>
   );
