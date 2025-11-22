@@ -3,21 +3,26 @@ import { Header } from "@/widgets/Header";
 import { Footer } from "@/widgets/Footer";
 import { Route, Routes } from "react-router";
 import { routesConfig } from "@/shared/config/routesCpnfig";
+import styled from "styled-components";
 
 export function App() {
   return (
-    <div className="app portfolio_theme_dark">
+    <div className="app">
       <Header />
-
-      <Routes>
-        {routesConfig.map((l) => (
-          <Route
-            path={l === "Home" ? "/" : `/${l.toLowerCase()}`}
-            element={<MainPage />}
-          />
-        ))}
-      </Routes>
+      <Main>
+        <Routes>
+          {routesConfig.map((l) => (
+            <Route
+              path={l === "Home" ? "/" : `/${l.toLowerCase()}`}
+              element={<MainPage />}
+            />
+          ))}
+        </Routes>
+      </Main>
       <Footer />
     </div>
   );
 }
+const Main = styled.main`
+  padding-top: var(--header-height);
+`;

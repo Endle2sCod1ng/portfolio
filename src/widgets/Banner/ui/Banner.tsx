@@ -22,9 +22,12 @@ export const Banner = () => {
   );
 };
 const BannerStyled = styled.section`
+  min-height: 400px;
   height: calc(100vh - var(--header-height));
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border: 1px solid red;
 `;
 const ImgBackground = styled.div`
   border-radius: 50%;
@@ -37,7 +40,7 @@ const ImgWrapper = styled.div`
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  
+
   display: flex;
   align-content: center;
   justify-content: center;
