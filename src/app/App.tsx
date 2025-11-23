@@ -17,6 +17,10 @@ export function App() {
               element={<MainPage />}
             />
           ))}
+             <Route
+              path={"*"}
+              element={<MainPage />}
+            />
         </Routes>
       </Main>
       <Footer />
