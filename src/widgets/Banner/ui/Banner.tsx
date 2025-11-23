@@ -1,15 +1,23 @@
-import Avatar from "@/shared/assets/img/banner/avatar.png";
 import styled from "styled-components";
+import Avatar from "@/shared/assets/img/banner/avatar.png";
+import { Flex } from "@/shared/ui/Flex/Flex";
 
 export const Banner = () => {
   return (
-    <BannerStyled>
+    <BannerStyled
+      as="section"
+      justify="space-between"
+      align="center"
+    >
       <div>
         <h2>Hi</h2>
         <h2>I'm Viacheslav</h2>
         <h1>Front-end Developer</h1>
       </div>
-      <ImgWrapper>
+      <ImgWrapper
+        justify="center"
+        align="center"
+      >
         {Array(5)
           .fill("")
           .map((_, i) => {
@@ -23,26 +31,27 @@ export const Banner = () => {
           })}
 
         <ImgBackground>
-          <div></div>
-          {/* <Img
-            src={Avatar}
-            alt="avatar"
-          /> */}
+          <div>
+            <Img
+              src={Avatar}
+              alt="avatar"
+            />
+          </div>
         </ImgBackground>
       </ImgWrapper>
     </BannerStyled>
   );
 };
-const BannerStyled = styled.section`
-  min-height: 800px;
+const BannerStyled = styled(Flex)`
+  min-height: 720px;
   height: calc(100vh - var(--header-height));
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
   border: 1px solid red;
 `;
 
-const ImgWrapper = styled.div`
+const ImgWrapper = styled(Flex)`
   border-radius: 50%;
   width: 444px;
   height: 444px;
@@ -55,13 +64,13 @@ const ImageBorder = styled.div<{ $angle: string }>`
   width: 100%;
   transform: rotateZ(${(props) => props.$angle}deg);
   z-index: 0;
-  div {
+  & > div {
     position: relative;
     width: 100%;
     height: 100%;
     background: linear-gradient(
       rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.1)
     );
     &:before {
       content: "";
@@ -76,37 +85,28 @@ const ImageBorder = styled.div<{ $angle: string }>`
 `;
 
 const ImgBackground = styled.div`
-  /* position: absolute;
-  width: 350px;
-  height: 350px;
-  div {
-    &:before {
-      position: absolute;
-      border-radius: 50%;
-      content: "";
-      top: -10px;
-      left: -10px;
-      width: 370px;
-      height: 370px;
-      z-index: 1;
-      background: var(--acented--gradient);
-    }
-  } */
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  width: 370px;
+  height: 370px;
+  background: var(--acented--gradient);
+  padding: 10px;
+  & > div {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Img = styled.img`
   height: 100%;
+  object-fit: cover;
+
+  /* position: absolute; */
 `;
-// const ImgWrapper = styled.div`
-//   content: "";
-//   width: 350px;
-//   height: 350px;
-//   border-radius: 50%;
-
-//   display: flex;
-//   align-content: center;
-//   justify-content: center;
-
-//   transform: translate3d(10px, 10px, 0);
-//   overflow: hidden;
-// `;
