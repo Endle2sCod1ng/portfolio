@@ -9,11 +9,14 @@ export const Banner = () => {
       justify="space-between"
       align="center"
     >
-      <div>
+      <Flex
+        direction="column"
+        align="flex-start"
+      >
         <h2>Hi</h2>
         <h2>I'm Viacheslav</h2>
         <h1>Front-end Developer</h1>
-      </div>
+      </Flex>
       <ImgWrapper
         justify="center"
         align="center"
@@ -43,11 +46,9 @@ export const Banner = () => {
   );
 };
 const BannerStyled = styled(Flex)`
+  padding: var(--section-indent-l) 0;
   min-height: 720px;
   height: calc(100vh - var(--header-height));
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
   border: 1px solid red;
 `;
 
@@ -68,10 +69,7 @@ const ImageBorder = styled.div<{ $angle: string }>`
     position: relative;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.1)
-    );
+    background: var(--image-border-gradient);
     &:before {
       content: "";
       position: absolute;

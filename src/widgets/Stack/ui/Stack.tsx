@@ -1,22 +1,25 @@
-import styled from "styled-components";
+// 👇 Update SVG imports with ?react
+import HtmlSvg from "@/shared/assets/img/stack/html.svg?react";
+import CssSvg from "@/shared/assets/img/stack/css.svg?react";
+import JsSvg from "@/shared/assets/img/stack/js.svg?react";
+import ReactSvg from "@/shared/assets/img/stack/react.svg?react";
+import ReduxSvg from "@/shared/assets/img/stack/redux.svg?react";
+import BootstrapSvg from "@/shared/assets/img/stack/bootstrap.svg?react";
+import TailwindSvg from "@/shared/assets/img/stack/tailwind.svg?react";
+import SassSvg from "@/shared/assets/img/stack/sass.svg?react";
+import GitSvg from "@/shared/assets/img/stack/git.svg?react";
+import GreensockSvg from "@/shared/assets/img/stack/greensock.svg?react";
+import VSCodeSvg from "@/shared/assets/img/stack/vscode.svg?react";
+import GithubSvg from "@/shared/assets/img/stack/github.svg?react";
 import { AppSvg } from "@/shared/ui/AppSvg/AppSvg";
-
-import HtmlSvg from "@/shared/assets/img/stack/html.svg";
-import CssSvg from "@/shared/assets/img/stack/html.svg";
-import JsSvg from "@/shared/assets/img/stack/html.svg";
-import ReactSvg from "@/shared/assets/img/stack/html.svg";
-import ReduxSvg from "@/shared/assets/img/stack/html.svg";
-import BootstrapSvg from "@/shared/assets/img/stack/html.svg";
-import TailwindSvg from "@/shared/assets/img/stack/html.svg";
-import SassSvg from "@/shared/assets/img/stack/html.svg";
-import GitSvg from "@/shared/assets/img/stack/html.svg";
-import GreensockSvg from "@/shared/assets/img/stack/html.svg";
-import VSCodeSvg from "@/shared/assets/img/stack/html.svg";
-import GithubSvg from "@/shared/assets/img/stack/html.svg";
+import styled from "styled-components";
+import { Flex } from "@/shared/ui/Flex/Flex";
+import { Container } from "@/shared/ui/Container/Container";
 
 interface StackProps {
   className?: string;
 }
+
 const svgList = [
   HtmlSvg,
   CssSvg,
@@ -31,26 +34,43 @@ const svgList = [
   VSCodeSvg,
   GithubSvg,
 ];
+
 export const Stack = ({ className }: StackProps) => {
   return (
-    <section className={`${className ?? ""}`}>
-      <h2>Stack</h2>
-      <List>
+    <StyledStack
+      as="section"
+      className={`${className ?? ""}`}
+    >
+      <StackTitle>Stack</StackTitle>
+      <StackSubitle> Technologies I’ve been working with recently</StackSubitle>
+      <List
+        as="ul"
+        wrap="wrap"
+        justify="space-between"
+      >
         {svgList.map((svg, i) => (
           <Item key={i}>
             <AppSvg Svg={svg} />
           </Item>
         ))}
       </List>
-    </section>
+    </StyledStack>
   );
 };
-
-const List = styled.ul`
+const StyledStack = styled(Container)`
+  padding: var(--section-indent-l) 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `;
+const StackTitle = styled.h2`
+  padding: 0 0 var(--section-title-indent-l) 0;
+`;
+const StackSubitle = styled.h2`
+  padding: 0 0 var(--section-subtitle-indent-l) 0;
+`;
+
+const List = styled(Flex)``;
 
 const Item = styled.li`
   max-width: calc(var(--width-container-max) / 4);

@@ -1,8 +1,11 @@
-/// <reference types="vite-plugin-svgr/client" />
+// src/types.d.ts
 
-// declare module '*.svg' {
-//   import React from 'react';
-//   export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
-//   const content: string;
-//   export default content;
-// }
+// Эта строка изолирует файл как модуль TypeScript
+export { };
+
+// Объявление пользовательского модуля для SVG
+declare module '*.svg' {
+  // Используйте псевдоним 'SvgComponent' вместо 'component' или 'content'
+  const SvgComponent: import("react").FC<import("react").SVGProps<SVGSVGElement>>;
+  export default SvgComponent;
+}

@@ -16,7 +16,7 @@ export const Flex = styled.div<{
   flex-direction: ${(props) => props.direction || "row"};
   justify-content: ${(props) => props.justify || "flex-start"};
   align-items: ${(props) => props.align || "stretch"};
-  flex-wrap: ${(props) => props.align || "nowrap"};
+  flex-wrap: ${(props) => props.wrap || "nowrap"};
   ${(props) =>
     props.gap &&
     css`

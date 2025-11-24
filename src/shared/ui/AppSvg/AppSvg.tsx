@@ -1,3 +1,5 @@
+// import styled from "styled-components";
+// AppSvg definition moved here for completeness
 import type { FC, SVGProps } from "react";
 
 type Size = "112" | "120" | "105" | "88" | "30";

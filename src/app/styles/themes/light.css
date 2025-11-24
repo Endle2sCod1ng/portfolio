@@ -2,4 +2,7 @@
   --bg-color: #fff;
   --primary-color: #42446e;
   --secondary-color: #666;
+
+  --image-border-gradient: linear-gradient(#00000000,
+      #00000030)
 }
