@@ -50,7 +50,14 @@ export const Stack = ({ className }: StackProps) => {
       >
         {svgList.map((svg, i) => (
           <Item key={i}>
-            <AppSvg Svg={svg} />
+            <AppSvg
+              Svg={svg}
+              viewBox={
+                svg === GithubSvg || svg === BootstrapSvg
+                  ? `0 0 88 88`
+                  : `0 0 120 120`
+              }
+            />
           </Item>
         ))}
       </List>
@@ -70,11 +77,16 @@ const StackSubitle = styled.h2`
   padding: 0 0 var(--section-subtitle-indent-l) 0;
 `;
 
-const List = styled(Flex)``;
+const List = styled(Flex)`
+  gap: var(--stack-icons-indent-l) 0;
+`;
 
 const Item = styled.li`
+  width: 120px;
+  height: 120px;
   max-width: calc(var(--width-container-max) / 4);
   min-width: calc(var(--width-container-min) / 2);
   display: flex;
   justify-content: center;
+  align-items: center;
 `;

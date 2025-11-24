@@ -6,13 +6,14 @@ type Size = "112" | "120" | "105" | "88" | "30";
 interface AppSvgProps extends SVGProps<SVGSVGElement> {
   Svg: FC<SVGProps<SVGSVGElement>>;
   size?: Size;
-  viewBox?: `0 0 ${Size} ${Size}`;
+  viewBox?: string;
   className?: string;
 }
 
 export const AppSvg = ({
   Svg,
   size = "120",
+  viewBox = `0 0 120 120`,
   className,
   ...otherProps
 }: AppSvgProps) => {
@@ -21,7 +22,8 @@ export const AppSvg = ({
       {...otherProps}
       width={size}
       height={size}
-      className={className ?? ""}
+      viewBox={viewBox}
+      className={`${className ? className : ""}`}
     />
   );
 };
