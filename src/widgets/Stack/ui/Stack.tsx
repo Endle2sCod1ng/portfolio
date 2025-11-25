@@ -37,7 +37,7 @@ const svgList = [
 export const Stack = ({ className }: StackProps) => {
   return (
     <StyledStack className={`${className ?? ""}`}>
-      <StackTitle>Stack</StackTitle>
+      <StackTitle>Tech stack</StackTitle>
       <StackSubitle> Technologies I’ve been working with recently</StackSubitle>
       <List
         as="ul"
@@ -62,9 +62,10 @@ export const Stack = ({ className }: StackProps) => {
 };
 const StyledStack = styled.section`
   padding: var(--section-indent-l) 0;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
+  text-align: center;
 `;
 const StackTitle = styled.h2`
   padding: 0 0 var(--section-title-indent-l) 0;

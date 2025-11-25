@@ -1,7 +1,9 @@
 .portfolio_theme_light {
-  --bg-color: #fff;
+  --bg-color: rgba(235, 234, 237, 1);
   --primary-color: #42446e;
   --secondary-color: #666;
+
+  --card-color: #fff;
 
   --image-border-gradient: linear-gradient(#00000000,
       #00000030)

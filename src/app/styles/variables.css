@@ -5,13 +5,17 @@
       rgba(230.5625, 15.370828628540039, 170.3088836669922, 1) 100%);
 
   /* Sizes */
+  --header-height: 120px;
+
+
   --section-indent-l: 100px;
   --section-title-indent-l: 50px;
   --section-subtitle-indent-l: 100px;
+
   --stack-icons-indent-l: 80px;
 
-  --header-height: 120px;
-
+  --border-radius-l: 20px;
+  
   --width-container-max: 1200px;
   --width-container-min: 360px;
 

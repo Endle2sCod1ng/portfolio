@@ -10,10 +10,12 @@ export const Flex = styled.div<{
     | "space-evenly";
   align?: "flex-start" | "center" | "flex-end" | "stretch" | "baseline";
   wrap?: "wrap" | "nowrap" | "wrap-reverse";
+  gap?: string;
 }>`
   display: flex;
   flex-direction: ${(props) => props.direction || "row"};
   justify-content: ${(props) => props.justify || "flex-start"};
   align-items: ${(props) => props.align || "stretch"};
   flex-wrap: ${(props) => props.wrap || "nowrap"};
+  gap: ${(props) => props.gap || "0"};
 `;
