@@ -14,7 +14,6 @@ import GithubSvg from "@/shared/assets/img/stack/github.svg?react";
 import { AppSvg } from "@/shared/ui/AppSvg/AppSvg";
 import styled from "styled-components";
 import { Flex } from "@/shared/ui/Flex/Flex";
-import { Container } from "@/shared/ui/Container/Container";
 
 interface StackProps {
   className?: string;
@@ -37,10 +36,7 @@ const svgList = [
 
 export const Stack = ({ className }: StackProps) => {
   return (
-    <StyledStack
-      as="section"
-      className={`${className ?? ""}`}
-    >
+    <StyledStack className={`${className ?? ""}`}>
       <StackTitle>Stack</StackTitle>
       <StackSubitle> Technologies I’ve been working with recently</StackSubitle>
       <List
@@ -64,7 +60,7 @@ export const Stack = ({ className }: StackProps) => {
     </StyledStack>
   );
 };
-const StyledStack = styled(Container)`
+const StyledStack = styled.section`
   padding: var(--section-indent-l) 0;
   display: flex;
   flex-direction: column;

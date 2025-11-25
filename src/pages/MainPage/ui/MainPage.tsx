@@ -1,4 +1,5 @@
 import { Banner } from "@/widgets/Banner";
+import { Projects } from "@/widgets/Projects";
 import { Stack } from "@/widgets/Stack";
 import styled from "styled-components";
 
@@ -7,6 +8,7 @@ export const MainPage = () => {
     <MainPageStyled>
       <Banner />
       <Stack />
+      <Projects />
     </MainPageStyled>
   );
 };
