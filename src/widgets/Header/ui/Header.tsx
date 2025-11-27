@@ -5,6 +5,7 @@ import { Logo } from "@/shared/ui/Logo/Logo";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Container } from "@/shared/ui/Container/Container";
+import { AppButton } from "@/shared/ui/AppButton/AppButton";
 
 type Theme = "light" | "dark";
 
@@ -35,7 +36,7 @@ export const Header = () => {
             </li>
           </Socials>
 
-          <button
+          <AppButton
             onClick={() => {
               const newTheme = theme === "light" ? "dark" : "light";
               setTheme(newTheme);
@@ -43,7 +44,7 @@ export const Header = () => {
             }}
           >
             Theme
-          </button>
+          </AppButton>
         </Content>
       </StyledContainer>
     </StyledHeader>
