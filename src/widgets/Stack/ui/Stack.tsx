@@ -67,9 +67,11 @@ const StyledStack = styled.section`
   align-items: center; */
   text-align: center;
 `;
+
 const StackTitle = styled.h2`
   padding: 0 0 var(--section-title-indent-l) 0;
 `;
+
 const StackSubitle = styled.h2`
   padding: 0 0 var(--section-subtitle-indent-l) 0;
 `;

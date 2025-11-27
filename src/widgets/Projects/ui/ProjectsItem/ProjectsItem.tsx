@@ -11,10 +11,15 @@ export const ProjectsItem = ({ project }: ProjectsItemProps) => {
   const { img, title, text, stackList, preview, code } = project;
   return (
     <ProjectsItemStyled>
-      <Img
-        src={img}
-        alt={"image"}
-      />
+      <ImgContainer>
+        <Img
+          src={img}
+          alt={"image"}
+        />
+        <AppLink to={preview}>
+          <span>Live preview</span>
+        </AppLink>
+      </ImgContainer>
 
       <Content>
         <Title>{title}</Title>
@@ -45,17 +50,36 @@ const ProjectsItemStyled = styled.div`
   margin-bottom: 50px;
 `;
 
+const ImgContainer = styled.div`
+  width: 100%;
+  height: 260px;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  z-index: 0;
+`;
+
 const Img = styled.img`
   width: 100%;
-  max-height: 260px;
   border-radius: 20px 20px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: all var(--transtion-delay) linear;
+  z-index: 1;
 `;
+
 const Content = styled.div`
   padding: 16px 30px 24px;
 `;
+
 const Title = styled.h4`
   margin-bottom: 16px;
 `;
+
 const Text = styled.div`
   margin-bottom: 12px;
 `;

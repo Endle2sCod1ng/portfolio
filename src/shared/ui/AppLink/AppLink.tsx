@@ -1,21 +1,47 @@
 import type { ReactNode } from "react";
 import { Link, type LinkProps } from "react-router";
+import styled, { css } from "styled-components";
+
+type AppLinkVariant = "clear";
 
 interface AppLinkProps extends LinkProps {
   children: ReactNode;
+  variant?: AppLinkVariant;
   className?: string;
 }
+
 export const AppLink = ({
   children,
+  variant = "clear",
   className,
   ...otherProps
 }: AppLinkProps) => {
   return (
-    <Link
+    <StyledAppLink
       {...otherProps}
       className={`${className ? className : ""}`}
+      $variant={variant}
     >
       {children}
-    </Link>
+    </StyledAppLink>
   );
 };
+
+const StyledAppLink = styled(Link)<{ $variant: AppLinkVariant }>`
+  ${(props) => {
+    switch (props.$variant) {
+      // case "clear":
+      //   return css``;
+      default:
+        return css`
+          transform: all 0.3s linear;
+          &:hover {
+            transform: all 0.3s linear;
+            background-image: var(--acented--gradient);
+            background-clip: text;
+            color: transparent;
+          }
+        `;
+    }
+  }}
+`;

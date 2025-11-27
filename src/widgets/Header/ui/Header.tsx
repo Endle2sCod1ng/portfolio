@@ -52,13 +52,13 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
   background: var(--bg-color);
-
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
 `;
+
 const StyledContainer = styled(Container)`
   height: var(--header-height);
   min-width: var(--width-container-min);
@@ -67,14 +67,14 @@ const StyledContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  border: 1px solid red;
 `;
+
 const Content = styled.div`
   display: flex;
   gap: 40px;
   list-style-type: none;
 `;
+
 const Socials = styled.ul`
   display: flex;
   list-style-type: none;

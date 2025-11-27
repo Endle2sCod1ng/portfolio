@@ -24,10 +24,11 @@ export const Banner = () => {
         {Array(5)
           .fill("")
           .map((_, i) => {
-            console.log(i);
-
             return (
-              <ImageBorder $angle={`-${(Number(i) + 1) * 15}`}>
+              <ImageBorder
+                key={i}
+                $angle={`-${(Number(i) + 1) * 15}`}
+              >
                 <div></div>
               </ImageBorder>
             );
@@ -49,7 +50,6 @@ const BannerStyled = styled(Flex)`
   padding: var(--section-indent-l) 0;
   min-height: 720px;
   height: calc(100vh - var(--header-height));
-  border: 1px solid red;
 `;
 
 const ImgWrapper = styled(Flex)`
@@ -105,6 +105,4 @@ const ImgBackground = styled.div`
 const Img = styled.img`
   height: 100%;
   object-fit: cover;
-
-  /* position: absolute; */
 `;

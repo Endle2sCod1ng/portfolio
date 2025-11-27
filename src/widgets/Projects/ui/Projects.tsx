@@ -59,6 +59,7 @@ const ProjectsStyled = styled.section`
 const ProjectsTitle = styled.h2`
   padding: 0 0 var(--section-title-indent-l) 0;
 `;
+
 const ProjectsSubitle = styled.h2`
   padding: 0 0 var(--section-subtitle-indent-l) 0;
 `;

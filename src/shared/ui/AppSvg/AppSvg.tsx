@@ -2,6 +2,8 @@
 // AppSvg definition moved here for completeness
 import type { FC, SVGProps } from "react";
 
+import s from "./AppSvg.module.scss";
+
 type Size = "112" | "120" | "105" | "88" | "30";
 interface AppSvgProps extends SVGProps<SVGSVGElement> {
   Svg: FC<SVGProps<SVGSVGElement>>;
@@ -23,7 +25,7 @@ export const AppSvg = ({
       width={size}
       height={size}
       viewBox={viewBox}
-      className={`${className ? className : ""}`}
+      className={`${s.appSvg} ${className ? className : ""}`}
     />
   );
 };
