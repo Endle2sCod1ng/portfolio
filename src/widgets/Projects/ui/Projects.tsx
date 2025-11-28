@@ -25,6 +25,46 @@ const projects: Project[] = [
     preview: "https://github.com/Endle2sCod1ng/portfolio",
     code: "https://github.com/Endle2sCod1ng/portfolio",
   },
+  {
+    img: Image,
+    title: "Portfolio",
+    text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+    stackList: ["HTML", " JavaScript", "SASS", " Vue"],
+    preview: "https://github.com/Endle2sCod1ng/portfolio",
+    code: "https://github.com/Endle2sCod1ng/portfolio",
+  },
+  {
+    img: Image,
+    title: "Portfolio",
+    text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+    stackList: ["HTML", " JavaScript", "SASS", " React"],
+    preview: "https://github.com/Endle2sCod1ng/portfolio",
+    code: "https://github.com/Endle2sCod1ng/portfolio",
+  },
+  {
+    img: Image,
+    title: "Portfolio",
+    text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+    stackList: ["HTML", " JavaScript", "SASS", " React"],
+    preview: "https://github.com/Endle2sCod1ng/portfolio",
+    code: "https://github.com/Endle2sCod1ng/portfolio",
+  },
+  {
+    img: Image,
+    title: "Portfolio",
+    text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+    stackList: ["HTML", " JavaScript", "SASS", " React"],
+    preview: "https://github.com/Endle2sCod1ng/portfolio",
+    code: "https://github.com/Endle2sCod1ng/portfolio",
+  },
+  {
+    img: Image,
+    title: "Portfolio",
+    text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+    stackList: ["HTML", " JavaScript", "SASS", " React"],
+    preview: "https://github.com/Endle2sCod1ng/portfolio",
+    code: "https://github.com/Endle2sCod1ng/portfolio",
+  },
 ];
 const PAGINATION = ["All", "React", "Vue", "Angular", "React Native"] as const;
 
@@ -50,9 +90,10 @@ export const Projects = ({ className }: ProjectsProps) => {
         wrap="wrap"
         justify="space-between"
       >
-        {projects.map((project) => {
-          return Array(6)
-            .fill(project)
+        {projects.filter((p: Project) =>
+          activeBtn === "All" ? p : p.stackList.join(",").includes(activeBtn)
+        ).length !== 0 ? (
+          projects
             .filter((p: Project) =>
               activeBtn === "All"
                 ? p
@@ -65,8 +106,12 @@ export const Projects = ({ className }: ProjectsProps) => {
                   project={project}
                 />
               );
-            });
-        })}
+            })
+        ) : (
+          <Stub>
+            <h3>Проекты по этой технолгии в рзаработке</h3>
+          </Stub>
+        )}
       </Flex>
     </ProjectsStyled>
   );
@@ -76,6 +121,7 @@ const ProjectsStyled = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid red;
 `;
 
 const ProjectsTitle = styled.h2`
@@ -100,4 +146,12 @@ const PaginationItem = styled(AppButton)<{ $activeBtn: boolean }>`
           color: transparent;
         `
       : undefined}
+`;
+
+const Stub = styled.div`
+  height: 527px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 `;

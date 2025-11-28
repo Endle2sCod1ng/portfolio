@@ -44,7 +44,8 @@ export const ProjectsItem = ({ project }: ProjectsItemProps) => {
 };
 
 const ProjectsItemStyled = styled.div`
-  max-width: 30%;
+  /* max-width: 30%; */
+  width: 32%;
   background: var(--card-color);
   border-radius: var(--border-radius-l);
   margin-bottom: 50px;

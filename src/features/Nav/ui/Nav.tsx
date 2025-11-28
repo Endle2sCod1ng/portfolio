@@ -8,9 +8,13 @@ interface NavProps {
 export const Nav = ({ className }: NavProps) => {
   return (
     <StyledNav className={`${className ? className : ""}`}>
-      {routesConfig.map((l, i) => (
-        <li key={i + l}>
-          <AppLink to={l === "Home" ? "/" : `/${l.toLowerCase()}`}>{l}</AppLink>
+      {routesConfig.map((l) => (
+        <li key={l.link}>
+          <AppLink to={l.link}>
+            {l.link === "/"
+              ? "Home"
+              : l.link.slice(1).replace(l.link[1], l.link[1].toUpperCase())}
+          </AppLink>
         </li>
       ))}
     </StyledNav>

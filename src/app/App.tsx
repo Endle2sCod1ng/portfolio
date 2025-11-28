@@ -13,9 +13,9 @@ export function App() {
         <Routes>
           {routesConfig.map((l) => (
             <Route
-              key={l}
-              path={l === "Home" ? "/" : `/${l.toLowerCase()}`}
-              element={<MainPage />}
+              key={l.link}
+              path={l.link}
+              element={l.element}
             />
           ))}
           <Route
