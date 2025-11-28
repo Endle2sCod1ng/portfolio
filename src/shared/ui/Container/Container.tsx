@@ -22,6 +22,7 @@ export const Container = ({
 };
 export const StyledContainer = styled.div`
   margin: 0 auto;
-  max-width: var(--width-container-max);
+  max-width: var(--width-container-xl);
+  width: 100%;
   min-width: var(--width-container-min);
 `;

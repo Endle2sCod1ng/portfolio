@@ -14,7 +14,7 @@ export const MainPage = () => {
 };
 const MainPageStyled = styled.div`
   width: 100%;
-  max-width: var(--width-container-max);
+  max-width: var(--width-container-xl);
   min-width: var(--width-container-min);
   margin: 0 auto;
 `;

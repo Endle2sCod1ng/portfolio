@@ -29,7 +29,7 @@ export const AppButton = ({
 const StyledAppButton = styled.button<{ $variant: AppButtonVariant }>`
   color: inherit;
   cursor: pointer;
-  
+
   ${(props) => {
     switch (props.$variant) {
       // case "clear":
@@ -38,6 +38,11 @@ const StyledAppButton = styled.button<{ $variant: AppButtonVariant }>`
         return css`
           background: none;
           border: none;
+          &:hover {
+            background-image: var(--acented--gradient);
+            background-clip: text;
+            color: transparent;
+          }
         `;
     }
   }}

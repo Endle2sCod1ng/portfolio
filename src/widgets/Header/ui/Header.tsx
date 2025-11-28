@@ -62,8 +62,6 @@ const StyledHeader = styled.header`
 
 const StyledContainer = styled(Container)`
   height: var(--header-height);
-  min-width: var(--width-container-min);
-  max-width: var(--width-container-max);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

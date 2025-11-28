@@ -1,14 +1,11 @@
 import styled from "styled-components";
 import Avatar from "@/shared/assets/img/banner/avatar.png";
 import { Flex } from "@/shared/ui/Flex/Flex";
+import { Container } from "@/shared/ui/Container/Container";
 
 export const Banner = () => {
   return (
-    <BannerStyled
-      as="section"
-      justify="space-between"
-      align="center"
-    >
+    <BannerStyled as="section">
       <Flex
         direction="column"
         align="flex-start"
@@ -46,10 +43,14 @@ export const Banner = () => {
     </BannerStyled>
   );
 };
-const BannerStyled = styled(Flex)`
+
+const BannerStyled = styled(Container)`
   padding: var(--section-indent-l) 0;
   min-height: 720px;
   height: calc(100vh - var(--header-height));
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
 `;
 
 const ImgWrapper = styled(Flex)`
@@ -57,6 +58,7 @@ const ImgWrapper = styled(Flex)`
   width: 444px;
   height: 444px;
   position: relative;
+  padding: 20px;
 `;
 
 const ImageBorder = styled.div<{ $angle: string }>`

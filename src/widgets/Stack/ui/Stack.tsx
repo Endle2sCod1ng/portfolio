@@ -13,7 +13,6 @@ import VSCodeSvg from "@/shared/assets/img/stack/vscode.svg?react";
 import GithubSvg from "@/shared/assets/img/stack/github.svg?react";
 import { AppSvg } from "@/shared/ui/AppSvg/AppSvg";
 import styled from "styled-components";
-import { Flex } from "@/shared/ui/Flex/Flex";
 
 interface StackProps {
   className?: string;
@@ -39,11 +38,7 @@ export const Stack = ({ className }: StackProps) => {
     <StyledStack className={`${className ?? ""}`}>
       <StackTitle>Tech stack</StackTitle>
       <StackSubitle> Technologies I’ve been working with recently</StackSubitle>
-      <List
-        as="ul"
-        wrap="wrap"
-        justify="space-between"
-      >
+      <List as="ul">
         {svgList.map((svg, i) => (
           <Item key={i}>
             <AppSvg
@@ -61,11 +56,12 @@ export const Stack = ({ className }: StackProps) => {
   );
 };
 const StyledStack = styled.section`
-  padding: var(--section-indent-l) 0;
+  /* padding: var(--section-indent-l) 0; */
   /* display: flex;
   flex-direction: column;
   align-items: center; */
   text-align: center;
+  border: 1px solid red;
 `;
 
 const StackTitle = styled.h2`
@@ -76,16 +72,22 @@ const StackSubitle = styled.h2`
   padding: 0 0 var(--section-subtitle-indent-l) 0;
 `;
 
-const List = styled(Flex)`
+const List = styled.ul`
   gap: var(--stack-icons-indent-l) 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* margin: 0 auto; */
+  @media (max-width: 767px) {
+    justify-content: space-around;
+  }
 `;
 
 const Item = styled.li`
-  width: 120px;
-  height: 120px;
-  max-width: calc(var(--width-container-max) / 4);
-  min-width: calc(var(--width-container-min) / 2);
+  width: calc((var(--width-container-xl) / 6) - 1px);
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid red;
 `;

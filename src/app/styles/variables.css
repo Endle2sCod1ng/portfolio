@@ -16,7 +16,10 @@
 
   --border-radius-l: 20px;
 
-  --width-container-max: 1200px;
+  --width-container-xl: 1200px;
+  --width-container-l: 990px;
+  --width-container-m: 767px;
+  --width-container-s: 540px;
   --width-container-min: 360px;
 
   /* Fonts */
