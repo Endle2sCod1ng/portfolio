@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 interface ContainerProps {
   children: ReactNode;
-  as?: "section" | "div" | "header" | "footer";
+  as?: "section" | "div" | "header";
   className?: string;
 }
 export const Container = ({

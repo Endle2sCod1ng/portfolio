@@ -1,5 +1,5 @@
 import { Container } from "@/shared/ui/Container/Container";
-import { Projects } from "@/widgets/Projects";
+import { Projects } from "@/sections/Projects";
 
 interface ProjectsPageProps {
   className?: string;

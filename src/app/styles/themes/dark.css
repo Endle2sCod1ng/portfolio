@@ -1,5 +1,6 @@
 .portfolio_theme_dark {
   --bg-color: #191919;
+  --bg-color-98: rgba(25, 25, 25, 0.98);
   --primary-color: #ccc;
   --secondary-color: #a7a7a7;
 

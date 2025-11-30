@@ -1,5 +1,5 @@
-import { Header } from "@/widgets/Header";
-import { Footer } from "@/widgets/Footer";
+import { Header } from "@/sections/Header";
+import { Footer } from "@/sections/Footer";
 import { Route, Routes } from "react-router";
 import { routesConfig } from "@/shared/config/routesCpnfig";
 import styled from "styled-components";

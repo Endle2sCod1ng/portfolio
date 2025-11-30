@@ -1,11 +1,13 @@
-import { Nav } from "@/features/Nav";
-import { AppLink } from "@/shared/ui/AppLink/AppLink";
+import { useEffect, useState } from "react";
+
+import { Nav } from "@/widgets/Nav";
+import { Socials } from "@/widgets/Socials";
 
 import { Logo } from "@/shared/ui/Logo/Logo";
-import styled from "styled-components";
-import { useEffect, useState } from "react";
 import { Container } from "@/shared/ui/Container/Container";
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
+
+import styled from "styled-components";
 
 type Theme = "light" | "dark";
 
@@ -24,17 +26,7 @@ export const Header = () => {
         <Logo />
         <Content>
           <Nav />
-          <Socials>
-            <li>
-              <AppLink to="/">GH</AppLink>
-            </li>
-            <li>
-              <AppLink to="/">X</AppLink>
-            </li>
-            <li>
-              <AppLink to="/">IN</AppLink>
-            </li>
-          </Socials>
+          <Socials />
 
           <AppButton
             onClick={() => {
@@ -52,7 +44,7 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-  background: var(--bg-color);
+  background: var(--bg-color-98);
   position: fixed;
   top: 0;
   left: 0;
@@ -72,10 +64,4 @@ const Content = styled.div`
   display: flex;
   gap: 40px;
   list-style-type: none;
-`;
-
-const Socials = styled.ul`
-  display: flex;
-  list-style-type: none;
-  gap: 20px;
 `;

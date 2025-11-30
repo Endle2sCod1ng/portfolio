@@ -5,6 +5,7 @@ import styled from "styled-components";
 interface NavProps {
   className?: string;
 }
+
 export const Nav = ({ className }: NavProps) => {
   return (
     <StyledNav className={`${className ? className : ""}`}>

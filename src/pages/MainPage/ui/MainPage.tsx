@@ -1,7 +1,7 @@
 import { Container } from "@/shared/ui/Container/Container";
-import { Banner } from "@/widgets/Banner";
-import { Projects } from "@/widgets/Projects";
-import { Stack } from "@/widgets/Stack";
+import { Banner } from "@/sections/Banner";
+import { Projects } from "@/sections/Projects";
+import { Stack } from "@/sections/Stack";
 // import styled from "styled-components";
 
 export const MainPage = () => {
