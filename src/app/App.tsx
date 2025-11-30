@@ -1,9 +1,9 @@
-import { MainPage } from "@/pages/MainPage";
 import { Header } from "@/widgets/Header";
 import { Footer } from "@/widgets/Footer";
 import { Route, Routes } from "react-router";
 import { routesConfig } from "@/shared/config/routesCpnfig";
 import styled from "styled-components";
+import { NotFoundPage } from "@/pages/NotFoundPage";
 
 export function App() {
   return (
@@ -20,7 +20,7 @@ export function App() {
           ))}
           <Route
             path={"*"}
-            element={<MainPage />}
+            element={<NotFoundPage />}
           />
         </Routes>
       </Main>

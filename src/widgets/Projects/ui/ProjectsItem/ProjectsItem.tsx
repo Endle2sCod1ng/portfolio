@@ -44,8 +44,9 @@ export const ProjectsItem = ({ project }: ProjectsItemProps) => {
 };
 
 const ProjectsItemStyled = styled.div`
-  /* max-width: 30%; */
-  width: 32%;
+  max-width: 375px;
+  width: 100%;
+  height: 570px;
   background: var(--card-color);
   border-radius: var(--border-radius-l);
   margin-bottom: 50px;
@@ -60,7 +61,6 @@ const ImgContainer = styled.div`
 `;
 
 const Img = styled.img`
-  width: 100%;
   border-radius: 20px 20px 0 0;
   position: absolute;
   top: 0;

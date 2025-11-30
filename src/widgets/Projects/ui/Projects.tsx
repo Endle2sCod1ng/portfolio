@@ -137,6 +137,7 @@ const Pagination = styled.div`
   gap: 20px;
   padding: 0 0 50px 0;
 `;
+
 const PaginationItem = styled(AppButton)<{ $activeBtn: boolean }>`
   ${(props) =>
     props.$activeBtn
@@ -149,7 +150,7 @@ const PaginationItem = styled(AppButton)<{ $activeBtn: boolean }>`
 `;
 
 const Stub = styled.div`
-  height: 527px;
+  height: 570px;
   display: flex;
   flex-direction: column;
   align-content: center;
