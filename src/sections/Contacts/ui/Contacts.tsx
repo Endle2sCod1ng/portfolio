@@ -1,3 +1,5 @@
+import { AppButton } from "@/shared/ui/AppButton/AppButton";
+import { AppInput } from "@/shared/ui/AppInput/AppInput";
 import { Container } from "@/shared/ui/Container/Container";
 import styled from "styled-components";
 
@@ -12,11 +14,11 @@ export const Contacts = ({ className }: ContactsProps) => {
     >
       <h2>{"For any questions"}</h2>
       <StyledForm action="#">
-        <input
+        <AppInput
           type="text"
           placeholder={"Name"}
         />
-        <input
+        <AppInput
           type="text"
           placeholder={"Email"}
         />
@@ -26,9 +28,10 @@ export const Contacts = ({ className }: ContactsProps) => {
           placeholder={"Message"}
         ></textarea>
         <input
-          type="button"
+          type="buttn"
           value={"Submit"}
         />
+        <AppButton>{"Submit"}</AppButton>
       </StyledForm>
     </StyledContacts>
   );

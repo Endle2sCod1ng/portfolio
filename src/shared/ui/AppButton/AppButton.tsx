@@ -11,6 +11,7 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const AppButton = ({
   children,
+  type,
   variant = "clear",
   className,
   ...otherProps
@@ -18,6 +19,7 @@ export const AppButton = ({
   return (
     <StyledAppButton
       {...otherProps}
+      type={type}
       className={`${className ? className : ""}`}
       $variant={variant}
     >
