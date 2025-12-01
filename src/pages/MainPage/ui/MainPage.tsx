@@ -2,6 +2,7 @@ import { Container } from "@/shared/ui/Container/Container";
 import { Banner } from "@/sections/Banner";
 import { Projects } from "@/sections/Projects";
 import { Stack } from "@/sections/Stack";
+import { Contacts } from "@/sections/Contacts";
 // import styled from "styled-components";
 
 export const MainPage = () => {
@@ -10,6 +11,7 @@ export const MainPage = () => {
       <Banner />
       <Stack />
       <Projects />
+      <Contacts />
     </Container>
   );
 };

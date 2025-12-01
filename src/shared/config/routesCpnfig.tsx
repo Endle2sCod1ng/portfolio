@@ -8,8 +8,7 @@ interface RouteType {
 export const routesConfig: RouteType[] = [
   { link: "/", element: <MainPage /> },
   // { link: "/about", element: <MainPage /> },
-  { link: "/stack", element: <MainPage /> },
+  { link: "/projects", element: <ProjectsPage /> },
   { link: "/contacts", element: <MainPage /> },
-  { link: "/projects", element: <ProjectsPage /> }, 
   // { link: "/projects/:id", element: <ProjectsPage /> },
 ];
