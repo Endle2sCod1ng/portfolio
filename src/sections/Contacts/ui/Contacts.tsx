@@ -1,5 +1,6 @@
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { AppInput } from "@/shared/ui/AppInput/AppInput";
+import { AppTextarea } from "@/shared/ui/AppTextarea";
 import { Container } from "@/shared/ui/Container/Container";
 import styled from "styled-components";
 
@@ -15,21 +16,20 @@ export const Contacts = ({ className }: ContactsProps) => {
       <h2>{"For any questions"}</h2>
       <StyledForm action="#">
         <AppInput
+          className="field"
           type="text"
           placeholder={"Name"}
         />
         <AppInput
+          className="field"
           type="text"
           placeholder={"Email"}
         />
-        <textarea
+        <AppTextarea
+          className="field"
           name="message"
           id="message"
           placeholder={"Message"}
-        ></textarea>
-        <input
-          type="buttn"
-          value={"Submit"}
         />
         <AppButton>{"Submit"}</AppButton>
       </StyledForm>
@@ -45,4 +45,7 @@ const StyledForm = styled.form`
   min-width: 330px;
   display: flex;
   flex-direction: column;
+  .field {
+    margin-bottom: 20px;
+  }
 `;

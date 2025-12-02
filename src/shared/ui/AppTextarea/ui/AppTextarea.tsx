@@ -1,31 +1,32 @@
-import type { InputHTMLAttributes } from "react";
+import type { TextareaHTMLAttributes } from "react";
 import styled from "styled-components";
 
-interface AppInputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface AppTextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  name: string;
+  id: string;
   placeholder: string;
-  type: string;
   className?: string;
 }
-export const AppInput = ({
+export const AppTextarea = ({
   placeholder,
-  type,
+  name,
+  id,
   className,
   ...otherPoprs
-}: AppInputProps) => {
+}: AppTextareaProps) => {
   return (
-    <StyledAppInput
+    <StyledAppTextarea
       {...otherPoprs}
-      placeholder={placeholder}
-      type={type}
       className={`${className ? className : ""}`}
+      name={name}
+      id={id}
+      placeholder={placeholder}
     />
   );
 };
 
-const StyledAppInput = styled.input`
-  /* border: 4px solid transparent;
-  border-image: var(--acented--gradient) 1;
-  border-radius: var(--border-radius-l); */
+const StyledAppTextarea = styled.textarea`
+  resize: none;
   border-radius: var(--border-radius-xs);
   padding: 14px 35px 14px 19px;
 
