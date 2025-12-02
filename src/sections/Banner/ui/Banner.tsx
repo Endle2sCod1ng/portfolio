@@ -90,7 +90,7 @@ const ImgBackground = styled.div`
   border-radius: 50%;
   width: 370px;
   height: 370px;
-  background: var(--acented--gradient);
+  background: var(--acented-gradient);
   padding: 10px;
   & > div {
     overflow: hidden;

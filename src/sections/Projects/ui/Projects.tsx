@@ -142,7 +142,7 @@ const PaginationItem = styled(AppButton)<{ $activeBtn: boolean }>`
   ${(props) =>
     props.$activeBtn
       ? css`
-          background-image: var(--acented--gradient);
+          background-image: var(--acented-gradient);
           background-clip: text;
           color: transparent;
         `

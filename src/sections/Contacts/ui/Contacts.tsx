@@ -14,7 +14,12 @@ export const Contacts = ({ className }: ContactsProps) => {
       className={`${className ? className : ""}`}
     >
       <h2>{"For any questions"}</h2>
-      <StyledForm action="#">
+      <StyledForm
+        action="#"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <AppInput
           className="field"
           type="text"
@@ -31,7 +36,12 @@ export const Contacts = ({ className }: ContactsProps) => {
           id="message"
           placeholder={"Message"}
         />
-        <AppButton>{"Submit"}</AppButton>
+        <AppButton
+          className="btn"
+          variant="filled"
+        >
+          {"Submit"}
+        </AppButton>
       </StyledForm>
     </StyledContacts>
   );
@@ -45,6 +55,9 @@ const StyledForm = styled.form`
   min-width: 330px;
   display: flex;
   flex-direction: column;
+  .btn {
+    margin: 0 auto;
+  }
   .field {
     margin-bottom: 20px;
   }

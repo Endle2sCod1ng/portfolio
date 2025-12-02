@@ -24,16 +24,16 @@ export const AppInput = ({
 
 const StyledAppInput = styled.input`
   /* border: 4px solid transparent;
-  border-image: var(--acented--gradient) 1;
+  border-image: var(--acented-gradient) 1;
   border-radius: var(--border-radius-l); */
   border-radius: var(--border-radius-xs);
   padding: 14px 35px 14px 19px;
 
   background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-    var(--acented--gradient) border-box;
+    var(--acented-gradient) border-box;
   border: 2px solid transparent;
   &::placeholder {
-    background-image: var(--acented--gradient-90);
+    background-image: var(--acented-gradient-90);
     background-clip: text;
     color: transparent;
   }

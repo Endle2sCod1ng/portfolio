@@ -31,10 +31,10 @@ const StyledAppTextarea = styled.textarea`
   padding: 14px 35px 14px 19px;
 
   background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-    var(--acented--gradient) border-box;
+    var(--acented-gradient) border-box;
   border: 2px solid transparent;
   &::placeholder {
-    background-image: var(--acented--gradient-90);
+    background-image: var(--acented-gradient-90);
     background-clip: text;
     color: transparent;
   }
