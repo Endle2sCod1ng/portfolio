@@ -28,19 +28,17 @@ export const AppInput = ({
 };
 
 const StyledAppInput = styled.input`
+  outline: none;
+
   border-radius: var(--border-radius-xs);
   padding: 14px 35px 14px 19px;
+  background: transparent;
+  border: 2px solid var(--inverted-bg-color);
+  color: inherit;
 
-  background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-    var(--acented-gradient) border-box;
-  border: 2px solid transparent;
-
-  &::placeholder {
-    background-image: var(--acented-gradient-90);
-    background-clip: text;
-    color: transparent;
-  }
   &:focus {
-    color: var(--primary-color);
+    background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+      var(--acented-gradient) border-box;
+    border: 2px solid transparent;
   }
 `;

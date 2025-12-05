@@ -47,7 +47,13 @@ export const Contacts = ({ className }: ContactsProps) => {
   );
 };
 
-const StyledContacts = styled(Container)``;
+const StyledContacts = styled(Container)`
+  padding: var(--section-indent-l) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+`;
 const StyledForm = styled.form`
   margin: 0 auto;
   max-width: 50%;

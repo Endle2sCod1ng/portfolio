@@ -28,6 +28,7 @@ export const AppLink = ({
 };
 
 const StyledAppLink = styled(Link)<{ $variant: AppLinkVariant }>`
+  transition: color linear var(--transtion-delay);
   ${(props) => {
     switch (props.$variant) {
       // case "clear":
@@ -35,9 +36,10 @@ const StyledAppLink = styled(Link)<{ $variant: AppLinkVariant }>`
       default:
         return css`
           &:hover {
-            background-image: var(--acented-gradient);
-            background-clip: text;
-            color: transparent;
+             background-image: var(--acented-gradient);
+            background-clip: text; 
+            color: transparent; 
+            /* color: var(--accented-color); */
           }
         `;
     }

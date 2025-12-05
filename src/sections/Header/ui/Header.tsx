@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import { Nav } from "@/widgets/Nav";
 import { Socials } from "@/widgets/Socials";
 
@@ -8,18 +6,11 @@ import { Container } from "@/shared/ui/Container/Container";
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 
 import styled from "styled-components";
-
-type Theme = "light" | "dark";
+import { useTheme } from "@/app/providers/ThemeProvider/ui/useTheme";
 
 export const Header = () => {
-  const LOCAL_STORAGE_PORTFOLIO_THEME_KEY = "portfolio_theme";
-  const [theme, setTheme] = useState<Theme>(
-    (localStorage.getItem(LOCAL_STORAGE_PORTFOLIO_THEME_KEY) as Theme) || "dark"
-  );
+  const { changeTheme } = useTheme();
 
-  useEffect(() => {
-    document.body.className = ` portfolio_theme_${theme}`;
-  });
   return (
     <StyledHeader>
       <StyledContainer>
@@ -27,16 +18,7 @@ export const Header = () => {
         <Content>
           <Nav />
           <Socials />
-
-          <AppButton
-            onClick={() => {
-              const newTheme = theme === "light" ? "dark" : "light";
-              setTheme(newTheme);
-              localStorage.setItem(LOCAL_STORAGE_PORTFOLIO_THEME_KEY, newTheme);
-            }}
-          >
-            Theme
-          </AppButton>
+          <AppButton onClick={() => changeTheme?.()}>Theme</AppButton>
         </Content>
       </StyledContainer>
     </StyledHeader>

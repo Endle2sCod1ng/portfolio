@@ -43,13 +43,13 @@ export const Reviews = ({ className }: ReviewsProps) => {
         <span></span>
         <span></span>
       </Pagination>
-      <AppLink to="/reviews">{"Leave a review"}</AppLink>
+      <AppLink to="/reviews">{"Write a review"}</AppLink>
     </StyledReviews>
   );
 };
 
 const StyledReviews = styled.section`
-  height: 500px;
+  padding: var(--section-indent-l) 0;
   width: 100%;
   display: flex;
   flex-direction: column;

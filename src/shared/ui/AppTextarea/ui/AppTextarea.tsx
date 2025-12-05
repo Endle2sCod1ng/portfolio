@@ -31,17 +31,21 @@ export const AppTextarea = ({
 };
 
 const StyledAppTextarea = styled.textarea`
+  outline: none;
   resize: none;
   border-radius: var(--border-radius-xs);
   padding: 14px 35px 14px 19px;
   min-height: 200px;
 
-  background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-    var(--acented-gradient) border-box;
-  border: 2px solid transparent;
-  &::placeholder {
-    background-image: var(--acented-gradient-90);
-    background-clip: text;
-    color: transparent;
+  border: 2px solid var(--inverted-bg-color);
+  background: transparent;
+
+  color: inherit;
+
+  &:focus {
+    color: var(--primary-color);
+    background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+      var(--acented-gradient) border-box;
+    border: 2px solid transparent;
   }
 `;
