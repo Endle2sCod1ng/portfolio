@@ -1,4 +1,4 @@
-import type { TextareaHTMLAttributes } from "react";
+import { useState, type ChangeEvent, type TextareaHTMLAttributes } from "react";
 import styled from "styled-components";
 
 interface AppTextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -14,6 +14,7 @@ export const AppTextarea = ({
   className,
   ...otherPoprs
 }: AppTextareaProps) => {
+  const [text, setText] = useState<string>("");
   return (
     <StyledAppTextarea
       {...otherPoprs}
@@ -21,6 +22,10 @@ export const AppTextarea = ({
       name={name}
       id={id}
       placeholder={placeholder}
+      value={text}
+      onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+        setText(e.currentTarget.value)
+      }
     />
   );
 };
@@ -29,6 +34,7 @@ const StyledAppTextarea = styled.textarea`
   resize: none;
   border-radius: var(--border-radius-xs);
   padding: 14px 35px 14px 19px;
+  min-height: 200px;
 
   background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
     var(--acented-gradient) border-box;
