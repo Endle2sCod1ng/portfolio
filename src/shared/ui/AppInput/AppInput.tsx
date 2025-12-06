@@ -1,33 +1,57 @@
 import { useState, type ChangeEvent, type InputHTMLAttributes } from "react";
 import styled from "styled-components";
+import { AppButton } from "../AppButton/AppButton";
 
 interface AppInputProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
   type: string;
+  inputValue: string;
+  onChangeValue: (value: string) => void;
   className?: string;
 }
+
 export const AppInput = ({
   placeholder,
   type,
+  inputValue,
   className,
+  onChangeValue,
   ...otherPoprs
 }: AppInputProps) => {
-  const [text, setText] = useState<string>("");
+  const [value, setValue] = useState<string>(inputValue);
+
+  const changeValue = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.currentTarget.value);
+    onChangeValue(value);
+  };
+
   return (
-    <StyledAppInput
-      {...otherPoprs}
-      placeholder={placeholder}
-      type={type}
-      value={text}
-      onChange={(e: ChangeEvent<HTMLInputElement>) =>
-        setText(e.currentTarget.value)
-      }
-      className={`${className ? className : ""}`}
-    />
+    <FieldWrapper>
+      <StyledAppInput
+        {...otherPoprs}
+        placeholder={placeholder}
+        type={type}
+        value={value}
+        onChange={changeValue}
+        className={`${className ? className : ""}`}
+      />
+      {value && <FieldCleaner onClick={() => setValue("")}>x</FieldCleaner>}
+    </FieldWrapper>
   );
 };
+const FieldWrapper = styled.div`
+  position: relative;
+`;
+
+const FieldCleaner = styled(AppButton)`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+`;
 
 const StyledAppInput = styled.input`
+  width: 100%;
   outline: none;
 
   border-radius: var(--border-radius-xs);

@@ -1,36 +1,57 @@
 import { useState, type ChangeEvent, type TextareaHTMLAttributes } from "react";
 import styled from "styled-components";
+import { AppButton } from "../../AppButton/AppButton";
 
 interface AppTextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  inputValue: string;
   name: string;
   id: string;
   placeholder: string;
+  onChangeValue: (value: string) => void;
   className?: string;
 }
 export const AppTextarea = ({
+  inputValue,
   placeholder,
   name,
   id,
   className,
+  onChangeValue,
   ...otherPoprs
 }: AppTextareaProps) => {
-  const [text, setText] = useState<string>("");
+  const [value, setValue] = useState<string>(inputValue);
+  const changeValue = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setValue(e.currentTarget.value);
+    onChangeValue(value);
+  };
   return (
-    <StyledAppTextarea
-      {...otherPoprs}
-      className={`${className ? className : ""}`}
-      name={name}
-      id={id}
-      placeholder={placeholder}
-      value={text}
-      onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-        setText(e.currentTarget.value)
-      }
-    />
+    <FieldWrapper>
+      <StyledAppTextarea
+        {...otherPoprs}
+        className={`${className ? className : ""}`}
+        name={name}
+        id={id}
+        placeholder={placeholder}
+        value={value}
+        onChange={changeValue}
+      />
+      {value && <FieldCleaner onClick={() => setValue("")}>x</FieldCleaner>}
+    </FieldWrapper>
   );
 };
 
+const FieldWrapper = styled.div`
+  position: relative;
+`;
+
+const FieldCleaner = styled(AppButton)`
+  position: absolute;
+  top: 5px;
+  right: 5px;
+`;
+
 const StyledAppTextarea = styled.textarea`
+  width: 100%;
   outline: none;
   resize: none;
   border-radius: var(--border-radius-xs);

@@ -2,12 +2,25 @@ import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { AppInput } from "@/shared/ui/AppInput/AppInput";
 import { AppTextarea } from "@/shared/ui/AppTextarea";
 import { Container } from "@/shared/ui/Container/Container";
+import { useState } from "react";
 import styled from "styled-components";
 
 interface ContactsProps {
   className?: string;
 }
 export const Contacts = ({ className }: ContactsProps) => {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [meassage, setMessage] = useState<string>("");
+
+  const sendContacts = () => {
+    console.log("name", name);
+    console.log("phone", phone);
+    console.log("email", email);
+    console.log("telegramm", telegramm);
+    console.log("meassage", meassage);
+  };
   return (
     <StyledContacts
       as="section"
@@ -24,21 +37,35 @@ export const Contacts = ({ className }: ContactsProps) => {
           className="field"
           type="text"
           placeholder={"Name"}
+          inputValue={name}
+          onChangeValue={(value: string) => setName(value)}
+        />
+        <AppInput
+          className="field"
+          type="tel"
+          placeholder={"Phone"}
+          inputValue={phone}
+          onChangeValue={(value: string) => setPhone(value)}
         />
         <AppInput
           className="field"
           type="text"
           placeholder={"Email"}
+          inputValue={email}
+          onChangeValue={(value: string) => setEmail(value)}
         />
         <AppTextarea
           className="field"
           name="message"
           id="message"
           placeholder={"Message"}
+          inputValue={meassage}
+          onChangeValue={(value: string) => setMessage(value)}
         />
         <AppButton
           className="btn"
           variant="filled"
+          onClick={sendContacts}
         >
           {"Submit"}
         </AppButton>
@@ -61,10 +88,11 @@ const StyledForm = styled.form`
   min-width: 330px;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   .btn {
     margin: 0 auto;
   }
   .field {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
 `;
