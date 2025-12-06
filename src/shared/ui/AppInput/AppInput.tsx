@@ -18,8 +18,8 @@ export const AppInput = ({
   onChangeValue,
   ...otherPoprs
 }: AppInputProps) => {
-  const [value, setValue] = useState<string>(inputValue);
 
+  const [value, setValue] = useState<string>(inputValue);
   const changeValue = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.currentTarget.value);
     onChangeValue(value);
@@ -35,7 +35,16 @@ export const AppInput = ({
         onChange={changeValue}
         className={`${className ? className : ""}`}
       />
-      {value && <FieldCleaner onClick={() => setValue("")}>x</FieldCleaner>}
+      {value && (
+        <FieldCleaner
+          onClick={() => {
+            setValue("");
+            onChangeValue("");
+          }}
+        >
+          x
+        </FieldCleaner>
+      )}
     </FieldWrapper>
   );
 };

@@ -19,11 +19,13 @@ export const AppTextarea = ({
   onChangeValue,
   ...otherPoprs
 }: AppTextareaProps) => {
+
   const [value, setValue] = useState<string>(inputValue);
   const changeValue = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.currentTarget.value);
     onChangeValue(value);
   };
+  
   return (
     <FieldWrapper>
       <StyledAppTextarea
@@ -35,7 +37,16 @@ export const AppTextarea = ({
         value={value}
         onChange={changeValue}
       />
-      {value && <FieldCleaner onClick={() => setValue("")}>x</FieldCleaner>}
+      {value && (
+        <FieldCleaner
+          onClick={() => {
+            setValue("");
+            onChangeValue("");
+          }}
+        >
+          x
+        </FieldCleaner>
+      )}
     </FieldWrapper>
   );
 };

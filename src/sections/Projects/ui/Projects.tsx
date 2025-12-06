@@ -16,6 +16,7 @@ export interface Project {
 import Image from "@/shared/assets/img/projects/avatar.png";
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { useState } from "react";
+import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
 const projects: Project[] = [
   {
     img: Image,
@@ -121,10 +122,9 @@ const ProjectsStyled = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid red;
 `;
 
-const ProjectsTitle = styled.h2`
+const ProjectsTitle = styled(AppTitle)`
   padding: 0 0 var(--section-title-indent-l) 0;
 `;
 

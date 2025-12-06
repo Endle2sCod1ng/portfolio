@@ -4,6 +4,7 @@ import { Flex } from "@/shared/ui/Flex/Flex";
 import styled from "styled-components";
 
 import QuotesSvg from "@/shared/assets/img/reviews/quotes.svg?react";
+import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
 
 interface ReviewsProps {
   className?: string;
@@ -17,7 +18,7 @@ interface ReviewsProps {
 export const Reviews = ({ className }: ReviewsProps) => {
   return (
     <StyledReviews className={`${className ? className : ""}`}>
-      <h2>Reviews</h2>
+      <AppTitle>Reviews</AppTitle>
       <Slider>
         {/* {reviewsList.map((r) => {
           return (

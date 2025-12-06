@@ -2,10 +2,14 @@
   --bg-color: #191919;
   --bg-color-98: rgba(25, 25, 25, 0.98);
   --inverted-bg-color: rgba(235, 234, 237, 1);
-  
+
   --primary-color: #ccc;
   --secondary-color: #a7a7a7;
-  --accented-color: rgba(66, 68, 110, 1);
+  --accented-color: #7975f8;
+  /* --accented-color: #8e8dd6; */
+  --accented-color: #7472d5;
+
+  --title-color: rgba(204, 204, 204, 1);
 
   --card-color: #545454;
 

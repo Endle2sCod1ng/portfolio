@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Avatar from "@/shared/assets/img/banner/avatar.png";
 import { Flex } from "@/shared/ui/Flex/Flex";
 import { Container } from "@/shared/ui/Container/Container";
+import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
 
 export const Banner = () => {
   return (
@@ -9,10 +10,11 @@ export const Banner = () => {
       <Flex
         direction="column"
         align="flex-start"
+        gap="12px"
       >
-        <h2>Hi</h2>
-        <h2>I'm Viacheslav</h2>
-        <h1>Front-end Developer</h1>
+        <AppTitle>Hi</AppTitle>
+        <AppTitle>I'm Viacheslav</AppTitle>
+        <AppTitle tagName="h1">Front-end Developer</AppTitle>
       </Flex>
       <ImgWrapper
         justify="center"
@@ -48,9 +50,9 @@ const BannerStyled = styled(Container)`
   padding: var(--section-indent-l) 0;
   min-height: 720px;
   height: calc(100vh - var(--header-height));
-  /* display: flex;
+  display: flex;
   justify-content: space-between;
-  align-items: center; */
+  align-items: center;
 `;
 
 const ImgWrapper = styled(Flex)`

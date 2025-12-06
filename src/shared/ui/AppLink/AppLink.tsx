@@ -36,10 +36,7 @@ const StyledAppLink = styled(Link)<{ $variant: AppLinkVariant }>`
       default:
         return css`
           &:hover {
-             background-image: var(--acented-gradient);
-            background-clip: text; 
-            color: transparent; 
-            /* color: var(--accented-color); */
+            color: var(--accented-color);
           }
         `;
     }

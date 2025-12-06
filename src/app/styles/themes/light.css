@@ -4,12 +4,10 @@
   --inverted-bg-color: #191919;
 
 
-
   --primary-color: #42446e;
   --secondary-color: #666;
-  --accented-color: #9052c9;
-
-
+  --accented-color: rgba(66, 68, 110, 1);
+  --title-color: rgba(66, 68, 110, 1);
 
   --card-color: #fff;
 

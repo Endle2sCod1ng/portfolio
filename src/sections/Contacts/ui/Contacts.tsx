@@ -1,6 +1,7 @@
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { AppInput } from "@/shared/ui/AppInput/AppInput";
 import { AppTextarea } from "@/shared/ui/AppTextarea";
+import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
 import { Container } from "@/shared/ui/Container/Container";
 import { useState } from "react";
 import styled from "styled-components";
@@ -18,15 +19,15 @@ export const Contacts = ({ className }: ContactsProps) => {
     console.log("name", name);
     console.log("phone", phone);
     console.log("email", email);
-    console.log("telegramm", telegramm);
     console.log("meassage", meassage);
   };
+
   return (
     <StyledContacts
       as="section"
       className={`${className ? className : ""}`}
     >
-      <h2>{"For any questions"}</h2>
+      <AppTitle>{"For any questions"}</AppTitle>
       <StyledForm
         action="#"
         onSubmit={(e) => {
@@ -66,6 +67,7 @@ export const Contacts = ({ className }: ContactsProps) => {
           className="btn"
           variant="filled"
           onClick={sendContacts}
+          type="submit"
         >
           {"Submit"}
         </AppButton>

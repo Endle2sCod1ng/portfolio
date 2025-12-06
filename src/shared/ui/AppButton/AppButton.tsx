@@ -39,18 +39,18 @@ const StyledAppButton = styled.button<{ $variant: AppButtonVariant }>`
       case "filled":
         return css`
           border-radius: var(--border-radius-s);
-          background: var(--acented-gradient);
           border: 2px solid transparent;
-          background: var(--acented-gradient) border-box;
-          color: var(--bg-color);
-/* 
+
+          background: var(--accented-color);
+
           &:hover {
-            background-image: var(--acented-gradient);
-            background-clip: text;
-            color: transparent;
+            background: linear-gradient(var(--bg-color), var(--bg-color))
+                padding-box,
+              var(--acented-gradient) border-box;
             border: 2px solid transparent;
-            background: linear-gradient(var(--bg-color))
-          } */
+
+            color: var(--primary-color);
+          }
         `;
       default:
         return css`

@@ -44,6 +44,7 @@ const StyledContainer = styled(Container)`
 
 const Content = styled.div`
   display: flex;
+  align-items: center;
   gap: 40px;
   list-style-type: none;
 `;

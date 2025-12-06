@@ -13,6 +13,7 @@ import VSCodeSvg from "@/shared/assets/img/stack/vscode.svg?react";
 import GithubSvg from "@/shared/assets/img/stack/github.svg?react";
 import { AppSvg } from "@/shared/ui/AppSvg/AppSvg";
 import styled from "styled-components";
+import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
 
 interface StackProps {
   className?: string;
@@ -55,16 +56,13 @@ export const Stack = ({ className }: StackProps) => {
     </StyledStack>
   );
 };
+
 const StyledStack = styled.section`
-  /* padding: var(--section-indent-l) 0; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  padding: var(--section-indent-l) 0;
   text-align: center;
-  border: 1px solid red;
 `;
 
-const StackTitle = styled.h2`
+const StackTitle = styled(AppTitle)`
   padding: 0 0 var(--section-title-indent-l) 0;
 `;
 
@@ -89,5 +87,4 @@ const Item = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
 `;
