@@ -1,7 +1,6 @@
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import styled from "styled-components";
 
-
 const socials = [
   { name: "GH", link: "https://github.com/Endle2sCod1ng" },
   { name: "X-GH", link: "https://github.com/Endle2sCod1ng" },
@@ -11,9 +10,9 @@ const socials = [
 export const Socials = () => {
   return (
     <StyledSocials>
-      {socials.map((s) => {
+      {socials.map((s, i) => {
         return (
-          <li>
+          <li key={i + s.link}>
             <AppLink to={s.link}>{s.name}</AppLink>
           </li>
         );

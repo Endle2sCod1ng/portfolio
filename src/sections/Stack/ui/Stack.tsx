@@ -41,7 +41,7 @@ export const Stack = ({ className }: StackProps) => {
       <StackSubitle> Technologies I’ve been working with recently</StackSubitle>
       <List as="ul">
         {svgList.map((svg, i) => (
-          <Item key={i}>
+          <Item key={i }>
             <AppSvg
               Svg={svg}
               viewBox={

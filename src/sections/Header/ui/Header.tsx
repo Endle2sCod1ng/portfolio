@@ -1,14 +1,15 @@
 import { Nav } from "@/widgets/Nav";
 import { Socials } from "@/widgets/Socials";
 
-import { Logo } from "@/shared/ui/Logo/Logo";
 import { Container } from "@/shared/ui/Container/Container";
+import { Logo } from "@/shared/ui/Logo/Logo";
+
+import { ThemeSwitcher } from "@/features/ThemeSwitcher";
+import { LanguageSwitcher } from "@/features/LanguageSwitcher";
 
 import styled from "styled-components";
-import { ChangeTheme } from "@/features/ChangeTheme";
 
 export const Header = () => {
-
   return (
     <StyledHeader>
       <StyledContainer>
@@ -16,7 +17,8 @@ export const Header = () => {
         <Content>
           <Nav />
           <Socials />
-          <ChangeTheme />
+          <ThemeSwitcher />
+          <LanguageSwitcher />
         </Content>
       </StyledContainer>
     </StyledHeader>
