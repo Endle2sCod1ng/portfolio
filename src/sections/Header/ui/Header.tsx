@@ -3,13 +3,11 @@ import { Socials } from "@/widgets/Socials";
 
 import { Logo } from "@/shared/ui/Logo/Logo";
 import { Container } from "@/shared/ui/Container/Container";
-import { AppButton } from "@/shared/ui/AppButton/AppButton";
 
 import styled from "styled-components";
-import { useTheme } from "@/app/providers/ThemeProvider/ui/useTheme";
+import { ChangeTheme } from "@/features/ChangeTheme";
 
 export const Header = () => {
-  const { changeTheme } = useTheme();
 
   return (
     <StyledHeader>
@@ -18,7 +16,7 @@ export const Header = () => {
         <Content>
           <Nav />
           <Socials />
-          <AppButton onClick={() => changeTheme?.()}>Theme</AppButton>
+          <ChangeTheme />
         </Content>
       </StyledContainer>
     </StyledHeader>

@@ -1,10 +1,13 @@
 import type { SVGProps } from "react";
 import Sprite from "@/shared/assets/img/sprite.svg";
 
+type AppIconSize = "120" | "41";
+
 interface AppIconProps extends SVGProps<SVGSVGElement> {
-  id: "html" ;
-  size?: string;
+  id: "html";
+  size?: AppIconSize;
   className?: string;
+  Svg: SVGProps<SVGSVGElement>;
 }
 export const AppIcon = ({
   id,
