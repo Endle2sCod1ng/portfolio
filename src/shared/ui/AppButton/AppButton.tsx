@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import styled, { css } from "styled-components";
 
-type AppButtonVariant = "clear" | "filled";
+type AppButtonVariant = "clear" | "filled" | "outlined";
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
@@ -36,13 +36,26 @@ const StyledAppButton = styled.button<{ $variant: AppButtonVariant }>`
 
   ${(props) => {
     switch (props.$variant) {
+      case "outlined":
+        return css`
+          border-radius: var(--border-radius-s);
+          border: 2px solid var(--accented-color);
+          background: transparent;
+          &:hover {
+            background: linear-gradient(var(--bg-color), var(--bg-color))
+                padding-box,
+              var(--acented-gradient) border-box;
+            border: 2px solid transparent;
+
+            color: var(--primary-color);
+          }
+        `;
       case "filled":
         return css`
           border-radius: var(--border-radius-s);
           border: 2px solid transparent;
-
           background: var(--accented-color);
-
+          color: white;
           &:hover {
             background: linear-gradient(var(--bg-color), var(--bg-color))
                 padding-box,

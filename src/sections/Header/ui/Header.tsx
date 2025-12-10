@@ -32,6 +32,7 @@ const StyledHeader = styled.header`
   left: 0;
   right: 0;
   z-index: 1000;
+  padding: 0 20px;
 `;
 
 const StyledContainer = styled(Container)`
