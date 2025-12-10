@@ -1,4 +1,3 @@
-// 👇 Update SVG imports with ?react
 import HtmlSvg from "@/shared/assets/img/stack/html.svg?react";
 import CssSvg from "@/shared/assets/img/stack/css.svg?react";
 import JsSvg from "@/shared/assets/img/stack/js.svg?react";
@@ -13,7 +12,8 @@ import VSCodeSvg from "@/shared/assets/img/stack/vscode.svg?react";
 import GithubSvg from "@/shared/assets/img/stack/github.svg?react";
 import { AppSvg } from "@/shared/ui/AppSvg/AppSvg";
 import styled from "styled-components";
-import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
+// import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
+import { useTranslation } from "react-i18next";
 
 interface StackProps {
   className?: string;
@@ -35,13 +35,16 @@ const svgList = [
 ];
 
 export const Stack = ({ className }: StackProps) => {
+  const { t } = useTranslation();
   return (
     <StyledStack className={`${className ?? ""}`}>
-      <StackTitle>Tech stack</StackTitle>
-      <StackSubitle> Technologies I’ve been working with recently</StackSubitle>
+      {/* <StackTitle>{t("Tech stack")}</StackTitle> */}
+      <StackSubitle>
+        {t("Technologies I’ve been working with recently")}
+      </StackSubitle>
       <List as="ul">
         {svgList.map((svg, i) => (
-          <Item key={i }>
+          <Item key={i}>
             <AppSvg
               Svg={svg}
               viewBox={
@@ -62,9 +65,9 @@ const StyledStack = styled.section`
   text-align: center;
 `;
 
-const StackTitle = styled(AppTitle)`
-  padding: 0 0 var(--section-title-indent-l) 0;
-`;
+// const StackTitle = styled(AppTitle)`
+//   padding: 0 0 var(--section-title-indent-l) 0;
+// `;
 
 const StackSubitle = styled.h2`
   padding: 0 0 var(--section-subtitle-indent-l) 0;

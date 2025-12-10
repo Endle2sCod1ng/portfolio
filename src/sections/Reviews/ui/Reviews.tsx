@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import QuotesSvg from "@/shared/assets/img/reviews/quotes.svg?react";
 import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
+import { useTranslation } from "react-i18next";
 
 interface ReviewsProps {
   className?: string;
@@ -16,9 +17,10 @@ interface ReviewsProps {
 //   { id: "4", name: "User 4", text: "Review4" },
 // ];
 export const Reviews = ({ className }: ReviewsProps) => {
+  const { t } = useTranslation();
   return (
     <StyledReviews className={`${className ? className : ""}`}>
-      <AppTitle>Reviews</AppTitle>
+      <AppTitle>{t("Reviews")}</AppTitle>
       <Slider>
         {/* {reviewsList.map((r) => {
           return (
@@ -44,7 +46,7 @@ export const Reviews = ({ className }: ReviewsProps) => {
         <span></span>
         <span></span>
       </Pagination>
-      <AppLink to="/reviews">{"Write a review"}</AppLink>
+      <AppLink to="/reviews">{t("Write a review")}</AppLink>
     </StyledReviews>
   );
 };

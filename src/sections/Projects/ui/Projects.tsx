@@ -16,7 +16,8 @@ export interface Project {
 import Image from "@/shared/assets/img/projects/avatar.png";
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { useState } from "react";
-import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
+import { useTranslation } from "react-i18next";
+// import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
 const projects: Project[] = [
   {
     img: Image,
@@ -72,18 +73,18 @@ const PAGINATION = ["All", "React", "Vue", "Angular", "React Native"] as const;
 export const Projects = ({ className }: ProjectsProps) => {
   const [activeBtn, setActiveBtn] =
     useState<(typeof PAGINATION)[number]>("All");
-
+  const { t } = useTranslation();
   return (
     <ProjectsStyled className={`${className ? className : ""}`}>
-      <ProjectsTitle>Projects</ProjectsTitle>
-      <ProjectsSubitle>Things I’ve built so far</ProjectsSubitle>
+      {/* <ProjectsTitle>Projects</ProjectsTitle> */}
+      <ProjectsSubitle>{t("Things I’ve built so far")}</ProjectsSubitle>
       <Pagination>
         {PAGINATION.map((c) => (
           <PaginationItem
             $activeBtn={c === activeBtn}
             onClick={() => setActiveBtn(c)}
           >
-            {c}
+            {t(`${c}`)}
           </PaginationItem>
         ))}
       </Pagination>
@@ -110,7 +111,7 @@ export const Projects = ({ className }: ProjectsProps) => {
             })
         ) : (
           <Stub>
-            <h3>Проекты по этой технолгии в рзаработке</h3>
+            <h3>{t("Projects using this technology in development")}</h3>
           </Stub>
         )}
       </Flex>
@@ -124,9 +125,9 @@ const ProjectsStyled = styled.section`
   align-items: center;
 `;
 
-const ProjectsTitle = styled(AppTitle)`
-  padding: 0 0 var(--section-title-indent-l) 0;
-`;
+// const ProjectsTitle = styled(AppTitle)`
+//   padding: 0 0 var(--section-title-indent-l) 0;
+// `;
 
 const ProjectsSubitle = styled.h2`
   padding: 0 0 60px 0;

@@ -5,6 +5,7 @@ import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
 import { Container } from "@/shared/ui/Container/Container";
 import { useState } from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 interface ContactsProps {
   className?: string;
@@ -21,13 +22,14 @@ export const Contacts = ({ className }: ContactsProps) => {
     console.log("email", email);
     console.log("meassage", meassage);
   };
+  const { t } = useTranslation();
 
   return (
     <StyledContacts
       as="section"
       className={`${className ? className : ""}`}
     >
-      <AppTitle>{"For any questions"}</AppTitle>
+      <AppTitle>{t("For any questions")}</AppTitle>
       <StyledForm
         action="#"
         onSubmit={(e) => {
@@ -37,21 +39,21 @@ export const Contacts = ({ className }: ContactsProps) => {
         <AppInput
           className="field"
           type="text"
-          placeholder={"Name"}
+          placeholder={t("Name")}
           inputValue={name}
           onChangeValue={(value: string) => setName(value)}
         />
         <AppInput
           className="field"
           type="tel"
-          placeholder={"Phone"}
+          placeholder={t("Phone")}
           inputValue={phone}
           onChangeValue={(value: string) => setPhone(value)}
         />
         <AppInput
           className="field"
           type="text"
-          placeholder={"Email"}
+          placeholder={t("Email")}
           inputValue={email}
           onChangeValue={(value: string) => setEmail(value)}
         />
@@ -59,7 +61,7 @@ export const Contacts = ({ className }: ContactsProps) => {
           className="field"
           name="message"
           id="message"
-          placeholder={"Message"}
+          placeholder={t("Message")}
           inputValue={meassage}
           onChangeValue={(value: string) => setMessage(value)}
         />
@@ -69,7 +71,7 @@ export const Contacts = ({ className }: ContactsProps) => {
           onClick={sendContacts}
           type="submit"
         >
-          {"Submit"}
+          {t("Submit")}
         </AppButton>
       </StyledForm>
     </StyledContacts>

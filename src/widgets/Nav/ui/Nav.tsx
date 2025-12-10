@@ -15,7 +15,9 @@ export const Nav = ({ className }: NavProps) => {
           <AppLink to={l.link}>
             {l.link === "/"
               ? `${t("Home")}`
-              : l.link.slice(1).replace(l.link[1], l.link[1].toUpperCase())}
+              : `${t(
+                  l.link.slice(1).replace(l.link[1], l.link[1].toUpperCase())
+                )}`}
           </AppLink>
         </li>
       ))}

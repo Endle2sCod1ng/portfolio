@@ -3,8 +3,10 @@ import Avatar from "@/shared/assets/img/banner/avatar.png";
 import { Flex } from "@/shared/ui/Flex/Flex";
 import { Container } from "@/shared/ui/Container/Container";
 import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
+import { useTranslation } from "react-i18next";
 
 export const Banner = () => {
+  const { t } = useTranslation();
   return (
     <BannerStyled as="section">
       <Flex
@@ -12,9 +14,9 @@ export const Banner = () => {
         align="flex-start"
         gap="12px"
       >
-        <AppTitle>Hi</AppTitle>
-        <AppTitle>I'm Viacheslav</AppTitle>
-        <AppTitle tagName="h1">Front-end Developer</AppTitle>
+        <AppTitle>{t("Hi")}</AppTitle>
+        <AppTitle>{t("I'm Viacheslav")}</AppTitle>
+        <AppTitle tagName="h1">{t("Front-end Developer")}</AppTitle>
       </Flex>
       <ImgWrapper
         justify="center"
