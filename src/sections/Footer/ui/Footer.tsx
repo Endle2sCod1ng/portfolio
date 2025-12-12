@@ -2,23 +2,30 @@ import { Nav } from "@/widgets/Nav";
 import { Socials } from "@/widgets/Socials";
 import { Logo } from "@/shared/ui/Logo/Logo";
 import styled from "styled-components";
-// import EmailSvg from "@/shared/assets/img/email.svg";
+import EmailSvg from "@/shared/assets/img/email.svg?react";
+import { AppSvg } from "@/shared/ui/AppSvg/AppSvg";
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <TopWrapper>
+      <Wrapper>
         <Logo />
         <ContactsWrapper>
+          <AppSvg
+            viewBox="0 0 18 18"
+            size="18"
+            Svg={EmailSvg}
+            varinat="filled"
+          />
           <div>endlesscoding@yahoo.com</div>
           <Socials />
         </ContactsWrapper>
-      </TopWrapper>
+      </Wrapper>
       <hr />
-      <div>
+      <Wrapper>
         <Nav />
         <div>Cp</div>
-      </div>
+      </Wrapper>
     </StyledFooter>
   );
 };
@@ -35,7 +42,7 @@ const StyledFooter = styled.footer`
   justify-content: space-around;
 `;
 
-const TopWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

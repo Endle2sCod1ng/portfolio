@@ -1,8 +1,16 @@
 .appSvg {
   fill: var(--inverted-bg-color);
   transition: all linear var(--transtion-delay);
+
   &:hover,
   .link {
     fill: var(--accented-color);
   }
+
+  // .filled {
+  //   size: 30px;
+  //   width: 30px;
+  //   background: var(--inverted-bg-color);
+  //   fill: var(--bg-color)
+  // }
 }
