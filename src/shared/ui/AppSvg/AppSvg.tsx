@@ -4,7 +4,7 @@ import type { FC, SVGProps } from "react";
 
 import s from "./AppSvg.module.scss";
 
-type Size = "112" | "120" | "105" | "88" | "30";
+type Size = "120" | "88" | "30" | "35";
 interface AppSvgProps extends SVGProps<SVGSVGElement> {
   Svg: FC<SVGProps<SVGSVGElement>>;
   size?: Size;

@@ -23,13 +23,16 @@ export const Socials = () => {
                   className="link"
                 />
               ) : (
-                // <AppSvg
-                //   Svg={soc.svg}
-                //   viewBox={`0 0 88 88`}
-                //   size="30"
-                //   className="link"
-                // />
-                ""
+                <>
+                  <IconWrapper>
+                    <AppSvg
+                      viewBox="0 0 25 25"
+                      size={`30`}
+                      Svg={soc.svg}
+                      className="link"
+                    />
+                  </IconWrapper>
+                </>
               )}
             </AppLink>
           </li>
@@ -41,6 +44,16 @@ export const Socials = () => {
 
 const StyledSocials = styled.ul`
   display: flex;
+  align-items: center;
   list-style-type: none;
   gap: 20px;
+`;
+const IconWrapper = styled.div`
+  background: var(--inverted-bg-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

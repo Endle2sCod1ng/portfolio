@@ -1,7 +1,7 @@
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import type { Project } from "../Projects";
 import styled from "styled-components";
-import { Flex } from "@/shared/ui/Flex/Flex";
+import { useTranslation } from "react-i18next";
 
 interface ProjectsItemProps {
   project: Project;
@@ -9,6 +9,7 @@ interface ProjectsItemProps {
 
 export const ProjectsItem = ({ project }: ProjectsItemProps) => {
   const { img, title, text, stackList, preview, code } = project;
+  const { t } = useTranslation();
   return (
     <ProjectsItemStyled>
       <ImgContainer>
@@ -17,7 +18,7 @@ export const ProjectsItem = ({ project }: ProjectsItemProps) => {
           alt={"image"}
         />
         <AppLink to={preview}>
-          <span>Live preview</span>
+          <span>{t("Live preview")}</span>
         </AppLink>
       </ImgContainer>
 
@@ -30,14 +31,14 @@ export const ProjectsItem = ({ project }: ProjectsItemProps) => {
             return <span key={s + i}>{s}</span>;
           })}
         </Stack>
-        <Flex justify="space-between">
+        <LinkWrapper>
           <AppLink to={preview}>
-            <span>Live preview</span>
+            <span>{t("Live preview")}</span>
           </AppLink>
           <AppLink to={code}>
-            <span>View code</span>
+            <span>{t("View code")}</span>
           </AppLink>
-        </Flex>
+        </LinkWrapper>
       </Content>
     </ProjectsItemStyled>
   );
@@ -87,4 +88,10 @@ const Text = styled.div`
 
 const Stack = styled.div`
   margin-bottom: 20px;
+`;
+
+const LinkWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;

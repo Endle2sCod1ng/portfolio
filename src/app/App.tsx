@@ -1,15 +1,15 @@
 import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
-// import { Route, Routes } from "react-router";
-// import { routesConfig } from "@/shared/config/routesCpnfig";
-// import styled from "styled-components";
-// import { NotFoundPage } from "@/pages/NotFoundPage";
+import { Route, Routes } from "react-router";
+import { routesConfig } from "@/shared/config/routesCpnfig";
+import styled from "styled-components";
+import { NotFoundPage } from "@/pages/NotFoundPage";
 
 export function App() {
   return (
     <div className="app">
       <Header />
-      {/* <Main>
+      <Main>
         <Routes>
           {routesConfig.map((l) => (
             <Route
@@ -23,11 +23,11 @@ export function App() {
             element={<NotFoundPage />}
           />
         </Routes>
-      </Main> */}
+      </Main>
       <Footer />
     </div>
   );
 }
-// const Main = styled.main`
-//   padding-top: var(--header-height);
-// `;
+const Main = styled.main`
+  padding-top: var(--header-height);
+`;

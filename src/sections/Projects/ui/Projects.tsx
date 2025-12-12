@@ -1,4 +1,3 @@
-import { Flex } from "@/shared/ui/Flex/Flex";
 import { ProjectsItem } from "./ProjectsItem/ProjectsItem";
 import styled, { css } from "styled-components";
 
@@ -88,10 +87,7 @@ export const Projects = ({ className }: ProjectsProps) => {
           </PaginationItem>
         ))}
       </Pagination>
-      <Flex
-        wrap="wrap"
-        justify="space-between"
-      >
+      <ProjectsWrapper>
         {projects.filter((p: Project) =>
           activeBtn === "All" ? p : p.stackList.join(",").includes(activeBtn)
         ).length !== 0 ? (
@@ -114,7 +110,7 @@ export const Projects = ({ className }: ProjectsProps) => {
             <h3>{t("Projects using this technology in development")}</h3>
           </Stub>
         )}
-      </Flex>
+      </ProjectsWrapper>
     </ProjectsStyled>
   );
 };
@@ -148,6 +144,12 @@ const PaginationItem = styled(AppButton)<{ $activeBtn: boolean }>`
           color: transparent;
         `
       : undefined}
+`;
+
+const ProjectsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 const Stub = styled.div`

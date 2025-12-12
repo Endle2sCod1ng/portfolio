@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Avatar from "@/shared/assets/img/banner/avatar.png";
-import { Flex } from "@/shared/ui/Flex/Flex";
+
 import { Container } from "@/shared/ui/Container/Container";
 import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
 import { useTranslation } from "react-i18next";
@@ -9,19 +9,12 @@ export const Banner = () => {
   const { t } = useTranslation();
   return (
     <BannerStyled as="section">
-      <Flex
-        direction="column"
-        align="flex-start"
-        gap="12px"
-      >
+      <TextWrapper>
         <AppTitle>{t("Hi")}</AppTitle>
         <AppTitle>{t("I'm Viacheslav")}</AppTitle>
         <AppTitle tagName="h1">{t("Front-end Developer")}</AppTitle>
-      </Flex>
-      <ImgWrapper
-        justify="center"
-        align="center"
-      >
+      </TextWrapper>
+      <ImgWrapper>
         {Array(5)
           .fill("")
           .map((_, i) => {
@@ -57,7 +50,13 @@ const BannerStyled = styled(Container)`
   align-items: center;
 `;
 
-const ImgWrapper = styled(Flex)`
+const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+const ImgWrapper = styled.div`
   border-radius: 50%;
   width: 444px;
   height: 444px;

@@ -1,6 +1,5 @@
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
-import { Flex } from "@/shared/ui/Flex/Flex";
 import styled from "styled-components";
 
 import QuotesSvg from "@/shared/assets/img/reviews/quotes.svg?react";
@@ -37,10 +36,10 @@ export const Reviews = ({ className }: ReviewsProps) => {
           }
         </Slide>
       </Slider>
-      <Flex>
+      <div>
         <AppButton>{"<"}</AppButton>
         <AppButton>{">"}</AppButton>
-      </Flex>
+      </div>
       <Pagination>
         <span></span>
         <span></span>

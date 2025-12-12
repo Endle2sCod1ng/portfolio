@@ -2,19 +2,23 @@ import { Nav } from "@/widgets/Nav";
 import { Socials } from "@/widgets/Socials";
 import { Logo } from "@/shared/ui/Logo/Logo";
 import styled from "styled-components";
+// import EmailSvg from "@/shared/assets/img/email.svg";
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <Flex>
+      <TopWrapper>
         <Logo />
-        <Socials />
-      </Flex>
+        <ContactsWrapper>
+          <div>endlesscoding@yahoo.com</div>
+          <Socials />
+        </ContactsWrapper>
+      </TopWrapper>
       <hr />
-      <Flex>
+      <div>
         <Nav />
         <div>Cp</div>
-      </Flex>
+      </div>
     </StyledFooter>
   );
 };
@@ -31,9 +35,14 @@ const StyledFooter = styled.footer`
   justify-content: space-around;
 `;
 
-const Flex = styled.div`
+const TopWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px 0;
+`;
+
+const ContactsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
 `;
