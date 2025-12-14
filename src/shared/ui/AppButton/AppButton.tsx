@@ -70,9 +70,7 @@ const StyledAppButton = styled.button<{ $variant: AppButtonVariant }>`
           background: none;
           border: none;
           &:hover {
-            background-image: var(--acented-gradient);
-            background-clip: text;
-            color: transparent;
+            color: var(--accented-color);
           }
         `;
     }

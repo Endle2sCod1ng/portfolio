@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router";
 import { routesConfig } from "@/shared/config/routesCpnfig";
 import styled from "styled-components";
 import { NotFoundPage } from "@/pages/NotFoundPage";
+import { ScrollTop } from "@/features/ScrollTop/ScrollTop";
 
 export function App() {
   return (
@@ -25,9 +26,11 @@ export function App() {
         </Routes>
       </Main>
       <Footer />
+      <ScrollTop />
     </div>
   );
 }
+
 const Main = styled.main`
   padding-top: var(--header-height);
 `;
