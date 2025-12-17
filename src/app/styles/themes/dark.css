@@ -1,6 +1,6 @@
 .portfolio_theme_dark {
   --bg-color: #191919;
-  --bg-color-98: rgba(25, 25, 25, 0.98);
+  --header-color: rgba(25, 25, 25, 0.98);
   --inverted-bg-color: rgba(235, 234, 237, 1);
 
   --primary-color: #ccc;

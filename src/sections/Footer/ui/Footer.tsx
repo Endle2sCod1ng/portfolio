@@ -1,4 +1,4 @@
-import { Nav } from "@/widgets/Nav";
+// import { Nav } from "@/widgets/Nav";
 import { Socials } from "@/widgets/Socials";
 import { Logo } from "@/shared/ui/Logo/Logo";
 import styled from "styled-components";
@@ -23,7 +23,8 @@ export const Footer = () => {
       </Wrapper>
       <hr />
       <Wrapper>
-        <Nav />
+        {/* <Nav /> */}
+        <div>Cp</div>
         <div>Cp</div>
       </Wrapper>
     </StyledFooter>
@@ -32,6 +33,7 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
   margin: 0 auto;
+  padding: 0 20px;
   max-width: var(--width-container-xl);
   width: 100%;
   min-width: var(--width-container-min);

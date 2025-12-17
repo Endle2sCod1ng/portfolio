@@ -58,7 +58,7 @@ const ImgContainer = styled.div`
   height: 260px;
   border-radius: 20px 20px 0 0;
   position: relative;
-  z-index: 0;
+  z-index: var(--projects-img-container-z-index);
 `;
 
 const Img = styled.img`
@@ -71,7 +71,7 @@ const Img = styled.img`
   width: 100%;
   height: 100%;
   transition: all var(--transtion-delay) linear;
-  z-index: 1;
+  z-index: var(--projects-img-z-index);
 `;
 
 const Content = styled.div`

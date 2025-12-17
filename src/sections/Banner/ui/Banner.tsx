@@ -69,7 +69,7 @@ const ImageBorder = styled.div<{ $angle: string }>`
   height: 100%;
   width: 100%;
   transform: rotateZ(${(props) => props.$angle}deg);
-  z-index: 0;
+  z-index: var(--banner-img-border-z-index);
   & > div {
     position: relative;
     width: 100%;
@@ -89,7 +89,7 @@ const ImageBorder = styled.div<{ $angle: string }>`
 
 const ImgBackground = styled.div`
   position: absolute;
-  z-index: 2;
+  z-index: var(--banner-img-background-z-index);
   border-radius: 50%;
   width: 370px;
   height: 370px;

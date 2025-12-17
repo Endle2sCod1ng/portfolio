@@ -26,12 +26,12 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-  background: var(--bg-color-98);
+  background: var(--header-color);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: var(--header-z-index);
   padding: 0 20px;
 `;
 

@@ -1,10 +1,22 @@
 :root {
+
   /* Colors */
   --acented-gradient: linear-gradient(90deg,
       rgba(19, 176, 245, 1) 3%,
       rgba(230.5625, 15.370828628540039, 170.3088836669922, 1) 100%);
   --acented-gradient-90: linear-gradient(rgba(19, 176, 245, 1) 3%,
       rgba(230.5625, 15.370828628540039, 170.3088836669922, 1) 100%);
+
+  /* Sizes */
+  --banner-img-border-z-index: 0;
+  --banner-img-background-z-index: 2;
+  --projects-img-container-z-index: 0;
+  --projects-img-z-index: 0;
+  --header-z-index: 100;
+  --header-z-index: 100;
+  --burger-z-index: 100;
+  --nav-z-index: 1000;
+  --scroll-top-z-index: 1000;
 
   /* Sizes */
   --header-height: 120px;

@@ -1,16 +1,22 @@
 import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
-import { Route, Routes } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
 import { routesConfig } from "@/shared/config/routesCpnfig";
 import styled from "styled-components";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { ScrollTop } from "@/features/ScrollTop/ScrollTop";
+import { useEffect } from "react";
 
 export function App() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+
   return (
     <div className="app">
       <Header />
-      <Main>
+      {/* <Main>
         <Routes>
           {routesConfig.map((l) => (
             <Route
@@ -24,7 +30,7 @@ export function App() {
             element={<NotFoundPage />}
           />
         </Routes>
-      </Main>
+      </Main> */}
       <Footer />
       <ScrollTop />
     </div>

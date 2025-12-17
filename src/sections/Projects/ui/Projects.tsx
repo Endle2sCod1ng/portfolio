@@ -78,8 +78,9 @@ export const Projects = ({ className }: ProjectsProps) => {
       {/* <ProjectsTitle>Projects</ProjectsTitle> */}
       <ProjectsSubitle>{t("Things I’ve built so far")}</ProjectsSubitle>
       <Pagination>
-        {PAGINATION.map((c) => (
+        {PAGINATION.map((c, i) => (
           <PaginationItem
+            key={c + i}
             $activeBtn={c === activeBtn}
             onClick={() => setActiveBtn(c)}
           >
@@ -97,10 +98,10 @@ export const Projects = ({ className }: ProjectsProps) => {
                 ? p
                 : p.stackList.join(",").includes(activeBtn)
             )
-            .map((project) => {
+            .map((project, i) => {
               return (
                 <ProjectsItem
-                  key={project.title}
+                  key={project.title + i}
                   project={project}
                 />
               );

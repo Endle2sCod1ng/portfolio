@@ -6,7 +6,7 @@ export const ScrollTop = () => {
     <StyledScrollTop
       variant="outlined"
       onClick={() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }}
     >
       {">"}
@@ -15,7 +15,7 @@ export const ScrollTop = () => {
 };
 const StyledScrollTop = styled(AppButton)`
   position: fixed;
-  z-index: 10000;
+  z-index: var() var(--scroll-top-z-index);
   transform: rotateZ(-90deg);
   top: calc(100vh - 50px);
   right: 20px;
