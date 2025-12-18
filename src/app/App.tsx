@@ -16,7 +16,7 @@ export function App() {
   return (
     <div className="app">
       <Header />
-      {/* <Main>
+      <Main>
         <Routes>
           {routesConfig.map((l) => (
             <Route
@@ -30,7 +30,7 @@ export function App() {
             element={<NotFoundPage />}
           />
         </Routes>
-      </Main> */}
+      </Main>
       <Footer />
       <ScrollTop />
     </div>

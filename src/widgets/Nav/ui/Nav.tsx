@@ -12,10 +12,19 @@ export const Nav = ({ className }: NavProps) => {
   const { t } = useTranslation();
   return (
     <StyledNav className={`${className ? className : ""}`}>
-      <ListWrapper $isOpen={isOpen}>
-        <List $isOpen={isOpen}>
+      <ListWrapper
+        aria-modal={true}
+        $isOpen={isOpen}
+      >
+        <List
+          role="menu"
+          $isOpen={isOpen}
+        >
           {routesConfig.map((l) => (
-            <li key={l.link}>
+            <li
+              key={l.link}
+              role="menuitem"
+            >
               <AppLink
                 onClick={() => {
                   setIsOpen(false);
@@ -34,6 +43,7 @@ export const Nav = ({ className }: NavProps) => {
           ))}
         </List>
         <BurgerWrapper
+          aria-haspopup={true}
           onClick={() => {
             setIsOpen(!isOpen);
           }}
@@ -46,7 +56,10 @@ export const Nav = ({ className }: NavProps) => {
   );
 };
 
-const StyledNav = styled.nav``;
+const StyledNav = styled.nav`
+  font-family: var(--font-family-accented);
+  font-size: 20px;
+`;
 const ListWrapper = styled.div<{ $isOpen: boolean }>`
   /* transform: translateY(-100%); */
   /* transition: transform linear 1s; */

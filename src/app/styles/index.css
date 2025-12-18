@@ -4,13 +4,41 @@
 @import url("./themes/light");
 
 
+
+
+@font-face {
+  font-family: 'Poppins';
+  src:
+    url('../../shared/assets/fonts/Poppins/Poppins-Regular.woff2') format('woff2'),
+    url('../../shared/assets/fonts/Poppins/Poppins-Regular.woff') format('woff'),
+    url('../../shared/assets/fonts/Poppins/Poppins-Regular.ttf') format('ttf'),
+    url('../../shared/assets/fonts/Poppins/Poppins-Regular.eot') format('eot'),
+  ;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DMSans';
+  src:
+    url('../../shared/assets/fonts/DMSans/DMSans-9ptRegular.woff2') format('woff2'),
+    url('../../shared/assets/fonts/DMSans/DMSans-9ptRegular.woff') format('woff'),
+    url('../../shared/assets/fonts/DMSans/DMSans-9ptRegular.ttf') format('ttf'),
+    url('../../shared/assets/fonts/DMSans/DMSans-9ptRegular.eot') format('eot'),
+  ;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
 html,
 #root,
 body,
 .app {
   min-height: 100vh;
   width: 100%;
-  font: var(--font-m);
+  font: var(--font-s);
 
   background-color: var(--bg-color);
   color: var(--primary-color);

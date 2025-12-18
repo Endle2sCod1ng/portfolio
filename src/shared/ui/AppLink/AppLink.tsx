@@ -28,6 +28,8 @@ export const AppLink = ({
 };
 
 const StyledAppLink = styled(Link)<{ $variant: AppLinkVariant }>`
+
+  
   transition: color linear var(--transtion-delay);
   ${(props) => {
     switch (props.$variant) {
