@@ -43,3 +43,8 @@ body,
   background-color: var(--bg-color);
   color: var(--primary-color);
 }
+
+.app {
+  padding-top: var(--header-height);
+}
+

@@ -3,6 +3,7 @@ import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled, { css } from "styled-components";
+import s from "./Nav.module.scss";
 
 interface NavProps {
   className?: string;
@@ -11,14 +12,25 @@ export const Nav = ({ className }: NavProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { t } = useTranslation();
   return (
-    <StyledNav className={`${className ? className : ""}`}>
-      <ListWrapper
+    <nav
+      className={`
+    ${s.nav} 
+    ${className ? className : ""}
+    `}
+    >
+      <div
+        className={`
+          ${s.listWrapper}
+          ${isOpen ? s.isOpen : ""}
+         `}
         aria-modal={true}
-        $isOpen={isOpen}
       >
-        <List
+        <ul
+          className={`
+            ${s.list} 
+          ${isOpen ? s.isOpen : ""}
+          `}
           role="menu"
-          $isOpen={isOpen}
         >
           {routesConfig.map((l) => (
             <li
@@ -41,7 +53,7 @@ export const Nav = ({ className }: NavProps) => {
               </AppLink>
             </li>
           ))}
-        </List>
+        </ul>
         <BurgerWrapper
           aria-haspopup={true}
           onClick={() => {
@@ -51,57 +63,10 @@ export const Nav = ({ className }: NavProps) => {
         >
           <Burger $isOpen={isOpen} />
         </BurgerWrapper>
-      </ListWrapper>
-    </StyledNav>
+      </div>
+    </nav>
   );
 };
-
-const StyledNav = styled.nav`
-  font-family: var(--font-family-accented);
-  font-size: 20px;
-`;
-const ListWrapper = styled.div<{ $isOpen: boolean }>`
-  /* transform: translateY(-100%); */
-  /* transition: transform linear 1s; */
-  ${(props) =>
-    props.$isOpen === true &&
-    css`
-      background: var(--bg-color);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      /* transform: translateY(0); */
-      /* transition: transform linear 1s; */
-    `}
-`;
-const List = styled.ul<{ $isOpen: boolean }>`
-  display: flex;
-  list-style-type: none;
-  gap: 20px;
-  @media (max-width: 767px) {
-    display: none;
-    flex-direction: column;
-    ${(props) =>
-      props.$isOpen === true &&
-      css`
-        height: 100%;
-        display: flex;
-        justify-content: space-around;
-        li {
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-bottom: 1px solid var(--primary-color);
-          &:last-child {
-            border: none;
-          }
-        }
-      `}
-  }
-`;
 
 const BurgerWrapper = styled.div<{ $isOpen: boolean }>`
   padding: 20px;

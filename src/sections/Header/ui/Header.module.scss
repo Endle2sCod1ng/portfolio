@@ -1,0 +1,24 @@
+.header {
+  background: var(--header-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--header-z-index);
+  padding: 0 20px;
+}
+
+.container {
+  height: var(--header-height);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style-type: none;
+}

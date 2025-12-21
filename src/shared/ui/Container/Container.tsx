@@ -1,28 +1,15 @@
 import type { ReactNode } from "react";
-import styled from "styled-components";
+import s from "./Container.module.scss";
 
 interface ContainerProps {
   children: ReactNode;
   as?: "section" | "div" | "header";
   className?: string;
 }
-export const Container = ({
-  children,
-  as = "div",
-  className,
-}: ContainerProps) => {
+export const Container = ({ children, className }: ContainerProps) => {
   return (
-    <StyledContainer
-      as={as}
-      className={`${className ? className : ""}`}
-    >
+    <div className={`${s.container} ${className ? className : ""}`}>
       {children}
-    </StyledContainer>
+    </div>
   );
 };
-export const StyledContainer = styled.div`
-  margin: 0 auto;
-  max-width: var(--width-container-xl);
-  width: 100%;
-  min-width: var(--width-container-min);
-`;

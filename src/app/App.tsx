@@ -2,7 +2,6 @@ import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
 import { Route, Routes, useLocation } from "react-router";
 import { routesConfig } from "@/shared/config/routesCpnfig";
-import styled from "styled-components";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { ScrollTop } from "@/features/ScrollTop/ScrollTop";
 import { useEffect } from "react";
@@ -16,7 +15,7 @@ export function App() {
   return (
     <div className="app">
       <Header />
-      <Main>
+      <main>
         <Routes>
           {routesConfig.map((l) => (
             <Route
@@ -30,13 +29,9 @@ export function App() {
             element={<NotFoundPage />}
           />
         </Routes>
-      </Main>
+      </main>
       <Footer />
       <ScrollTop />
     </div>
   );
 }
-
-const Main = styled.main`
-  padding-top: var(--header-height);
-`;

@@ -7,45 +7,20 @@ import { Logo } from "@/shared/ui/Logo/Logo";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 import { LanguageSwitcher } from "@/features/LanguageSwitcher";
 
-import styled from "styled-components";
+import s from "./Header.module.scss";
 
 export const Header = () => {
   return (
-    <StyledHeader>
-      <StyledContainer>
+    <header className={s.header}>
+      <Container className={s.container}>
         <Logo />
-        <Content>
+        <div className={s.content}>
           <Nav />
           <Socials />
           <ThemeSwitcher />
           <LanguageSwitcher />
-        </Content>
-      </StyledContainer>
-    </StyledHeader>
+        </div>
+      </Container>
+    </header>
   );
 };
-
-const StyledHeader = styled.header`
-  background: var(--header-color);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: var(--header-z-index);
-  padding: 0 20px;
-`;
-
-const StyledContainer = styled(Container)`
-  height: var(--header-height);
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Content = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  list-style-type: none;
-`;
