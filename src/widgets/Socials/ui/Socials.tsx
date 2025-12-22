@@ -18,7 +18,7 @@ export const Socials = () => {
             <AppLink to={soc.link}>
               <AppSvg
                 Svg={soc.svg}
-                viewBox={`0 0 88 88`}
+                viewBox={`0 -5 88 88`}
                 size="30"
                 className="link"
               />
@@ -29,4 +29,3 @@ export const Socials = () => {
     </ul>
   );
 };
- 
