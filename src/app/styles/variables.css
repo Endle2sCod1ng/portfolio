@@ -1,4 +1,6 @@
 :root {
+  /* @Media*/
+  --media-latop:1200px;
 
   /* Colors */
   --acented-gradient: linear-gradient(90deg,

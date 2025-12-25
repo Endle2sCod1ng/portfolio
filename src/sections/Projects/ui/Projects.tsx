@@ -12,14 +12,15 @@ export interface Project {
   preview: string;
   code: string;
 }
-import Image from "@/shared/assets/img/projects/avatar.png";
+import AvaImg from "@/shared/assets/img/projects/avatar.png";
+import PortfolioImg from "@/shared/assets/img/projects/portfolio.png";
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 // import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
 const projects: Project[] = [
   {
-    img: Image,
+    img: AvaImg,
     title: "Todolist",
     text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
     stackList: ["HTML", " JavaScript", "SASS", "React"],
@@ -27,7 +28,7 @@ const projects: Project[] = [
     code: "https://github.com/Endle2sCod1ng/todolist",
   },
   {
-    img: Image,
+    img: PortfolioImg,
     title: "Portfolio",
     text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
     stackList: ["HTML", " JavaScript", "SASS", "React"],
@@ -35,7 +36,7 @@ const projects: Project[] = [
     code: "https://github.com/Endle2sCod1ng/portfolio",
   },
   {
-    img: Image,
+    img: AvaImg,
     title: "React",
     text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
     stackList: ["HTML", " JavaScript", "SASS", "React"],
@@ -43,7 +44,7 @@ const projects: Project[] = [
     code: "https://github.com/Endle2sCod1ng/portfolio",
   },
   {
-    img: Image,
+    img: AvaImg,
     title: "Vue",
     text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
     stackList: ["HTML", " JavaScript", "SASS", "Vue"],
@@ -51,7 +52,7 @@ const projects: Project[] = [
     code: "https://github.com/Endle2sCod1ng/portfolio",
   },
   {
-    img: Image,
+    img: AvaImg,
     title: "Angular",
     text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
     stackList: ["HTML", " JavaScript", "SASS", "Angular"],
@@ -59,7 +60,7 @@ const projects: Project[] = [
     code: "https://github.com/Endle2sCod1ng/portfolio",
   },
   {
-    img: Image,
+    img: AvaImg,
     title: "React Native",
     text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
     stackList: ["HTML", " JavaScript", "SASS", "React Native"],
