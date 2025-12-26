@@ -16,19 +16,18 @@ export const Banner = () => {
         <AppTitle>{t("I'm Viacheslav")}</AppTitle>
         <AppTitle tagName="h1">{t("Front-end Developer")}</AppTitle>
       </div>
-      {/* <div className={s.imgWraper}>
-        {Array(5)
-          .fill("")
-          .map((_, i) => {
-            return (
-              <div
-                className={`${s.imgBorder} ${(Number(i) + 1) * 15}`}
-                key={i}
-              >
-                <div></div>
-              </div>
-            );
-          })} */}
+      <div className={s.imgWrapper}>
+        <div className={`${s.imgBorder} `}>
+          {Array(5)
+            .fill("")
+            .map((_, i) => {
+              return (
+                <div key={i}>
+            
+                </div>
+              );
+            })}
+        </div>
 
         <div className={s.imgBackground}>
           <div>
@@ -39,7 +38,7 @@ export const Banner = () => {
             />
           </div>
         </div>
-      {/* </div> */}
+      </div>
     </Container>
   );
 };

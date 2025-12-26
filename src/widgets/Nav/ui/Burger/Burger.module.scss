@@ -4,7 +4,7 @@
   cursor: pointer;
 
 
-  @media (max-width: 767px) {
+  @media (max-width: var(--media-768px)) {
     display: block;
 
     .burgerWrapper.isOpen {

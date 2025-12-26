@@ -21,7 +21,7 @@
   list-style-type: none;
   gap: 20px;
 
-  @media (max-width: 767px) {
+  @media (max-width: var(--media-768px)) {
     display: none;
 
     .list.isOpen {

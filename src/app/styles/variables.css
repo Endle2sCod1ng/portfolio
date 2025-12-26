@@ -1,7 +1,11 @@
 :root {
   /* @Media*/
-  --media-latop:1200px;
-
+  --media-1200px:1200px;
+  --media-992px:992px;
+  --media-768px:768px;
+  --media-576px:576px;
+  --media-400px:400px;
+  
   /* Colors */
   --acented-gradient: linear-gradient(90deg,
       rgba(19, 176, 245, 1) 3%,
