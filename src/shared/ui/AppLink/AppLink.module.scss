@@ -1,0 +1,22 @@
+.appLink {
+  transition: color linear var(--transtion-delay);
+
+  &.clear.primary {
+    &:hover {
+      color: var(--accented-color);
+    }
+  }
+
+  &.clear.accented {
+ 
+
+    background-image: var(--acented-gradient);
+    color: transparent;
+    background-clip: text;
+
+    &:hover {
+      color: var(--accented-color);
+    }
+  }
+
+}

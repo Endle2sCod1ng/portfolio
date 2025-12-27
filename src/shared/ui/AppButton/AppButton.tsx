@@ -1,11 +1,14 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
-import styled, { css } from "styled-components";
+
+import s from "./AppButton.module.scss";
 
 type AppButtonVariant = "clear" | "filled" | "outlined";
+type AppButtonColorType = "primary" | "accentedGradient";
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: AppButtonVariant;
+  colorType?: AppButtonColorType;
   className?: string;
 }
 
@@ -13,66 +16,19 @@ export const AppButton = ({
   children,
   type,
   variant = "clear",
+  colorType = "primary",
   className,
   ...otherProps
 }: AppButtonProps) => {
   return (
-    <StyledAppButton
+    <button
       {...otherProps}
       type={type}
-      className={`${className ? className : ""}`}
-      $variant={variant}
+      className={`${s.appButton} ${s[variant]} ${s[colorType]} ${
+        className ? className : ""
+      }`}
     >
       {children}
-    </StyledAppButton>
+    </button>
   );
 };
-
-const StyledAppButton = styled.button<{ $variant: AppButtonVariant }>`
-  color: inherit;
-  cursor: pointer;
-  padding: 8px 12px;
-  transition: all linear var(--transtion-delay);
-
-  ${(props) => {
-    switch (props.$variant) {
-      case "outlined":
-        return css`
-          border-radius: var(--border-radius-s);
-          border: 2px solid var(--accented-color);
-          background: transparent;
-          &:hover {
-            background: linear-gradient(var(--bg-color), var(--bg-color))
-                padding-box,
-              var(--acented-gradient) border-box;
-            border: 2px solid transparent;
-
-            color: var(--primary-color);
-          }
-        `;
-      case "filled":
-        return css`
-          border-radius: var(--border-radius-s);
-          border: 2px solid transparent;
-          background: var(--accented-color);
-          color: white;
-          &:hover {
-            background: linear-gradient(var(--bg-color), var(--bg-color))
-                padding-box,
-              var(--acented-gradient) border-box;
-            border: 2px solid transparent;
-
-            color: var(--primary-color);
-          }
-        `;
-      default:
-        return css`
-          background: none;
-          border: none;
-          &:hover {
-            color: var(--accented-color);
-          }
-        `;
-    }
-  }}
-`;

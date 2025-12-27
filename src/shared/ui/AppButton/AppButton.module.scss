@@ -1,0 +1,54 @@
+  .appButton {
+    color: inherit;
+    padding: 8px 12px;
+    transition: all linear var(--transtion-delay);
+
+    cursor: pointer;
+
+    &.clear.primary {
+      background: none;
+      border: none;
+
+      &:hover {
+        color: var(--accented-color);
+      }
+    }
+
+    &.outlined {
+      border-radius: var(--border-radius-s);
+      background: transparent;
+
+      &.primary {
+        border: 2px solid var(--primary-color);
+
+        &:hover {
+          color: var(--accented-color);
+          border: 2px solid var(--accented-color);
+        }
+      }
+
+      &.accentedGradient {
+        color: transparent;
+        background-image: var(--acented-gradient);
+        background-clip: text;
+
+        border: 2px solid var(--acented-gradient);
+
+        &:hover {}
+      }
+    }
+
+    // &.filled {
+    //   border-radius: var(--border-radius-s);
+    //   border: 2px solid transparent;
+    //   background: var(--accented-color);
+    //   color: white;
+
+    //   &:hover {
+    //     background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+    //       var(--acented-gradient) border-box;
+    //     border: 2px solid transparent;
+    //     color: var(--primary-color);
+    //   }
+    // }
+  }

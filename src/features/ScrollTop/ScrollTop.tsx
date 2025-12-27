@@ -1,23 +1,17 @@
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
-import styled from "styled-components";
+import s from "./ScrollTop.module.scss";
 
-export const ScrollTop = () => {
+export const ScrollTop = ({ className }: { className?: string }) => {
   return (
-    <StyledScrollTop
+    <AppButton
+      className={`${s.scrollTop} ${className ? className : ""}`}
       variant="outlined"
+      colorType="accentedGradient"
       onClick={() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
     >
       {">"}
-    </StyledScrollTop>
+    </AppButton>
   );
 };
-const StyledScrollTop = styled(AppButton)`
-  position: fixed;
-  z-index: var() var(--scroll-top-z-index);
-  transform: rotateZ(-90deg);
-  top: calc(100vh - 50px);
-  right: 20px;
-  /* color: red; */
-`;

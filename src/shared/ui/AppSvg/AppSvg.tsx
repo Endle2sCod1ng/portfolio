@@ -1,5 +1,3 @@
-// import styled from "styled-components";
-// AppSvg definition moved here for completeness
 import type { FC, SVGProps } from "react";
 
 import s from "./AppSvg.module.scss";
@@ -28,7 +26,7 @@ export const AppSvg = ({
       width={size}
       height={size}
       viewBox={viewBox}
-      className={`${s.appSvg} ${varinat ?? s[varinat]} ${
+      className={`${s.appSvg} ${s[varinat]} ${
         className ?? className
       }`}
     />

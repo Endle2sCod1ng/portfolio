@@ -1,0 +1,8 @@
+.scrollTop {
+  position: fixed;
+  z-index: var() var(--scroll-top-z-index);
+  transform: rotateZ(-90deg);
+  top: calc(100vh - 50px);
+  right: 20px;
+
+}

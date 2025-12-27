@@ -1,24 +1,17 @@
-import styled from "styled-components";
 import { AppLink } from "../AppLink/AppLink";
-
+import s from "./Logo.module.scss";
 interface LogoProps {
   className?: string;
 }
 export const Logo = ({ className }: LogoProps) => {
   return (
-    <StyledLogo
+    <AppLink
+      colorType="accented"
       to="/"
-      className={`${className ? className : ""}`}
+      className={`${s.logo} ${className ? className : ""}`}
     >
       <span>{"Fort"}</span>
       <span>{"Code"}</span>
-    </StyledLogo>
+    </AppLink>
   );
 };
-
-const StyledLogo = styled(AppLink)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-`;

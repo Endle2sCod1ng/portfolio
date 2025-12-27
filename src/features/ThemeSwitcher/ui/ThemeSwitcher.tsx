@@ -15,4 +15,8 @@ export const ThemeSwitcher = () => {
 
 const StyleThemeIcon = styled(ThemeIcon)`
   fill: var(--inverted-bg-color);
+  transition: all linear var(--transtion-delay);
+  &:hover {
+    fill: var(--accented-color);
+  }
 `;
