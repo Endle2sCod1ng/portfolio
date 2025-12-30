@@ -23,7 +23,6 @@ export const Banner = () => {
             .map((_, i) => {
               return (
                 <div key={i}>
-            
                 </div>
               );
             })}

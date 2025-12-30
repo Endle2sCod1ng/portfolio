@@ -2,19 +2,7 @@
   padding: 20px;
   display: none;
   cursor: pointer;
-
-
-  @media (max-width: var(--media-768px)) {
-    display: block;
-
-    .burgerWrapper.isOpen {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-  }
 }
-
 
 .burger {
   width: 40px;
@@ -46,19 +34,24 @@
     background: var(--inverted-bg-color);
     z-index: var(--burger-z-index);
   }
+}
 
+@media (max-width:786px) {
+  .burgerWrapper {
+    display: block;
+  }
 
-  // .burger.isOpen {
-  //     background: transparent;
+  .burger.isOpen {
+    background: none;
 
-  //     &::before {
-  //       top: 0;
-  //       transform: rotateZ(45deg);
-  //     }
+    &:before {
+      top: 0;
+      transform: rotateZ(45deg);
+    }
 
-  //     &::after {
-  //       top: 0;
-  //       transform: rotateZ(-45deg);
-  //     }
-  // }
+    &:after {
+      top: 0;
+      transform: rotateZ(-45deg);
+    }
+  }
 }

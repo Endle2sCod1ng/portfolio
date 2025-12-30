@@ -14,9 +14,7 @@ export const Burger = ({ isOpen, setIsOpen, className }: BurgerProps) => {
       }`}
       aria-haspopup={true}
       onClick={() => {
-        alert(isOpen);
         setIsOpen(!isOpen);
-   
       }}
     >
       <span className={`${s.burger} ${isOpen ? s.isOpen : ""}`} />

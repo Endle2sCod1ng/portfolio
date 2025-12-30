@@ -21,3 +21,9 @@
   gap: 40px;
   list-style-type: none;
 }
+
+@media (max-width:768px) {
+  .content {
+    flex-direction: row-reverse;
+  }
+}

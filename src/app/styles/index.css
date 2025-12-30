@@ -48,3 +48,6 @@ body,
   padding-top: var(--header-height);
 }
 
+body.isOpen {
+  overflow: hidden;
+}
