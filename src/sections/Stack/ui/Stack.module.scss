@@ -1,0 +1,33 @@
+.section {
+  padding: var(--section-indent-l) 0;
+  text-align: center;
+}
+
+.sectionTitle {
+  padding: 0 0 var(--section-subtitle-indent-l) 0;
+}
+
+.list {
+  gap: var(--stack-icons-indent-l) 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+
+}
+
+.listItem {
+  width: calc((var(--width-container-xl) / 7));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 767px) {
+  .list {
+    justify-content: space-around;
+  }
+}

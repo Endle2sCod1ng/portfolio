@@ -1,5 +1,6 @@
 import { ProjectsItem } from "./ProjectsItem/ProjectsItem";
 import styled, { css } from "styled-components";
+import s from "./Projects.module.scss";
 
 interface ProjectsProps {
   className?: string;
@@ -75,8 +76,7 @@ export const Projects = ({ className }: ProjectsProps) => {
     useState<(typeof PAGINATION)[number]>("All");
   const { t } = useTranslation();
   return (
-    <ProjectsStyled className={`${className ? className : ""}`}>
-      {/* <ProjectsTitle>Projects</ProjectsTitle> */}
+    <ProjectsStyled className={`${s.section} ${className ? className : ""}`}>
       <ProjectsSubitle>{t("Things I’ve built so far")}</ProjectsSubitle>
       <Pagination>
         {PAGINATION.map((c, i) => (
