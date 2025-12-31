@@ -8,26 +8,31 @@
 }
 
 .list {
-  gap: var(--stack-icons-indent-l) 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-
+  display: grid;
+  gap: 15px;
+  /* По умолчанию 3 колонки (для маленьких контейнеров) */
+  grid-template-columns: repeat(6, 1fr);
 }
+
 
 .listItem {
-  width: calc((var(--width-container-xl) / 7));
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-bottom: 50px;
 }
 
-@media (max-width: 1200px) {}
-
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .list {
-    justify-content: space-around;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

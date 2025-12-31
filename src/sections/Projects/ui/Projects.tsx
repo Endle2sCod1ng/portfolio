@@ -1,5 +1,4 @@
 import { ProjectsItem } from "./ProjectsItem/ProjectsItem";
-import styled, { css } from "styled-components";
 import s from "./Projects.module.scss";
 
 interface ProjectsProps {
@@ -23,7 +22,7 @@ const projects: Project[] = [
   {
     img: AvaImg,
     title: "Todolist",
-    text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+    text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
     stackList: ["HTML", " JavaScript", "SASS", "React"],
     preview: "https://github.com/Endle2sCod1ng/todolist",
     code: "https://github.com/Endle2sCod1ng/todolist",
@@ -76,20 +75,19 @@ export const Projects = ({ className }: ProjectsProps) => {
     useState<(typeof PAGINATION)[number]>("All");
   const { t } = useTranslation();
   return (
-    <ProjectsStyled className={`${s.section} ${className ? className : ""}`}>
-      <ProjectsSubitle>{t("Things I’ve built so far")}</ProjectsSubitle>
-      <Pagination>
+    <section className={`${s.section} ${className ? className : ""}`}>
+      <h2 className={s.title}>{t("Things I’ve built so far")}</h2>
+      <div className={s.pagination}>
         {PAGINATION.map((c, i) => (
-          <PaginationItem
+          <AppButton
             key={c + i}
-            $activeBtn={c === activeBtn}
             onClick={() => setActiveBtn(c)}
           >
             {t(`${c}`)}
-          </PaginationItem>
+          </AppButton>
         ))}
-      </Pagination>
-      <ProjectsWrapper>
+      </div>
+      <ul className={s.list}>
         {projects.filter((p: Project) =>
           activeBtn === "All" ? p : p.stackList.join(",").includes(activeBtn)
         ).length !== 0 ? (
@@ -108,56 +106,11 @@ export const Projects = ({ className }: ProjectsProps) => {
               );
             })
         ) : (
-          <Stub>
+          <div className={s.stub}>
             <h3>{t("Projects using this technology in development")}</h3>
-          </Stub>
+          </div>
         )}
-      </ProjectsWrapper>
-    </ProjectsStyled>
+      </ul>
+    </section>
   );
 };
-
-const ProjectsStyled = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-// const ProjectsTitle = styled(AppTitle)`
-//   padding: 0 0 var(--section-title-indent-l) 0;
-// `;
-
-const ProjectsSubitle = styled.h2`
-  padding: 0 0 60px 0;
-`;
-
-const Pagination = styled.div`
-  display: flex;
-  gap: 20px;
-  padding: 0 0 50px 0;
-`;
-
-const PaginationItem = styled(AppButton)<{ $activeBtn: boolean }>`
-  ${(props) =>
-    props.$activeBtn
-      ? css`
-          background-image: var(--acented-gradient);
-          background-clip: text;
-          color: transparent;
-        `
-      : undefined}
-`;
-
-const ProjectsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-
-const Stub = styled.div`
-  height: 570px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-`;

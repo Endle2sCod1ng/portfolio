@@ -1,11 +1,4 @@
 :root {
-  /* @Media*/
-  --media-1200px:1200px;
-  --media-992px:992px;
-  --media-768px:768px;
-  --media-576px:576px;
-  --media-400px:400px;
-  
   /* Colors */
   --acented-gradient: linear-gradient(90deg,
       rgba(19, 176, 245, 1) 3%,
@@ -41,10 +34,18 @@
   --border-radius-xs: 8px;
 
   --width-container-xl: 1200px;
-  --width-container-l: 990px;
-  --width-container-m: 767px;
-  --width-container-s: 540px;
+  --width-container-l: 992px;
+  --width-container-m: 768px;
+  --width-container-s: 576px;
   --width-container-min: 360px;
+
+  /* @Media*/
+  --media-1200px: 1200px;
+  --media-992px: 992px;
+  --media-768px: 768px;
+  --media-576px: 576px;
+  --media-400px: 400px;
+
 
   /* Fonts */
   --font-family-main: "Poppins",
