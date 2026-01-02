@@ -4,8 +4,8 @@ import { AppTextarea } from "@/shared/ui/AppTextarea";
 import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
 import { Container } from "@/shared/ui/Container/Container";
 import { useState } from "react";
-import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import s from "./Contacts.module.scss";
 
 interface ContactsProps {
   className?: string;
@@ -25,12 +25,10 @@ export const Contacts = ({ className }: ContactsProps) => {
   const { t } = useTranslation();
 
   return (
-    <StyledContacts
-      as="section"
-      className={`${className ? className : ""}`}
-    >
+    <Container className={`${s.contacts} ${className ? className : ""}`}>
       <AppTitle>{t("For any questions")}</AppTitle>
-      <StyledForm
+      <form
+        className={s.form}
         action="#"
         onSubmit={(e) => {
           e.preventDefault();
@@ -73,30 +71,7 @@ export const Contacts = ({ className }: ContactsProps) => {
         >
           {t("Submit")}
         </AppButton>
-      </StyledForm>
-    </StyledContacts>
+      </form>
+    </Container>
   );
 };
-
-const StyledContacts = styled(Container)`
-  padding: var(--section-indent-l) 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-`;
-const StyledForm = styled.form`
-  margin: 0 auto;
-  max-width: 50%;
-  width: 100%;
-  min-width: 330px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  .btn {
-    margin: 0 auto;
-  }
-  .field {
-    /* margin-bottom: 20px; */
-  }
-`;
