@@ -73,6 +73,7 @@ const PAGINATION = ["All", "React", "Vue", "Angular", "React Native"] as const;
 export const Projects = ({ className }: ProjectsProps) => {
   const [activeBtn, setActiveBtn] =
     useState<(typeof PAGINATION)[number]>("All");
+  const [slideNum, setSlideNum] = useState<number>(0);
   const { t } = useTranslation();
   return (
     <section className={`${s.section} ${className ? className : ""}`}>
@@ -87,30 +88,57 @@ export const Projects = ({ className }: ProjectsProps) => {
           </AppButton>
         ))}
       </div>
-      <ul className={s.list}>
-        {projects.filter((p: Project) =>
-          activeBtn === "All" ? p : p.stackList.join(",").includes(activeBtn)
-        ).length !== 0 ? (
-          projects
-            .filter((p: Project) =>
-              activeBtn === "All"
-                ? p
-                : p.stackList.join(",").includes(activeBtn)
-            )
-            .map((project, i) => {
-              return (
-                <ProjectsItem
-                  key={project.title + i}
-                  project={project}
-                />
-              );
-            })
-        ) : (
-          <div className={s.stub}>
-            <h3>{t("Projects using this technology in development")}</h3>
-          </div>
-        )}
-      </ul>
+      <div className={s.listWrapper}>
+        <ul className={s.list}>
+          {projects.filter((p: Project) =>
+            activeBtn === "All" ? p : p.stackList.join(",").includes(activeBtn)
+          ).length !== 0 ? (
+            projects
+              .filter((p: Project) =>
+                activeBtn === "All"
+                  ? p
+                  : p.stackList.join(",").includes(activeBtn)
+              )
+              .map((project, i) => {
+                return (
+                  <ProjectsItem
+                    className={`${s.projectItem} ${
+                      i === slideNum ? s.activeItem : ""
+                    }`}
+                    key={project.title + i}
+                    project={project}
+                  />
+                );
+              })
+          ) : (
+            <div className={s.stub}>
+              <h3>{t("Projects using this technology in development")}</h3>
+            </div>
+          )}
+        </ul>
+        <div className={s.sliderBtns}>
+          <AppButton
+            variant="outlined"
+            className={`${s.sliderBtn} ${slideNum === 0 && s.disable}`}
+            disabled={slideNum === 0}
+            onClick={() => slideNum !== 0 && setSlideNum(slideNum - 1)}
+          >
+            {"<"}
+          </AppButton>
+          <AppButton
+            variant="outlined"
+            className={`${s.sliderBtn} ${
+              slideNum === projects.length && s.disable
+            }`}
+            disabled={slideNum === projects.length}
+            onClick={() =>
+              slideNum !== projects.length && setSlideNum(slideNum + 1)
+            }
+          >
+            {">"}
+          </AppButton>
+        </div>
+      </div>
     </section>
   );
 };

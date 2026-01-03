@@ -42,7 +42,32 @@
 }
 
 @media (max-width: 768px) {
-  .list {
-    grid-template-columns: repeat(1, 1fr);
+  .listWrapper {
+    width: 100%;
+    overflow: hidden;
   }
+
+  .list {
+    display: flex;
+    justify-content: start;
+  }
+
+  .projectItem {
+    min-width: 100%;
+  }
+
+  .sliderBtns {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .disable {
+    opacity: var(--opacity-main);
+  }
+}
+
+@media (max-width: 576px) {
+  .list {}
+
 }

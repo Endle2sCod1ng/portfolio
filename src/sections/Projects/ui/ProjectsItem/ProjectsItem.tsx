@@ -5,13 +5,14 @@ import s from "./ProjectsItem.module.scss";
 
 interface ProjectsItemProps {
   project: Project;
+  className: string;
 }
 
-export const ProjectsItem = ({ project }: ProjectsItemProps) => {
+export const ProjectsItem = ({ project, className }: ProjectsItemProps) => {
   const { img, title, text, stackList, preview, code } = project;
   const { t } = useTranslation();
   return (
-    <li className={s.listItem}>
+    <li className={`${s.listItem} ${className ?? className}`}>
       <div className={s.imageContainer}>
         <img
           className={s.image}

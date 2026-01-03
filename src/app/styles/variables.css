@@ -76,5 +76,8 @@
   --font-3xl: var(--font-size-3xl) / var(--font-line) var(--font-family-main);
 
   /* Transition */
-  --transtion-delay: 0.3s
+  --transtion-delay: 0.3s;
+
+  /* Opacity */
+  --opacity-main: 0.5;
 }
