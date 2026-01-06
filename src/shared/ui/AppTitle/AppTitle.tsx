@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 type TagName = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
 interface AppTitleProps {
   children: string;
   tagName?: TagName;
@@ -33,7 +34,7 @@ export const StyledAppTitle = styled.div<{ $tagName: TagName }>`
         `;
       case "h2":
         return css`
-          color: var(--title-color);
+          /* color: var(--title-color); */
         `;
       default:
         return css``;

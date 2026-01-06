@@ -1,3 +1,4 @@
+import { ContactsPage } from "@/pages/ContactsPage";
 import { MainPage } from "@/pages/MainPage";
 import { ProjectsPage } from "@/pages/ProjectsPage";
 import type { ReactNode } from "react";
@@ -8,6 +9,6 @@ interface RouteType {
 export const routesConfig: RouteType[] = [
   { link: "/", element: <MainPage /> },
   { link: "/projects", element: <ProjectsPage /> },
-  { link: "/contacts", element: <MainPage /> },
+  { link: "/contacts", element: <ContactsPage /> },
   // { link: "/projects/:id", element: <ProjectsPage /> },
 ];

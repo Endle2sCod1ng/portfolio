@@ -35,6 +35,11 @@
   justify-content: center;
 }
 
+.sliderBtns {
+  opacity: 0;
+  pointer-events: none
+}
+
 @media (max-width: 1200px) {
   .list {
     grid-template-columns: repeat(2, 1fr);
@@ -60,6 +65,8 @@
     display: flex;
     justify-content: center;
     gap: 100px;
+    opacity: 1;
+    pointer-events: all;
   }
 
   .disable {
