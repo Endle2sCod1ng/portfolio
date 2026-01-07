@@ -1,9 +1,10 @@
 import { routesConfig } from "@/shared/config/routesCpnfig";
-import { AppLink } from "@/shared/ui/AppLink/AppLink";
+
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import s from "./Nav.module.scss";
 import { Burger } from "../Burger/Burger";
+import { AppNavLink } from "@/shared/ui/AppNavLink/AppNavLink";
 
 interface NavProps {
   className?: string;
@@ -35,12 +36,14 @@ export const Nav = ({ className }: NavProps) => {
             <li
               key={l.link}
               role="menuitem"
+              className={s.listItem}
             >
-              <AppLink
+              <AppNavLink
                 onClick={() => {
                   setIsOpen(false);
                 }}
                 to={l.link}
+                end
               >
                 {l.link === "/"
                   ? `${t("Home")}`
@@ -49,7 +52,7 @@ export const Nav = ({ className }: NavProps) => {
                         .slice(1)
                         .replace(l.link[1], l.link[1].toUpperCase())
                     )}`}
-              </AppLink>
+              </AppNavLink>
             </li>
           ))}
         </ul>

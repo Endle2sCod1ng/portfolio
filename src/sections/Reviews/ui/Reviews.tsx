@@ -84,7 +84,7 @@ const Pagination = styled.div`
     margin: 7px;
     background: var(--inverted-bg-color);
     &:nth-child(2) {
-      background: var(--acented-gradient-90);
+      background: var(--accented-gradient-90);
     }
     cursor: pointer;
   }

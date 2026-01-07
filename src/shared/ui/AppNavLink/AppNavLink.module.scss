@@ -1,5 +1,10 @@
-.appLink {
-  transition: color linear var(--transtion-delay);
+.appNavLink {
+  transition: all linear var(--transtion-delay);
+
+  &.isActive {
+    color: var(--accented-color);
+    cursor: default;
+  }
 
   &.clear.primary {
     &:hover {
@@ -8,8 +13,6 @@
   }
 
   &.clear.accented {
-
-
     background-image: var(--accented-gradient);
     color: transparent;
     background-clip: text;

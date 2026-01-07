@@ -1,9 +1,9 @@
 :root {
   /* Colors */
-  --acented-gradient: linear-gradient(90deg,
+  --accented-gradient: linear-gradient(90deg,
       rgba(19, 176, 245, 1) 3%,
       rgba(230.5625, 15.370828628540039, 170.3088836669922, 1) 100%);
-  --acented-gradient-90: linear-gradient(rgba(19, 176, 245, 1) 3%,
+  --accented-gradient-90: linear-gradient(rgba(19, 176, 245, 1) 3%,
       rgba(230.5625, 15.370828628540039, 170.3088836669922, 1) 100%);
 
   /* Z-index */
@@ -52,7 +52,12 @@
     sans-serif;
   --font-family-accented: "DMSans",
     sans-serif;
+
+
   --font-line: 1.6rem;
+
+  --font-size-2xs: 14px;
+  --font-2xs: var(--font-size-2xs) / var(--font-line) var(--font-family-main);
 
   --font-size-xs: 16px;
   --font-xs: var(--font-size-xs) / var(--font-line) var(--font-family-main);
@@ -63,17 +68,28 @@
   --font-size-m: 20px;
   --font-m: var(--font-size-m) / var(--font-line) var(--font-family-main);
 
-  --font-size-l: 28px;
+  --font-size-l: 24px;
   --font-l: var(--font-size-l) / var(--font-line) var(--font-family-main);
 
-  --font-size-xl: 32px;
+  --font-size-xl: 28px;
   --font-xl: var(--font-size-xl) / var(--font-line) var(--font-family-main);
 
-  --font-size-2xl: 48px;
+  --font-size-2xl: 32px;
   --font-2xl: var(--font-size-2xl) / var(--font-line) var(--font-family-main);
 
-  --font-size-3xl: 58px;
+  --font-size-3xl: 36px;
   --font-3xl: var(--font-size-3xl) / var(--font-line) var(--font-family-main);
+
+  --font-size-4xl: 42px;
+  --font-4xl: var(--font-size-4xl) / var(--font-line) var(--font-family-main);
+
+  --font-size-h2: 48px;
+  --font-h2: var(--font-size-h2) / var(--font-line) var(--font-family-main);
+
+  --font-size-h1: 58px;
+  --font-h1: var(--font-size-h1) / var(--font-line) var(--font-family-main);
+
+
 
   /* Transition */
   --transtion-delay: 0.3s;

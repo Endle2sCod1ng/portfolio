@@ -19,13 +19,12 @@ export const AppTextarea = ({
   onChangeValue,
   ...otherPoprs
 }: AppTextareaProps) => {
-
   const [value, setValue] = useState<string>(inputValue);
   const changeValue = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.currentTarget.value);
     onChangeValue(value);
   };
-  
+
   return (
     <FieldWrapper>
       <StyledAppTextarea
@@ -77,7 +76,7 @@ const StyledAppTextarea = styled.textarea`
   &:focus {
     color: var(--primary-color);
     background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-      var(--acented-gradient) border-box;
+      var(--accented-gradient) border-box;
     border: 2px solid transparent;
   }
 `;

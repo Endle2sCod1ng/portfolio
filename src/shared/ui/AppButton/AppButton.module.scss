@@ -29,10 +29,10 @@
 
       &.accentedGradient {
         color: transparent;
-        background-image: var(--acented-gradient);
+        background-image: var(--accented-gradient);
         background-clip: text;
 
-        border: 2px solid var(--acented-gradient);
+        border: 2px solid var(--accented-gradient);
 
         &:hover {}
       }
@@ -46,7 +46,7 @@
 
     //   &:hover {
     //     background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-    //       var(--acented-gradient) border-box;
+    //       var(--accented-gradient) border-box;
     //     border: 2px solid transparent;
     //     color: var(--primary-color);
     //   }

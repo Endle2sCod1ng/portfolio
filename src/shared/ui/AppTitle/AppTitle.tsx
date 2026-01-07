@@ -28,7 +28,7 @@ export const StyledAppTitle = styled.div<{ $tagName: TagName }>`
     switch (props.$tagName) {
       case "h1":
         return css`
-          background-image: var(--acented-gradient);
+          background-image: var(--accented-gradient);
           background-clip: text;
           color: transparent;
         `;

@@ -18,7 +18,6 @@ export const AppInput = ({
   onChangeValue,
   ...otherPoprs
 }: AppInputProps) => {
-
   const [value, setValue] = useState<string>(inputValue);
   const changeValue = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.currentTarget.value);
@@ -71,7 +70,7 @@ const StyledAppInput = styled.input`
 
   &:focus {
     background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-      var(--acented-gradient) border-box;
+      var(--accented-gradient) border-box;
     border: 2px solid transparent;
   }
 `;
