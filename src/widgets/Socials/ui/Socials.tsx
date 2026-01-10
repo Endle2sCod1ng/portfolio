@@ -9,9 +9,12 @@ const socials = [
   { svg: TelegrammSvg, link: "https://github.com/Endle2sCod1ng" },
 ];
 
-export const Socials = () => {
+interface SocialsProps {
+  className?: string;
+}
+export const Socials = ({ className }: SocialsProps) => {
   return (
-    <ul className={s.socials}>
+    <ul className={`${s.socials} ${className ? className : ""}`}>
       {socials.map((soc, i) => {
         return (
           <li key={i + soc.link}>

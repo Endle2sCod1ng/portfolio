@@ -1,6 +1,6 @@
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
-import styled from "styled-components";
+import s from "./Reviews.module.scss";
 
 import QuotesSvg from "@/shared/assets/img/reviews/quotes.svg?react";
 import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
@@ -18,9 +18,9 @@ interface ReviewsProps {
 export const Reviews = ({ className }: ReviewsProps) => {
   const { t } = useTranslation();
   return (
-    <StyledReviews className={`${className ? className : ""}`}>
+    <section className={`${s.section} ${className ? className : ""}`}>
       <AppTitle>{t("Reviews")}</AppTitle>
-      <Slider>
+      <div className={s.slider}>
         {/* {reviewsList.map((r) => {
           return (
             <Slide key={r.id}>
@@ -30,62 +30,22 @@ export const Reviews = ({ className }: ReviewsProps) => {
           );
         })} */}
         <QuotesSvg />
-        <Slide>
+        <div className={s.slide}>
           {
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nulla accusantium iure, nisi quos rerum dignissimos provident numquam magni cupiditate nostrum unde eos deleniti quisquam esse autem? Velit, consequuntur voluptatem!"
           }
-        </Slide>
-      </Slider>
+        </div>
+      </div>
       <div>
         <AppButton>{"<"}</AppButton>
         <AppButton>{">"}</AppButton>
       </div>
-      <Pagination>
+      <div className={s.pagination}>
         <span></span>
         <span></span>
         <span></span>
-      </Pagination>
+      </div>
       <AppLink to="/reviews">{t("Write a review")}</AppLink>
-    </StyledReviews>
+    </section>
   );
 };
-
-const StyledReviews = styled.section`
-  padding: var(--section-indent-l) 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-`;
-
-const Slider = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-`;
-
-const Slide = styled.div`
-  max-width: 600px;
-  width: 100%;
-  min-width: 320px;
-`;
-
-const Pagination = styled.div`
-  span {
-    display: inline-block;
-    content: "";
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: 7px;
-    background: var(--inverted-bg-color);
-    &:nth-child(2) {
-      background: var(--accented-gradient-90);
-    }
-    cursor: pointer;
-  }
-`;

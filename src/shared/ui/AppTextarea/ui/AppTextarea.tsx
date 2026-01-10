@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent, type TextareaHTMLAttributes } from "react";
-import styled from "styled-components";
 import { AppButton } from "../../AppButton/AppButton";
+import s from "./AppTextarea.module.scss";
 
 interface AppTextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   inputValue: string;
@@ -26,10 +26,10 @@ export const AppTextarea = ({
   };
 
   return (
-    <FieldWrapper>
-      <StyledAppTextarea
+    <div className={s.fieldWrapper}>
+      <textarea
         {...otherPoprs}
-        className={`${className ? className : ""}`}
+        className={`${s.textarea} ${className ? className : ""}`}
         name={name}
         id={id}
         placeholder={placeholder}
@@ -37,46 +37,16 @@ export const AppTextarea = ({
         onChange={changeValue}
       />
       {value && (
-        <FieldCleaner
+        <AppButton
+          className={s.fieldCleaner}
           onClick={() => {
             setValue("");
             onChangeValue("");
           }}
         >
           x
-        </FieldCleaner>
+        </AppButton>
       )}
-    </FieldWrapper>
+    </div>
   );
 };
-
-const FieldWrapper = styled.div`
-  position: relative;
-`;
-
-const FieldCleaner = styled(AppButton)`
-  position: absolute;
-  top: 5px;
-  right: 5px;
-`;
-
-const StyledAppTextarea = styled.textarea`
-  width: 100%;
-  outline: none;
-  resize: none;
-  border-radius: var(--border-radius-xs);
-  padding: 14px 35px 14px 19px;
-  min-height: 200px;
-
-  border: 2px solid var(--inverted-bg-color);
-  background: transparent;
-
-  color: inherit;
-
-  &:focus {
-    color: var(--primary-color);
-    background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-      var(--accented-gradient) border-box;
-    border: 2px solid transparent;
-  }
-`;

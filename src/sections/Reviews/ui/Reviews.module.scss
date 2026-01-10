@@ -1,0 +1,41 @@
+.section {
+ padding: var(--section-indent-l) 0;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ gap: 40px;
+}
+
+.slider {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ gap: 40px;
+}
+
+.slide {
+ max-width: 600px;
+ width: 100%;
+ min-width: 320px;
+}
+
+.pagination {
+ span {
+  display: inline-block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 7px;
+  background: var(--inverted-bg-color);
+
+  &:nth-child(2) {
+   background: var(--accented-gradient-90);
+  }
+
+  cursor: pointer;
+ }
+}

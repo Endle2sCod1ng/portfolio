@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent, type InputHTMLAttributes } from "react";
-import styled from "styled-components";
 import { AppButton } from "../AppButton/AppButton";
+import s from "./AppInput.module.scss";
 
 interface AppInputProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
@@ -25,52 +25,26 @@ export const AppInput = ({
   };
 
   return (
-    <FieldWrapper>
-      <StyledAppInput
+    <div className={s.fieldWrapper}>
+      <input
         {...otherPoprs}
         placeholder={placeholder}
         type={type}
         value={value}
         onChange={changeValue}
-        className={`${className ? className : ""}`}
+        className={`${s.input} ${className ? className : ""}`}
       />
       {value && (
-        <FieldCleaner
+        <AppButton
+          className={s.fieldCleaner}
           onClick={() => {
             setValue("");
             onChangeValue("");
           }}
         >
           x
-        </FieldCleaner>
+        </AppButton>
       )}
-    </FieldWrapper>
+    </div>
   );
 };
-const FieldWrapper = styled.div`
-  position: relative;
-`;
-
-const FieldCleaner = styled(AppButton)`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 5px;
-`;
-
-const StyledAppInput = styled.input`
-  width: 100%;
-  outline: none;
-
-  border-radius: var(--border-radius-xs);
-  padding: 14px 35px 14px 19px;
-  background: transparent;
-  border: 2px solid var(--inverted-bg-color);
-  color: inherit;
-
-  &:focus {
-    background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-      var(--accented-gradient) border-box;
-    border: 2px solid transparent;
-  }
-`;

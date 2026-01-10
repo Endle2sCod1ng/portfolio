@@ -1,43 +1,20 @@
-import styled, { css } from "styled-components";
+import s from "./AppTitle.module.scss";
 
 type TagName = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 interface AppTitleProps {
   children: string;
-  tagName?: TagName;
+  TagName?: TagName;
   className?: string;
 }
 export const AppTitle = ({
   children,
-  tagName = "h2",
+  TagName = "h2",
   className,
 }: AppTitleProps) => {
   return (
-    <StyledAppTitle
-      as={tagName}
-      $tagName={tagName}
-      className={`${className ? className : ""}`}
-    >
-      {children}
-    </StyledAppTitle>
+    <TagName className={`${s.appTitle} ${className ? className : ""}`}>{children}</TagName>
   );
 };
 
-export const StyledAppTitle = styled.div<{ $tagName: TagName }>`
-  ${(props) => {
-    switch (props.$tagName) {
-      case "h1":
-        return css`
-          background-image: var(--accented-gradient);
-          background-clip: text;
-          color: transparent;
-        `;
-      case "h2":
-        return css`
-          /* color: var(--title-color); */
-        `;
-      default:
-        return css``;
-    }
-  }}
-`;
+

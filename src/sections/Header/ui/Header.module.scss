@@ -22,8 +22,16 @@
   list-style-type: none;
 }
 
+
 @media (max-width:768px) {
   .content {
     flex-direction: row-reverse;
+    gap: 16px;
+  }
+}
+
+@media (max-width:576px) {
+  .socials {
+    display: none;
   }
 }

@@ -1,19 +1,13 @@
 import { Container } from "@/shared/ui/Container/Container";
-import styled from "styled-components";
+import s from "./NotFoundPage.module.scss";
 
 interface NotFoundPageProps {
   className?: string;
 }
 export const NotFoundPage = ({ className }: NotFoundPageProps) => {
   return (
-    <StyledNotFoundPage className={`${className ? className : ""}`}>
+    <Container className={`${s.container} ${className ? className : ""}`}>
       <h2>Page Not Found</h2>
-    </StyledNotFoundPage>
+    </Container>
   );
 };
-const StyledNotFoundPage = styled(Container)`
-  min-height: calc(100vh - var(--header-height));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;

@@ -16,7 +16,7 @@ export const Header = () => {
         <Logo />
         <div className={s.content}>
           <Nav />
-          <Socials />
+          <Socials className={s.socials}/>
           <ThemeSwitcher />
           <LanguageSwitcher />
         </div>

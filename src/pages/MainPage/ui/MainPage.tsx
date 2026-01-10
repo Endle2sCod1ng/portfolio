@@ -4,7 +4,6 @@ import { Projects } from "@/sections/Projects";
 import { Stack } from "@/sections/Stack";
 import { Contacts } from "@/sections/Contacts";
 import { Reviews } from "@/sections/Reviews";
-// import styled from "styled-components";
 
 export const MainPage = () => {
   return (
@@ -17,9 +16,3 @@ export const MainPage = () => {
     </Container>
   );
 };
-// const MainPageStyled = styled.div`
-//   width: 100%;
-//   max-width: var(--width-container-xl);
-//   min-width: var(--width-container-min);
-//   margin: 0 auto;
-// `;
