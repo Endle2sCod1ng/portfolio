@@ -7,10 +7,13 @@
   padding: 0 0 var(--section-subtitle-indent-l) 0;
 }
 
+.listWrapper {
+  width: 100%;
+}
+
 .list {
   display: grid;
   gap: 15px;
-  /* По умолчанию 3 колонки (для маленьких контейнеров) */
   grid-template-columns: repeat(6, 1fr);
 }
 
@@ -34,5 +37,19 @@
 @media (max-width: 576px) {
   .list {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .listWrapper {
+    overflow: hidden;
+  }
+
+  .list {
+    display: flex;
+  }
+
+  .listItem {
+    min-width: 100%;
   }
 }

@@ -1,0 +1,21 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  opacity: 0;
+  pointer-events: none
+}
+
+.disable {
+  opacity: var(--opacity-main);
+}
+
+.sliderBtn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+}
+
+.item {
+  padding: 5px;
+}

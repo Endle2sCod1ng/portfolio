@@ -13,8 +13,8 @@ export const AppTitle = ({
   className,
 }: AppTitleProps) => {
   return (
-    <TagName className={`${s.appTitle} ${className ? className : ""}`}>{children}</TagName>
+    <TagName className={`${s.appTitle} ${className ? className : ""}`}>
+      {children}
+    </TagName>
   );
 };
-
-

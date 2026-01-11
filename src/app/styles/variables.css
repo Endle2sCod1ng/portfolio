@@ -11,6 +11,10 @@
   --banner-img-background-z-index: 2;
   --projects-img-container-z-index: 0;
   --projects-img-z-index: 0;
+  --projects-link-z-index: -1;
+  --projects-link-hover-z-index: 2;
+  --projects-overlay-z-index: -2;
+  --projects-overlay-hover-z-index: 1;
   --header-z-index: 100;
   --header-z-index: 100;
   --burger-z-index: 100;

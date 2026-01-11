@@ -14,17 +14,14 @@ export const Banner = () => {
       <div className={s.textWrapper}>
         <AppTitle>{t("Hi")}</AppTitle>
         <AppTitle>{t("I'm Viacheslav")}</AppTitle>
-        <AppTitle tagName="h1">{t("Front-end Developer")}</AppTitle>
+        <AppTitle TagName="h1">{t("Front-end Developer")}</AppTitle>
       </div>
       <div className={s.imgWrapper}>
         <div className={`${s.imgBorder} `}>
           {Array(5)
             .fill("")
             .map((_, i) => {
-              return (
-                <div key={i}>
-                </div>
-              );
+              return <div key={i}></div>;
             })}
         </div>
 

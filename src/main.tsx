@@ -9,7 +9,7 @@ import "@/shared/config/i18n";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="portfolio">
       <ThemeProvider>
         <Suspense fallback="">
           <App />

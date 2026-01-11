@@ -14,17 +14,18 @@ import { AppSvg } from "@/shared/ui/AppSvg/AppSvg";
 
 import { useTranslation } from "react-i18next";
 import s from "./Stack.module.scss";
+import { Slider } from "@/features/Slider";
 
 interface StackProps {
   className?: string;
 }
 
 const svgList = [
-  HtmlSvg,
-  CssSvg,
-  JsSvg,
   ReactSvg,
   ReduxSvg,
+  JsSvg,
+  HtmlSvg,
+  CssSvg,
   BootstrapSvg,
   TailwindSvg,
   SassSvg,
@@ -41,23 +42,26 @@ export const Stack = ({ className }: StackProps) => {
       <h2 className={s.sectionTitle}>
         {t("Technologies I’ve been working with recently")}
       </h2>
-      <ul className={s.list}>
-        {svgList.map((svg, i) => (
-          <li
-            className={s.listItem}
-            key={i}
-          >
-            <AppSvg
-              Svg={svg}
-              viewBox={
-                svg === GithubSvg || svg === BootstrapSvg
-                  ? `0 0 88 88`
-                  : `0 0 120 120`
-              }
-            />
-          </li>
-        ))}
-      </ul>
+      <div className={s.listWrapper}>
+        <ul className={s.list}>
+          {svgList.map((svg, i) => (
+            <li
+              className={s.listItem}
+              key={i}
+            >
+              <AppSvg
+                Svg={svg}
+                viewBox={
+                  svg === GithubSvg || svg === BootstrapSvg
+                    ? `0 0 88 88`
+                    : `0 0 120 120`
+                }
+              />
+            </li>
+          ))}
+        </ul>
+        <Slider list={svgList} />
+      </div>
     </section>
   );
 };

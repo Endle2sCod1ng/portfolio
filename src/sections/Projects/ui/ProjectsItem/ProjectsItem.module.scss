@@ -13,6 +13,40 @@
   border-radius: 20px 20px 0 0;
   position: relative;
   z-index: var(--projects-img-container-z-index);
+
+  &::before {
+    transition: all linear var(--transtion-delay);
+    position: absolute;
+    z-index: var(--projects-overlay-z-index);
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--header-color)
+  }
+
+  &:hover .link {
+    z-index: var(--projects-link-hover-z-index);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &:hover & &:before {
+    z-index: var(--projects-overlay-hover-z-index);
+  }
+}
+
+.link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+
+  z-index: var(--projects-link-z-index);
+  opacity: 0;
+  pointer-events: none;
+  transition: all linear var(--transtion-delay);
 }
 
 .image {

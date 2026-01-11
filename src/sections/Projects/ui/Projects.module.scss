@@ -10,14 +10,31 @@
 
 .pagination {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
-  padding: 0 0 50px 0;
+  margin-bottom: 40px;
 }
 
 .paginationItem {
-  background-image: var(--accented-gradient);
-  background-clip: text;
-  color: transparent;
+  padding: 6px 10px;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+
+  &:hover {
+    transition: all linear var(--transtion-delay);
+    color: var(--accented-color)
+  }
+
+  ;
+
+  &.active {
+    background-image: var(--accented-gradient);
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 .list {
@@ -35,10 +52,6 @@
   justify-content: center;
 }
 
-.sliderBtns {
-  opacity: 0;
-  pointer-events: none
-}
 
 @media (max-width: 1200px) {
   .list {
@@ -61,17 +74,6 @@
     min-width: 100%;
   }
 
-  .sliderBtns {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  .disable {
-    opacity: var(--opacity-main);
-  }
 }
 
 @media (max-width: 576px) {

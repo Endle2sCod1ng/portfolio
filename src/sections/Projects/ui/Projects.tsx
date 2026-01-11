@@ -1,5 +1,10 @@
 import { ProjectsItem } from "./ProjectsItem/ProjectsItem";
 import s from "./Projects.module.scss";
+import AvaImg from "@/shared/assets/img/projects/avatar.png";
+import PortfolioImg from "@/shared/assets/img/projects/portfolio.png";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Slider } from "@/features/Slider";
 
 interface ProjectsProps {
   className?: string;
@@ -12,12 +17,7 @@ export interface Project {
   preview: string;
   code: string;
 }
-import AvaImg from "@/shared/assets/img/projects/avatar.png";
-import PortfolioImg from "@/shared/assets/img/projects/portfolio.png";
-import { AppButton } from "@/shared/ui/AppButton/AppButton";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-// import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
+
 const projects: Project[] = [
   {
     img: AvaImg,
@@ -73,21 +73,27 @@ const PAGINATION = ["All", "React", "Vue", "Angular", "React Native"] as const;
 export const Projects = ({ className }: ProjectsProps) => {
   const [activeBtn, setActiveBtn] =
     useState<(typeof PAGINATION)[number]>("All");
+
   const [slideNum, setSlideNum] = useState<number>(0);
+
   const { t } = useTranslation();
   return (
     <section className={`${s.section} ${className ? className : ""}`}>
       <h2 className={s.title}>{t("Things I’ve built so far")}</h2>
-      <div className={s.pagination}>
+      <ul className={s.pagination}>
         {PAGINATION.map((c, i) => (
-          <AppButton
-            key={c + i}
-            onClick={() => setActiveBtn(c)}
-          >
-            {t(`${c}`)}
-          </AppButton>
+          <li key={c + i}>
+            <button
+              onClick={() => setActiveBtn(c)}
+              className={`${s.paginationItem} ${
+                activeBtn === c ? s.active : ""
+              }`}
+            >
+              {t(`${c}`)}
+            </button>
+          </li>
         ))}
-      </div>
+      </ul>
       <div className={s.listWrapper}>
         <ul className={s.list}>
           {projects.filter((p: Project) =>
@@ -116,28 +122,7 @@ export const Projects = ({ className }: ProjectsProps) => {
             </div>
           )}
         </ul>
-        <div className={s.sliderBtns}>
-          <AppButton
-            variant="outlined"
-            className={`${s.sliderBtn} ${slideNum === 0 && s.disable}`}
-            disabled={slideNum === 0}
-            onClick={() => slideNum !== 0 && setSlideNum(slideNum - 1)}
-          >
-            {"<"}
-          </AppButton>
-          <AppButton
-            variant="outlined"
-            className={`${s.sliderBtn} ${
-              slideNum === projects.length && s.disable
-            }`}
-            disabled={slideNum === projects.length}
-            onClick={() =>
-              slideNum !== projects.length && setSlideNum(slideNum + 1)
-            }
-          >
-            {">"}
-          </AppButton>
-        </div>
+        <Slider list={projects} />
       </div>
     </section>
   );

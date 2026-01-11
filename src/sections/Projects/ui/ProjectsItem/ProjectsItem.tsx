@@ -2,6 +2,7 @@ import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import type { Project } from "../Projects";
 import { useTranslation } from "react-i18next";
 import s from "./ProjectsItem.module.scss";
+import { Link } from "react-router";
 
 interface ProjectsItemProps {
   project: Project;
@@ -13,13 +14,18 @@ export const ProjectsItem = ({ project, className }: ProjectsItemProps) => {
   const { t } = useTranslation();
   return (
     <li className={`${s.listItem} ${className ?? className}`}>
-      <div className={s.imageContainer}>
+      <div
+        className={s.imageContainer}
+      >
         <img
           className={s.image}
           src={img}
           alt={"image"}
         />
-        <AppLink to={preview}>
+        <AppLink
+          to={preview}
+          className={s.link}
+        >
           <span>{t("Live preview")}</span>
         </AppLink>
       </div>
