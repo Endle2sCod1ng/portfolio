@@ -14,7 +14,7 @@ import { AppSvg } from "@/shared/ui/AppSvg/AppSvg";
 
 import { useTranslation } from "react-i18next";
 import s from "./Stack.module.scss";
-import { Slider } from "@/features/Slider";
+import { Pagination } from "@/features/Pagination";
 
 interface StackProps {
   className?: string;
@@ -60,7 +60,7 @@ export const Stack = ({ className }: StackProps) => {
             </li>
           ))}
         </ul>
-        <Slider list={svgList} />
+        <Pagination list={svgList} />
       </div>
     </section>
   );

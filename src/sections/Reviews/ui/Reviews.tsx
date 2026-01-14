@@ -36,10 +36,6 @@ export const Reviews = ({ className }: ReviewsProps) => {
           }
         </div>
       </div>
-      <div>
-        <AppButton>{"<"}</AppButton>
-        <AppButton>{">"}</AppButton>
-      </div>
       <div className={s.pagination}>
         <span></span>
         <span></span>

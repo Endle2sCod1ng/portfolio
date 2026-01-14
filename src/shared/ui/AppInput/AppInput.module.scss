@@ -1,27 +1,28 @@
 .fieldWrapper {
- position: relative;
+  position: relative;
 }
 
 .input {
- width: 100%;
- outline: none;
+  font-family: var(--font-family-accented);
+  width: 100%;
+  outline: none;
 
- border-radius: var(--border-radius-xs);
- padding: 14px 35px 14px 19px;
- background: transparent;
- border: 2px solid var(--inverted-bg-color);
- color: inherit;
+  border-radius: var(--border-radius-xs);
+  padding: 14px 35px 14px 19px;
+  background: transparent;
+  border: 2px solid var(--inverted-bg-color);
+  color: inherit;
 
- &:focus {
-  background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-   var(--accented-gradient) border-box;
-  border: 2px solid transparent;
- }
+  &:focus {
+    background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+      var(--accented-gradient) border-box;
+    border: 2px solid transparent;
+  }
 }
 
 .fieldCleaner {
- position: absolute;
- top: 50%;
- transform: translateY(-50%);
- right: 5px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
 }

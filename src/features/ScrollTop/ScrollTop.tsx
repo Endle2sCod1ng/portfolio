@@ -6,12 +6,12 @@ export const ScrollTop = ({ className }: { className?: string }) => {
     <AppButton
       className={`${s.scrollTop} ${className ? className : ""}`}
       variant="outlined"
-      colorType="accentedGradient"
+      borderRadius="s"
       onClick={() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
     >
-      {">"}
+      {">>"}
     </AppButton>
   );
 };

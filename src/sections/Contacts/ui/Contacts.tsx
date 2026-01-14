@@ -65,7 +65,8 @@ export const Contacts = ({ className }: ContactsProps) => {
         />
         <AppButton
           className="btn"
-          variant="filled"
+          variant="outlined"
+          colorType="accented"
           onClick={sendContacts}
           type="submit"
         >

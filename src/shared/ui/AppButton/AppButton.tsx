@@ -2,13 +2,15 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 import s from "./AppButton.module.scss";
 
-type AppButtonVariant = "clear" | "filled" | "outlined";
-type AppButtonColorType = "primary" | "accentedGradient";
+type AppButtonVariant = "clear" | "outlined";
+type AppButtonColorType = "primary" | "accented";
+type BorderRadius = "xs" | "s" ;
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: AppButtonVariant;
   colorType?: AppButtonColorType;
+  borderRadius?: BorderRadius;
   className?: string;
 }
 
@@ -17,6 +19,7 @@ export const AppButton = ({
   type,
   variant = "clear",
   colorType = "primary",
+  borderRadius = "xs",
   className,
   ...otherProps
 }: AppButtonProps) => {
@@ -26,7 +29,7 @@ export const AppButton = ({
       type={type}
       className={`${s.appButton} ${s[variant]} ${s[colorType]} ${
         className ? className : ""
-      }`}
+      } ${s[borderRadius]}`}
     >
       {children}
     </button>

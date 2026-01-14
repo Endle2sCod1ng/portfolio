@@ -2,7 +2,7 @@
     color: inherit;
     padding: 8px 12px;
     transition: all linear var(--transtion-delay);
-
+    font-family: var(--font-family-accented);
     cursor: pointer;
 
     &.clear.primary {
@@ -15,7 +15,14 @@
     }
 
     &.outlined {
-      border-radius: var(--border-radius-s);
+      &.xs {
+        border-radius: var(--border-radius-xs);
+      }
+
+      &.s {
+        border-radius: var(--border-radius-s);
+      }
+
       background: transparent;
 
       &.primary {
@@ -27,28 +34,16 @@
         }
       }
 
-      &.accentedGradient {
-        color: transparent;
-        background-image: var(--accented-gradient);
-        background-clip: text;
+      &.accented {
+        border: 2px solid var(--accented-color);
+        color: var(--accented-color);
 
-        border: 2px solid var(--accented-gradient);
-
-        &:hover {}
+        &:hover {
+          background: var(--accented-color);
+          color: var(--primary-color);
+        }
       }
     }
 
-    // &.filled {
-    //   border-radius: var(--border-radius-s);
-    //   border: 2px solid transparent;
-    //   background: var(--accented-color);
-    //   color: white;
 
-    //   &:hover {
-    //     background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
-    //       var(--accented-gradient) border-box;
-    //     border: 2px solid transparent;
-    //     color: var(--primary-color);
-    //   }
-    // }
   }

@@ -1,5 +1,6 @@
 .appLink {
   transition: color linear var(--transtion-delay);
+  font-family: var(--font-family-accented);
 
   &.clear.primary {
     &:hover {

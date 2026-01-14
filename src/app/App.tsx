@@ -30,7 +30,7 @@ export function App() {
           />
         </Routes>
       </main>
-      {/* <Footer /> */}
+      <Footer />
       <ScrollTop />
     </div>
   );

@@ -1,7 +1,8 @@
 .appTitle {
-  h1 {
+  &:is(h1) {
     background-image: var(--accented-gradient);
     background-clip: text;
     color: transparent;
+    font-family: var(--font-family-accented);
   }
 }

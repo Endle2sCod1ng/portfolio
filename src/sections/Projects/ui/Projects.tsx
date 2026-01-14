@@ -4,7 +4,7 @@ import AvaImg from "@/shared/assets/img/projects/avatar.png";
 import PortfolioImg from "@/shared/assets/img/projects/portfolio.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Slider } from "@/features/Slider";
+import { Pagination } from "@/features/Pagination";
 
 interface ProjectsProps {
   className?: string;
@@ -122,7 +122,7 @@ export const Projects = ({ className }: ProjectsProps) => {
             </div>
           )}
         </ul>
-        <Slider list={projects} />
+        <Pagination list={projects} />
       </div>
     </section>
   );
