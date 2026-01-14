@@ -3,7 +3,7 @@ import type { FC, SVGProps } from "react";
 import s from "./AppSvg.module.scss";
 type AppSvgVariant = "clear" | "filled";
 
-type Size = "120" | "88" | "30" | "35" | "18";
+type Size = "120" | "88" | "35" | "21";
 interface AppSvgProps extends SVGProps<SVGSVGElement> {
   Svg: FC<SVGProps<SVGSVGElement>>;
   size?: Size;
@@ -26,7 +26,7 @@ export const AppSvg = ({
       width={size}
       height={size}
       viewBox={viewBox}
-      className={`${s.appSvg} ${s[varinat]} ${
+      className={`${s.appSvg} ${s[varinat]} ${size === "21" ? s.size_21 : ""} ${
         className ?? className
       }`}
     />

@@ -1,16 +1,27 @@
 .appSvg {
   fill: var(--inverted-bg-color);
   transition: all linear var(--transtion-delay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover,
   .link {
     fill: var(--accented-color);
   }
 
-  // .filled {
-  //   size: 30px;
-  //   width: 30px;
-  //   background: var(--inverted-bg-color);
-  //   fill: var(--bg-color)
-  // }
+  &.size_21 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    fill: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: var(--accented-color);
+    }
+  }
 }

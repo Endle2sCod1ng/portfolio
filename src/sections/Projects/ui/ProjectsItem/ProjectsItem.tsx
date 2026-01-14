@@ -2,7 +2,6 @@ import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import type { Project } from "../Projects";
 import { useTranslation } from "react-i18next";
 import s from "./ProjectsItem.module.scss";
-import { Link } from "react-router";
 
 interface ProjectsItemProps {
   project: Project;
