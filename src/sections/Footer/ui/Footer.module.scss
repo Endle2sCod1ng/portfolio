@@ -10,4 +10,17 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+  .email {
+    text-align: center;
+    color: transparent;
+    background-clip: text;
+    background-image: var(--accented-gradient)
+  }
+
+  .cp {
+    text-align: center;
+  }
 }
+
+@media(max-width:576px) {}

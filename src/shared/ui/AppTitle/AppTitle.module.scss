@@ -1,8 +1,55 @@
 .appTitle {
   &:is(h1) {
+    font: var(--font-h1);
     background-image: var(--accented-gradient);
     background-clip: text;
     color: transparent;
-    font-family: var(--font-family-accented);
+  }
+
+  &:is(h2) {
+    font: var(--font-5xl)
+  }
+
+  &:is(h3) {
+    font: var(--font-3xl)
+  }
+
+  &:is(h4) {
+    font: var(--font-xl)
+  }
+
+  &:is(h5) {
+    font: var(--font-m)
+  }
+
+  &:is(h6) {
+    font: var(--font-s)
+  }
+}
+
+@media (max-width:1400px) {
+  .appTitle {
+    &:is(h1) {
+      font: var(--font-5xl)
+    }
+  }
+}
+@media (max-width:1200px) {
+  .appTitle {
+    &:is(h1) {
+      font: var(--font-4xl)
+    }
+  }
+}
+
+@media (max-width:400px) {
+  .appTitle {
+    &:is(h1) {
+      font: var(--font-5xl)
+    }
+
+    &:is(h5) {
+      font: var(--font-s)
+    }
   }
 }

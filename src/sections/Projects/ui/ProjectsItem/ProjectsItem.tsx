@@ -2,6 +2,7 @@ import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import type { Project } from "../Projects";
 import { useTranslation } from "react-i18next";
 import s from "./ProjectsItem.module.scss";
+import { AppText } from "@/shared/ui/AppText/AppText";
 
 interface ProjectsItemProps {
   project: Project;
@@ -13,9 +14,7 @@ export const ProjectsItem = ({ project, className }: ProjectsItemProps) => {
   const { t } = useTranslation();
   return (
     <li className={`${s.listItem} ${className ?? className}`}>
-      <div
-        className={s.imageContainer}
-      >
+      <div className={s.imageContainer}>
         <img
           className={s.image}
           src={img}
@@ -31,7 +30,10 @@ export const ProjectsItem = ({ project, className }: ProjectsItemProps) => {
 
       <div className={s.content}>
         <h4 className={s.title}>{title}</h4>
-        <div className={s.text}>{text}</div>
+        <AppText
+          text={text}
+          className={s.text}
+        />
         <div className={s.stack}>
           <span>{"Tech stack: "}</span>
           {stackList.map((s, i) => {

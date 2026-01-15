@@ -5,7 +5,7 @@ interface AppTextProps {
   Tag?: "div" | "span" | "p";
   className?: string;
 }
-export const AppText = ({ text, Tag = "div", className }: AppTextProps) => {
+export const AppText = ({ text, Tag = "span", className }: AppTextProps) => {
   return (
     <Tag className={`${s.appText} ${className ? className : ""}`}>{text}</Tag>
   );

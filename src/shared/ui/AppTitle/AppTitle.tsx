@@ -9,7 +9,7 @@ interface AppTitleProps {
 }
 export const AppTitle = ({
   children,
-  TagName = "h2",
+  TagName = "h3",
   className,
 }: AppTitleProps) => {
   return (

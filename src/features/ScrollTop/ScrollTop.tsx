@@ -11,7 +11,7 @@ export const ScrollTop = ({ className }: { className?: string }) => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
     >
-      {">>"}
+      {">"}
     </AppButton>
   );
 };

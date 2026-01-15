@@ -51,3 +51,7 @@ body,
 body.isOpen {
   overflow: hidden;
 }
+
+body {
+  outline: 1px solid red;
+}

@@ -3,5 +3,10 @@
   margin: 0 auto;
   max-width: var(--width-container-xl);
   width: 100%;
-  min-width: var(--width-container-min);
+}
+
+@media (max-width:576px) {
+  .container {
+    padding: 0 15px;
+  }
 }

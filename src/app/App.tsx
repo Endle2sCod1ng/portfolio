@@ -1,10 +1,10 @@
 import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
 import { Route, Routes, useLocation } from "react-router";
-import { routesConfig } from "@/shared/config/routesCpnfig";
-import { NotFoundPage } from "@/pages/NotFoundPage";
 import { ScrollTop } from "@/features/ScrollTop/ScrollTop";
 import { useEffect } from "react";
+import { NotFoundPage } from "@/pages/NotFoundPage";
+import { routesConfig } from "@/shared/config/routesCpnfig";
 
 export function App() {
   const { pathname } = useLocation();

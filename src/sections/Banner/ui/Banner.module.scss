@@ -29,15 +29,12 @@
     bottom: 0;
     z-index: var(--banner-img-border-z-index);
 
-
-
     &>div {
       @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
           transform: rotateZ($i * -15deg);
         }
       }
-
       position: absolute;
       width: 100%;
       height: 100%;

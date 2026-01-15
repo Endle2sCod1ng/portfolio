@@ -73,6 +73,7 @@ export const Contacts = ({ className }: ContactsProps) => {
           {t("Submit")}
         </AppButton>
       </form>
+   
     </Container>
   );
 };
