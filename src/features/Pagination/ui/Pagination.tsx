@@ -1,7 +1,8 @@
+import type { Project } from "@/sections/Projects/ui/Projects";
 import s from "./Pagination.module.scss";
-import { useState } from "react";
+import { useState, type FunctionComponent, type ReactNode } from "react";
 interface PaginationProps {
-  list: any;
+  list: ReactNode[] | FunctionComponent[] | Project[];
   className?: string;
 }
 export const Pagination = ({ list, className }: PaginationProps) => {
@@ -17,7 +18,9 @@ export const Pagination = ({ list, className }: PaginationProps) => {
       </button>
       <ul>
         <li className={s.item}>
-          {list.map((l, i) => {
+          {list.map((l, i: number) => {
+            console.log(l);
+
             return (
               <button
                 key={i}
@@ -32,7 +35,9 @@ export const Pagination = ({ list, className }: PaginationProps) => {
       <button
         className={`${s.paginationBtn} ${paginationNum === list.length && s.disable}`}
         disabled={paginationNum === list.length}
-        onClick={() => paginationNum !== list.length && setSlideNum(paginationNum + 1)}
+        onClick={() =>
+          paginationNum !== list.length && setSlideNum(paginationNum + 1)
+        }
       >
         {">"}
       </button>

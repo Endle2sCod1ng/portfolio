@@ -8,8 +8,8 @@ import s from "./Socials.module.scss";
 import { AppSvg } from "@/shared/ui/AppSvg/AppSvg";
 const socials = [
   { svg: GhSvg, link: "https://github.com/Endle2sCod1ng" },
-  { svg: TgSvg, link: "https://github.com/Endle2sCod1ng" },
-  { svg: VkSvg, link: "https://github.com/Endle2sCod1ng" },
+  { svg: TgSvg, link: "https://t.me/EndlessCoding" },
+  { svg: VkSvg, link: "https://vk.com/id949021058" },
   // { svg: InSvg, link: "https://github.com/Endle2sCod1ng" },
 ];
 
@@ -24,18 +24,25 @@ export const Socials = ({ className }: SocialsProps) => {
           soc.svg === GhSvg || soc.svg === InSvg
             ? "0 -2 35 35"
             : soc.svg === TgSvg
-            ? "1.4 -0.5 21 21"
-            : "0 0 21 21";
+              ? "1.4 -0.5 21 21"
+              : "0 0 21 21";
         const size = soc.svg === GhSvg || soc.svg === InSvg ? "35" : "21";
+        const className = soc.svg === GhSvg ? s.svg : s.bg;
 
         return (
-          <li key={i + soc.link}>
-            <AppLink to={soc.link}>
+          <li
+            key={i + soc.link}
+            className={s.socItem}
+          >
+            <AppLink
+              to={soc.link}
+              target="_blank"
+            >
               <AppSvg
                 Svg={soc.svg}
                 viewBox={viewBox}
                 size={size}
-                className="link"
+                className={`${className}`}
               />
             </AppLink>
           </li>

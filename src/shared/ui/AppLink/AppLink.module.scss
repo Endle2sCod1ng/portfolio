@@ -2,15 +2,15 @@
   transition: color linear var(--transtion-delay);
   font-family: var(--font-family-accented);
 
+
   &.clear.primary {
     &:hover {
       color: var(--accented-color);
+    
     }
   }
 
   &.clear.accented {
-
-
     background-image: var(--accented-gradient);
     color: transparent;
     background-clip: text;

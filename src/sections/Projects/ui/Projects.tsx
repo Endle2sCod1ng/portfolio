@@ -74,7 +74,8 @@ export const Projects = ({ className }: ProjectsProps) => {
   const [activeBtn, setActiveBtn] =
     useState<(typeof PAGINATION)[number]>("All");
 
-  const [slideNum, setSlideNum] = useState<number>(0);
+  // const [slideNum, setSlideNum] = useState<number>(0);
+  const [slideNum, ] = useState<number>(0);
 
   const { t } = useTranslation();
   return (

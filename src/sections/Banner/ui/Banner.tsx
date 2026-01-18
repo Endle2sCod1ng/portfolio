@@ -17,7 +17,7 @@ export const Banner = () => {
         <AppTitle TagName="h1">{t("Front-end Developer")}</AppTitle>
       </div>
       <div className={s.imgWrapper}>
-        <div className={`${s.imgBorder} `}>
+        <div className={`${s.imgRotateBorders} `}>
           {Array(5)
             .fill("")
             .map((_, i) => {
@@ -25,7 +25,7 @@ export const Banner = () => {
             })}
         </div>
 
-        <div className={s.imgBackground}>
+        <div className={s.imgBackgroundBorder}>
           <div>
             <img
               className={s.img}

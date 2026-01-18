@@ -1,4 +1,4 @@
-import { AppButton } from "@/shared/ui/AppButton/AppButton";
+
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import s from "./Reviews.module.scss";
 

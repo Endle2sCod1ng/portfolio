@@ -5,10 +5,9 @@
   align-items: center;
   justify-content: center;
 
-  &:hover,
-  .link {
-    fill: var(--accented-color);
-  }
+  // &:hover {
+  //   fill: var(--accented-color);
+  // }
 
   &.size_21 {
     width: 30px;
@@ -20,8 +19,8 @@
     justify-content: center;
     align-items: center;
 
-    &:hover {
-      background-color: var(--accented-color);
-    }
+    // &:hover {
+    //   background-color: var(--accented-color);
+    // }
   }
 }

@@ -9,7 +9,7 @@ import "@/shared/config/i18n";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename="portfolio">
+    <BrowserRouter basename="/portfolio">
       <ThemeProvider>
         <Suspense fallback="">
           <App />
@@ -18,3 +18,6 @@ createRoot(document.getElementById("root")!).render(
     </BrowserRouter>
   </StrictMode>
 );
+// Rm consoler.log() in projects
+// Rm iutline body index.css
+// NOt workong i18n in gh-pages

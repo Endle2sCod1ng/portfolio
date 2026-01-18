@@ -8,4 +8,20 @@
   li {
     padding: 6px 10px;
   }
+
+  .socItem {
+    a {
+      .svg {
+        &:hover {
+          fill: var(--accented-color);
+        }
+      }
+
+      .bg {
+        &:hover {
+          background: var(--accented-color);
+        }
+      }
+    }
+  }
 }
