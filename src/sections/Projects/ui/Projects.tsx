@@ -5,6 +5,7 @@ import PortfolioImg from "@/shared/assets/img/projects/portfolio.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Pagination } from "@/features/Pagination";
+import { Container } from "@/shared/ui/Container/Container";
 
 interface ProjectsProps {
   className?: string;
@@ -75,11 +76,14 @@ export const Projects = ({ className }: ProjectsProps) => {
     useState<(typeof PAGINATION)[number]>("All");
 
   // const [slideNum, setSlideNum] = useState<number>(0);
-  const [slideNum, ] = useState<number>(0);
+  const [slideNum] = useState<number>(0);
 
   const { t } = useTranslation();
   return (
-    <section className={`${s.section} ${className ? className : ""}`}>
+    <Container
+      indent
+      className={`${s.section} ${className ? className : ""}`}
+    >
       <h2 className={s.title}>{t("Things I’ve built so far")}</h2>
       <ul className={s.pagination}>
         {PAGINATION.map((c, i) => (
@@ -98,13 +102,13 @@ export const Projects = ({ className }: ProjectsProps) => {
       <div className={s.listWrapper}>
         <ul className={s.list}>
           {projects.filter((p: Project) =>
-            activeBtn === "All" ? p : p.stackList.join(",").includes(activeBtn)
+            activeBtn === "All" ? p : p.stackList.join(",").includes(activeBtn),
           ).length !== 0 ? (
             projects
               .filter((p: Project) =>
                 activeBtn === "All"
                   ? p
-                  : p.stackList.join(",").includes(activeBtn)
+                  : p.stackList.join(",").includes(activeBtn),
               )
               .map((project, i) => {
                 return (
@@ -125,6 +129,6 @@ export const Projects = ({ className }: ProjectsProps) => {
         </ul>
         <Pagination list={projects} />
       </div>
-    </section>
+    </Container>
   );
 };

@@ -11,16 +11,17 @@ import s from "./Header.module.scss";
 
 export const Header = () => {
   return (
-    <header className={s.header}>
-      <Container className={s.container}>
-        <Logo />
-        <div className={s.content}>
-          <Nav />
-          <Socials className={s.socials} />
-          <ThemeSwitcher />
-          <LanguageSwitcher />
-        </div>
-      </Container>
-    </header>
+    <Container
+      TagName="header"
+      className={`${s.header}`}
+    >
+      <Logo />
+      <div className={s.content}>
+        <Nav />
+        <Socials className={s.socials} />
+        <ThemeSwitcher />
+        <LanguageSwitcher />
+      </div>
+    </Container>
   );
 };

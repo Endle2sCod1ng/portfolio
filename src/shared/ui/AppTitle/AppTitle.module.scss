@@ -22,9 +22,6 @@
     font: var(--font-m)
   }
 
-  &:is(h6) {
-    font: var(--font-s)
-  }
 }
 
 @media (max-width:1400px) {
@@ -34,10 +31,27 @@
     }
   }
 }
+
 @media (max-width:1200px) {
   .appTitle {
     &:is(h1) {
       font: var(--font-4xl)
+    }
+  }
+}
+
+@media (max-width:991px) {
+  .appTitle {
+    &:is(h2) {
+      font: var(--font-4xl)
+    }
+
+    &:is(h3) {
+      font: var(--font-2xl)
+    }
+
+    &:is(h4) {
+      font: var(--font-l)
     }
   }
 }

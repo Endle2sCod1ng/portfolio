@@ -1,12 +1,32 @@
+.containerWrapper {
+  width: 100%;
+}
+
 .container {
   padding: 0 20px;
   margin: 0 auto;
   max-width: var(--width-container-xl);
   width: 100%;
+  // outline: 1px solid green;
+
+  &.indent {
+    padding: var(--section-indent-l) 20px;
+  }
+}
+
+@media (max-width:768px) {
+  .container {
+    .indent {
+      padding: var(--section-indent-m) 20px;
+    }
+  }
 }
 
 @media (max-width:576px) {
   .container {
     padding: 0 15px;
+    .indent {
+      padding: var(--section-indent-m) 15px;
+    }
   }
 }

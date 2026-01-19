@@ -1,5 +1,4 @@
 .section {
-  padding: var(--section-indent-l) 0;
   text-align: center;
 }
 
@@ -20,36 +19,51 @@
 
 .listItem {
   padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .list {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .list {
-    grid-template-columns: repeat(3, 1fr);
+  // .list {
+  //   grid-template-columns: repeat(3, 1fr);
+  // }
+
+  .svg {
+    width: 66px;
+    height: 66px;
   }
 }
 
 @media (max-width: 576px) {
-  .list {
-    grid-template-columns: repeat(2, 1fr);
+
+  .svg {
+    width: 55px;
+    height: 55px;
   }
+
+  // .list {
+  //   grid-template-columns: repeat(2, 1fr);
+  // }
+
 }
 
 @media (max-width: 400px) {
-  .listWrapper {
-    overflow: hidden;
-  }
+  // .listWrapper {
+  //   overflow: hidden;
+  // }
 
-  .list {
-    display: flex;
-  }
+  // .list {
+  //   display: flex;
+  // }
 
-  .listItem {
-    min-width: 100%;
-  }
+  // .listItem {
+  //   min-width: 100%;
+  // }
 }

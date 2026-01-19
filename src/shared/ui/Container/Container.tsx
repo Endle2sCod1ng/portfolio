@@ -3,13 +3,23 @@ import s from "./Container.module.scss";
 
 interface ContainerProps {
   children: ReactNode;
-  as?: "section" | "div" | "header";
+  TagName?: "section" | "header" | "footer";
+  indent?: boolean;
   className?: string;
 }
-export const Container = ({ children, className }: ContainerProps) => {
+export const Container = ({
+  children,
+  TagName = "section",
+  // indent = false,
+  className,
+}: ContainerProps) => {
   return (
-    <div className={`${s.container} ${className ? className : ""}`}>
-      {children}
-    </div>
+    <TagName className={`${s.containerWrapper}`}>
+      <div
+        className={`${s.container} ${s.indent} ${className ? className : ""}`}
+      >
+        {children}
+      </div>
+    </TagName>
   );
 };

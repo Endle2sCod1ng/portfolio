@@ -1,5 +1,4 @@
 .contacts {
-  padding: var(--section-indent-l) 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,10 +17,7 @@
     margin: 0 auto;
   }
 
-  .field {
-    /* margin-bottom: 20px; */
-  }
+  // .field {
+  //   margin-bottom: 20px; 
+  // }
 }
-
-
-

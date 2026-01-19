@@ -6,14 +6,10 @@
   left: 0;
   right: 0;
   z-index: var(--header-z-index);
-}
-
-.container {
-  height: var(--header-height);
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: var(--header-height);
 }
 
 .content {

@@ -9,11 +9,10 @@ export const Banner = () => {
   return (
     <Container
       className={s.banner}
-      as="section"
     >
       <div className={s.textWrapper}>
-        <AppTitle>{t("Hi")}</AppTitle>
-        <AppTitle>{t("I'm Viacheslav")}</AppTitle>
+        <AppTitle TagName="h2">{t("Hi")}</AppTitle>
+        <AppTitle TagName="h2">{t("I'm Viacheslav")}</AppTitle>
         <AppTitle TagName="h1">{t("Front-end Developer")}</AppTitle>
       </div>
       <div className={s.imgWrapper}>

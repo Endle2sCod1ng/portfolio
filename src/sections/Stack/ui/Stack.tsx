@@ -16,6 +16,7 @@ import { useTranslation } from "react-i18next";
 import s from "./Stack.module.scss";
 import { Pagination } from "@/features/Pagination";
 import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
+import { Container } from "@/shared/ui/Container/Container";
 
 interface StackProps {
   className?: string;
@@ -39,7 +40,10 @@ const svgList = [
 export const Stack = ({ className }: StackProps) => {
   const { t } = useTranslation();
   return (
-    <section className={`${s.section} ${className ?? ""}`}>
+    <Container
+      indent={true}
+      className={`${s.section} ${className ?? ""}`}
+    >
       <AppTitle className={s.sectionTitle}>
         {t("Technologies I’ve been working with recently")}
       </AppTitle>
@@ -51,6 +55,7 @@ export const Stack = ({ className }: StackProps) => {
               key={i}
             >
               <AppSvg
+                className={s.svg}
                 Svg={svg}
                 viewBox={
                   svg === GithubSvg || svg === BootstrapSvg
@@ -63,6 +68,6 @@ export const Stack = ({ className }: StackProps) => {
         </ul>
         <Pagination list={svgList} />
       </div>
-    </section>
+    </Container>
   );
 };

@@ -1,15 +1,16 @@
 .footer {
-  margin: 0 auto;
-  padding: 0 20px;
   max-width: var(--width-container-xl);
   width: 100%;
   min-width: var(--width-container-min);
+
   min-height: var(--footer-height);
+  height: fit-content;
 
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  gap: 12px;
 
   .email {
     text-align: center;

@@ -26,7 +26,10 @@
   --footer-height: 200px;
 
 
-  --section-indent-l: 100px;
+  --section-indent-l: 60px;
+  --section-indent-m: 50px;
+  --section-indent-s: 40px;
+
   --section-title-indent-l: 50px;
   --section-subtitle-indent-l: 100px;
 
@@ -38,7 +41,7 @@
   --border-radius-xs: 8px;
 
   --width-container-xl: 1200px;
-  --width-container-l: 992px;
+  --width-container-l: 991px;
   --width-container-m: 768px;
   --width-container-s: 576px;
 
@@ -46,7 +49,7 @@
   --media-1600px: 1600px;
   --media-1400px: 1400px;
   --media-1200px: 1200px;
-  --media-992px: 992px;
+  --media-991px: 991px;
   --media-768px: 768px;
   --media-576px: 576px;
   --media-400px: 400px;

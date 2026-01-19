@@ -4,11 +4,15 @@ import s from "./Footer.module.scss";
 import { AppText } from "@/shared/ui/AppText/AppText";
 import { useTranslation } from "react-i18next";
 import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
+import { Container } from "@/shared/ui/Container/Container";
 
 export const Footer = () => {
   const { t } = useTranslation();
   return (
-    <footer className={s.footer}>
+    <Container
+      TagName="footer"
+      className={s.footer}
+    >
       <Socials />
       <AppTitle
         TagName="h5"
@@ -19,9 +23,9 @@ export const Footer = () => {
       <AppText
         className={s.cp}
         text={`© ${new Date().getFullYear()} ${t(`Viacheslav`)}, ${t(
-          `All Rights Reserved`
+          `All Rights Reserved`,
         )}.`}
       />
-    </footer>
+    </Container>
   );
 };

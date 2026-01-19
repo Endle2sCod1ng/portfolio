@@ -1,10 +1,10 @@
-
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import s from "./Reviews.module.scss";
 
 import QuotesSvg from "@/shared/assets/img/reviews/quotes.svg?react";
 import { AppTitle } from "@/shared/ui/AppTitle/AppTitle";
 import { useTranslation } from "react-i18next";
+import { Container } from "@/shared/ui/Container/Container";
 
 interface ReviewsProps {
   className?: string;
@@ -18,7 +18,7 @@ interface ReviewsProps {
 export const Reviews = ({ className }: ReviewsProps) => {
   const { t } = useTranslation();
   return (
-    <section className={`${s.section} ${className ? className : ""}`}>
+    <Container className={`${s.section} ${className ? className : ""}`}>
       <AppTitle>{t("Reviews")}</AppTitle>
       <div className={s.slider}>
         {/* {reviewsList.map((r) => {
@@ -42,6 +42,6 @@ export const Reviews = ({ className }: ReviewsProps) => {
         <span></span>
       </div>
       <AppLink to="/reviews">{t("Write a review")}</AppLink>
-    </section>
+    </Container>
   );
 };

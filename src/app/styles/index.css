@@ -48,6 +48,17 @@ body,
   padding-top: var(--header-height);
 }
 
+/* section {
+  padding: var(--section-indent-l) 0;
+}
+
+@media (max-width:768px) {
+  section {
+    padding: var(--section-indent-m) 0;
+
+  }
+} */
+
 body.isOpen {
   overflow: hidden;
 }
