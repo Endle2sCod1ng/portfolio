@@ -3,6 +3,8 @@ import type { Project } from "../Projects";
 import { useTranslation } from "react-i18next";
 import s from "./ProjectsItem.module.scss";
 import { AppText } from "@/shared/ui/AppText/AppText";
+// import { AppSvg } from "@/shared/ui/AppSvg/AppSvg";
+// import GhSvg from "@/shared/assets/img/socials/gh.svg?react";
 
 interface ProjectsItemProps {
   project: Project;
@@ -22,9 +24,10 @@ export const ProjectsItem = ({ project, className }: ProjectsItemProps) => {
         />
         <AppLink
           to={preview}
-          className={s.link}
+          className={s.imgLink}
+          target="_blank"
         >
-          <span>{t("Live preview")}</span>
+          {t("Live preview")}
         </AppLink>
       </div>
 
@@ -36,16 +39,38 @@ export const ProjectsItem = ({ project, className }: ProjectsItemProps) => {
         />
         <div className={s.stack}>
           <span>{"Tech stack: "}</span>
-          {stackList.map((s, i) => {
-            return <span key={s + i}>{s}</span>;
+          {stackList.map((sItem, i) => {
+            return (
+              <span
+                className={s.stackItem}
+                key={sItem + i}
+              >
+                {sItem}
+                {", "}
+              </span>
+            );
           })}
         </div>
       </div>
       <div className={s.linkWrapper}>
-        <AppLink to={preview}>
+        <AppLink
+          className={s.decorated}
+          to={preview}
+          target="_blank"
+        >
           <span>{t("Live preview")}</span>
         </AppLink>
-        <AppLink to={code}>
+        <AppLink
+          target="_blank"
+          to={code}
+          className={s.decorated}
+        >
+          {/* <AppSvg
+            Svg={GhSvg}
+            viewBox="0 0 120 120"
+            width={"21"}
+            height={"21"}
+          /> */}
           <span>{t("View code")}</span>
         </AppLink>
       </div>

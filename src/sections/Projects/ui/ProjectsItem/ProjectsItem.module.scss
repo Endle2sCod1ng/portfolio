@@ -27,7 +27,7 @@
     background: var(--header-color)
   }
 
-  &:hover .link {
+  &:hover .imgLink {
     z-index: var(--projects-link-hover-z-index);
     opacity: 1;
     pointer-events: all;
@@ -40,7 +40,7 @@
   }
 }
 
-.link {
+.imgLink {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -66,20 +66,32 @@
 }
 
 .content {
-  padding: 16px 30px 44px;
+  padding: 16px 30px 120px;
 }
 
 .title {
   margin-bottom: 16px;
+  font-weight: 600;
+  
 }
 
 .text {
   margin-bottom: 12px;
+  font-weight: 300;
 
 }
 
 .stack {
-  margin-bottom: 20px;
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 60px;
+}
+
+.stackItem {
+  color: var(--not-accented-color);
+  font-weight: 300;
+  font: var(--font-xs);
 }
 
 .linkWrapper {
@@ -90,4 +102,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.decorated {
+  color: var(--link-color);
+  text-decoration: underline;
 }

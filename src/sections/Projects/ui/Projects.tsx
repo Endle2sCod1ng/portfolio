@@ -2,6 +2,7 @@ import { ProjectsItem } from "./ProjectsItem/ProjectsItem";
 import s from "./Projects.module.scss";
 import AvaImg from "@/shared/assets/img/projects/avatar.png";
 import PortfolioImg from "@/shared/assets/img/projects/portfolio.png";
+import TodolistImg from "@/shared/assets/img/projects/todolist.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Pagination } from "@/features/Pagination";
@@ -21,7 +22,7 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    img: AvaImg,
+    img: TodolistImg,
     title: "Todolist",
     text: "This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content This is my portfolio project,sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
     stackList: ["HTML", " JavaScript", "SASS", "React"],

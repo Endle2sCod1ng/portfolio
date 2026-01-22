@@ -55,7 +55,9 @@
   --media-400px: 400px;
   --media-360px: 360px;
 
-
+  /* Letter Spasing */
+  --letter-spacing-main: 1px;
+  --letter-spacing-title: 2px;
   /* Fonts */
   --font-family-main: "Poppins",
     sans-serif;

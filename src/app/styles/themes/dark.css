@@ -5,11 +5,12 @@
 
   --primary-color: #ccc;
   --secondary-color: #a7a7a7;
-  --accented-color: #7975f8;
-  /* --accented-color: #8e8dd6; */
   --accented-color: #7472d5;
+  --not-accented-color: #a7a7a7;
+
 
   --title-color: rgba(204, 204, 204, 1);
+  --link-color: #fff;
 
   --card-color: #272727;
 
