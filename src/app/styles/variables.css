@@ -105,8 +105,8 @@
   --font-line-5xl: 56px;
   --font-5xl: var(--font-size-5xl) / var(--font-line-5xl) var(--font-family-main);
 
-  --font-size-h1: 58px;
-  --font-line-h1: 64px;
+  --font-size-h1: 56px;
+  --font-line-h1:64px;
   --font-h1: var(--font-size-h1) / var(--font-line-h1) var(--font-family-accented);
 
 

@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Pagination } from "@/features/Pagination";
 import { Container } from "@/shared/ui/Container/Container";
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
 
 interface ProjectsProps {
   className?: string;
@@ -129,6 +130,13 @@ export const Projects = ({ className }: ProjectsProps) => {
           )}
         </ul>
         <Pagination list={projects} />
+        <AppLink
+          className={s.navLink}
+          to={"/projects"}
+        >
+          {t("All projects")}
+          {" >"}
+        </AppLink>
       </div>
     </Container>
   );

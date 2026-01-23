@@ -35,6 +35,10 @@ export const Reviews = ({ className }: ReviewsProps) => {
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nulla accusantium iure, nisi quos rerum dignissimos provident numquam magni cupiditate nostrum unde eos deleniti quisquam esse autem? Velit, consequuntur voluptatem!"
           }
         </div>
+        <div className={s.author}>
+          {"@"}
+          {"Author"}
+        </div>
       </div>
       <div className={s.pagination}>
         <span></span>

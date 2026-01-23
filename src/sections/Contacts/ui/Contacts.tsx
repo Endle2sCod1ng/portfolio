@@ -26,7 +26,7 @@ export const Contacts = ({ className }: ContactsProps) => {
 
   return (
     <Container className={`${s.contacts} ${className ? className : ""}`}>
-      <AppTitle>{t("For any questions")}</AppTitle>
+      <AppTitle className={s.title}>{t("For any questions")}</AppTitle>
       <form
         className={s.form}
         action="#"
