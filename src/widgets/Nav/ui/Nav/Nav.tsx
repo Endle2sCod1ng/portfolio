@@ -12,6 +12,7 @@ interface NavProps {
 export const Nav = ({ className }: NavProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { t } = useTranslation();
+
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("isOpen");
@@ -19,6 +20,8 @@ export const Nav = ({ className }: NavProps) => {
       document.body.classList.remove("isOpen");
     }
   }, [isOpen]);
+
+  
   return (
     <nav
       className={`${s.nav} ${className ? className : ""}

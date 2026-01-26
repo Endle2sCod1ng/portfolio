@@ -23,6 +23,7 @@
   border: none;
   color: var(--primary-color);
   cursor: pointer;
+  font: var(--font-s);
 
   &:hover {
     transition: all linear var(--transtion-delay);
@@ -45,11 +46,12 @@
 }
 
 .stub {
-  height: 570px;
+  min-height: 570px;
   display: flex;
   flex-direction: column;
-  align-content: center;
+
   justify-content: center;
+  text-align: center;
 }
 
 .navLink {

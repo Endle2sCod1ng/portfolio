@@ -71,13 +71,23 @@ const projects: Project[] = [
     code: "https://github.com/Endle2sCod1ng/portfolio",
   },
 ];
-const PAGINATION = ["All", "React", "Vue", "Angular", "React Native"] as const;
+
+const PAGINATION = [
+  "All",
+  "React",
+  "Vue",
+  "Angular",
+  "React Native",
+  "NodeJs",
+  "Python",
+] as const;
 
 export const Projects = ({ className }: ProjectsProps) => {
   const [activeBtn, setActiveBtn] =
     useState<(typeof PAGINATION)[number]>("All");
 
   // const [slideNum, setSlideNum] = useState<number>(0);
+
   const [slideNum] = useState<number>(0);
 
   const { t } = useTranslation();
@@ -101,12 +111,13 @@ export const Projects = ({ className }: ProjectsProps) => {
           </li>
         ))}
       </ul>
+
       <div className={s.listWrapper}>
-        <ul className={s.list}>
-          {projects.filter((p: Project) =>
-            activeBtn === "All" ? p : p.stackList.join(",").includes(activeBtn),
-          ).length !== 0 ? (
-            projects
+        {projects.filter((p: Project) =>
+          activeBtn === "All" ? p : p.stackList.join(",").includes(activeBtn),
+        ).length !== 0 ? (
+          <ul className={s.list}>
+            {projects
               .filter((p: Project) =>
                 activeBtn === "All"
                   ? p
@@ -122,13 +133,13 @@ export const Projects = ({ className }: ProjectsProps) => {
                     project={project}
                   />
                 );
-              })
-          ) : (
-            <div className={s.stub}>
-              <h3>{t("Projects using this technology in development")}</h3>
-            </div>
-          )}
-        </ul>
+              })}
+          </ul>
+        ) : (
+          <div className={s.stub}>
+            <h3>{t("Projects using this technology in development")}</h3>
+          </div>
+        )}
         <Pagination list={projects} />
         <AppLink
           className={s.navLink}

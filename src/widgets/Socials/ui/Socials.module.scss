@@ -12,12 +12,16 @@
   .socItem {
     a {
       .svg {
+    
+
         &:hover {
           fill: var(--accented-color);
         }
       }
 
       .bg {
+        background: var(--inverted-bg-color);
+
         &:hover {
           background: var(--accented-color);
         }

@@ -24,8 +24,8 @@ export const Socials = ({ className }: SocialsProps) => {
           soc.svg === GhSvg || soc.svg === InSvg
             ? "0 -2 35 35"
             : soc.svg === TgSvg
-              ? "1.4 -0.5 21 21"
-              : "0 0 21 21";
+              ? "-0.6 -2.5 25 25"
+              : "-2 -2 25 25";
         const size = soc.svg === GhSvg || soc.svg === InSvg ? "35" : "21";
         const className = soc.svg === GhSvg ? s.svg : s.bg;
 
