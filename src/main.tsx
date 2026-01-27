@@ -20,5 +20,4 @@ createRoot(document.getElementById("root")!).render(
 );
 // Rm consoler.log() in projects
 // Rm outline body index.css
-// Rm outline Container container.module.scss .container
 // NOt workong i18n in gh-pages
